@@ -1,0 +1,341 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-01-07T06:37:26.292Z",
+  "__export_source": "insomnia.desktop.app:v10.3.0",
+  "resources": [
+    {
+      "_id": "req_d8a584416de3415ea428ac0ce6037bf2",
+      "parentId": "fld_37cd6c37e1df48e49551b381177db140",
+      "modified": 1736231460168,
+      "created": 1736062919513,
+      "url": "{{ _.baseURL }}/status",
+      "name": "Status",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.3.0",
+          "id": "pair_6a6a49ccab914b95b92ec3f4be9d40b5"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1734839272254,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_37cd6c37e1df48e49551b381177db140",
+      "parentId": "wrk_a3c293e204394f3599cde0100e054700",
+      "modified": 1734839264133,
+      "created": 1734839264133,
+      "name": "v1",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1734839264133,
+      "environmentType": "kv",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_a3c293e204394f3599cde0100e054700",
+      "parentId": null,
+      "modified": 1735800158048,
+      "created": 1728405371249,
+      "name": "Inquira API",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_9d962682c31d45e5b4dadcf5fbe78fb4",
+      "parentId": "fld_74d20640df0c44f7b9b66ce11b47d6c1",
+      "modified": 1736231506424,
+      "created": 1734848160426,
+      "url": "{{ _.baseURL }}/workflows",
+      "name": "List Workflows",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.3.0",
+          "id": "pair_6a6a49ccab914b95b92ec3f4be9d40b5"
+        },
+        {
+          "id": "pair_50b10e517e2d495da3b9cc0e5447a279",
+          "name": "x-api-key",
+          "value": "{{ _.apiKey }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1734847908579,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_74d20640df0c44f7b9b66ce11b47d6c1",
+      "parentId": "fld_37cd6c37e1df48e49551b381177db140",
+      "modified": 1734847907059,
+      "created": 1734847894896,
+      "name": "Workflows",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1734839272154,
+      "environmentType": "kv",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_4662bc76806443719e3e73b654c922f8",
+      "parentId": "fld_74d20640df0c44f7b9b66ce11b47d6c1",
+      "modified": 1736231512689,
+      "created": 1734849879286,
+      "url": "{{ _.baseURL }}/workflows/d6a2a371-c7a3-4b3c-8dcb-a87878255c02/",
+      "name": "Get Workflow By ID",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.3.0",
+          "id": "pair_6a6a49ccab914b95b92ec3f4be9d40b5"
+        },
+        {
+          "id": "pair_50b10e517e2d495da3b9cc0e5447a279",
+          "name": "x-api-key",
+          "value": "{{ _.apiKey }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1734843592909,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_85af2d012bf64b239ac2f4651e16a7c5",
+      "parentId": "fld_b2bcbee4fd4e4ef99c31865d9c92d817",
+      "modified": 1736231714178,
+      "created": 1734839275905,
+      "url": "{{ _.baseURL }}/deployments/619ffc13-1645-4186-9b7f-6d1efbdee7cd/users/",
+      "name": "Add User To Deployment",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"users\": [\n\t\t{\n\t\t\t\"user_first_name\": \"John\",\n\t\t\t\"user_last_name\": \"Doe\",\n\t\t\t\"user_dob\": \"1990-01-01\",\n\t\t\t\"user_phone_number\": \"+31123123123\",\n\t\t\t\"user_email\": \"support@inquira.health\",\n\t\t\t\"appointment_date_time\": \"2024-11-16T10:00:00Z\",\n\t\t\t\"appointment_poli_name\": \"Appointment Clinic\"\n\t\t}\n\t]\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_613aa551bcde4eeda38fc45c876f6fcd"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.3.0",
+          "id": "pair_6a6a49ccab914b95b92ec3f4be9d40b5"
+        },
+        {
+          "id": "pair_50b10e517e2d495da3b9cc0e5447a279",
+          "name": "x-api-key",
+          "value": "{{ _.apiKey }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1734839277239,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_b2bcbee4fd4e4ef99c31865d9c92d817",
+      "parentId": "fld_37cd6c37e1df48e49551b381177db140",
+      "modified": 1734839272097,
+      "created": 1734839269324,
+      "name": "Deployments",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1734839272054,
+      "environmentType": "kv",
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_aa130fa46f0f487c816a563bf04f565c",
+      "parentId": "fld_b2bcbee4fd4e4ef99c31865d9c92d817",
+      "modified": 1736231517661,
+      "created": 1735194258724,
+      "url": "{{ _.baseURL }}/deployments/619ffc13-1645-4186-9b7f-6d1efbdee7cd/",
+      "name": "Get Deployment By ID",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.3.0",
+          "id": "pair_6a6a49ccab914b95b92ec3f4be9d40b5"
+        },
+        {
+          "id": "pair_50b10e517e2d495da3b9cc0e5447a279",
+          "name": "x-api-key",
+          "value": "{{ _.apiKey }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1734048444237.5,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1db0b156ab2b47c4bd60ea5a6debeea1",
+      "parentId": "fld_b2bcbee4fd4e4ef99c31865d9c92d817",
+      "modified": 1736231520161,
+      "created": 1735197255894,
+      "url": "{{ _.baseURL }}/deployments/f402ae0f-c46a-442f-8d6f-b0ca367d3d73/calls/",
+      "name": "Get Deployment Calls",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.3.0",
+          "id": "pair_6a6a49ccab914b95b92ec3f4be9d40b5"
+        },
+        {
+          "id": "pair_50b10e517e2d495da3b9cc0e5447a279",
+          "name": "x-api-key",
+          "value": "{{ _.apiKey }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1733653027736.75,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6eb3214ac59b47a08c07b5d90994cef2",
+      "parentId": "fld_b2bcbee4fd4e4ef99c31865d9c92d817",
+      "modified": 1736231521876,
+      "created": 1734840011179,
+      "url": "{{ _.baseURL }}/deployments?active=true",
+      "name": "List Deployments",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/10.3.0",
+          "id": "pair_6a6a49ccab914b95b92ec3f4be9d40b5"
+        },
+        {
+          "id": "pair_50b10e517e2d495da3b9cc0e5447a279",
+          "name": "x-api-key",
+          "value": "{{ _.apiKey }}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1733257611236,
+      "isPrivate": false,
+      "pathParameters": [],
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_03d293c08b8330a667ad282047743e060f31e6c8",
+      "parentId": "wrk_a3c293e204394f3599cde0100e054700",
+      "modified": 1736231801973,
+      "created": 1728405371265,
+      "name": "Base Environment",
+      "data": { "baseURL": "https://web.inquira.app/api/v1/", "apiKey": "" },
+      "dataPropertyOrder": { "&": ["baseURL", "apiKey"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1728405371265,
+      "environmentType": "json",
+      "kvPairData": [],
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_03d293c08b8330a667ad282047743e060f31e6c8",
+      "parentId": "wrk_a3c293e204394f3599cde0100e054700",
+      "modified": 1728405371267,
+      "created": 1728405371267,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}

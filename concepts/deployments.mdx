@@ -1,0 +1,176 @@
+---
+title: 'Deployments'
+description: 'Deployments are the instances of your Inquira agent.'
+icon: 'paper-plane'
+---
+# Understanding Deployments
+
+## What is a Deployment?
+
+A Deployment is how you make your workflow available to interact with users. It represents an active instance of your workflow that can handle either incoming or outgoing calls. When you create a deployment, you're essentially making your workflow "live" and ready to interact with users.
+
+## Types of Deployments
+
+There are currently two types of deployments available:
+
+<CardGroup cols={2}>
+  <Card title="Outgoing Call Deployment">
+    - Makes outbound calls to your customers
+    - Requires a list of users to call
+    - Follows a schedule you define
+  </Card>
+  <Card title="Incoming Call Deployment">
+    - Handles incoming calls from your customers
+    - Can include predefined user data for personalization
+  </Card>
+</CardGroup>
+
+<Info>
+  Chat deployments are coming soon! If this is something you need early access to, please contact us.
+</Info>
+
+## Creating a Deployment
+
+To create a new deployment:
+
+1. Navigate to the Deployments page
+2. Click "Create Deployment"
+3. Select a workflow release
+4. Choose the deployment type
+5. Configure the following settings:
+
+### Input Data
+
+<Steps>
+  <Step title="Prepare User Data">
+    Upload or enter user data that your workflow needs
+  </Step>
+  <Step title="Map Fields">
+    Match columns to your workflow's input requirements
+  </Step>
+  <Step title="Verify">
+    For outbound calls, ensure contact information is included
+  </Step>
+</Steps>
+
+### Model Configuration
+
+<Properties>
+  <Property name="Voice Settings">
+    Choose between Azure TTS, ElevenLabs, or OpenAI
+  </Property>
+  <Property name="Language">
+    Set language preferences
+  </Property>
+  <Property name="Speech Recognition">
+    Configure speech recognition settings
+  </Property>
+</Properties>
+
+### Deployment Configuration
+
+<Properties>
+  <Property name="Timing">
+    Set start time and end time
+  </Property>
+  <Property name="Timezone">
+    Configure timezone settings
+  </Property>
+  <Property name="Call Handling">
+    Set call handling preferences
+  </Property>
+</Properties>
+
+## Managing Active Deployments
+
+The Deployments dashboard shows you:
+
+- Active deployments
+- Call statistics
+- Deployment status
+- Associated phone numbers
+
+For each active deployment, you can:
+
+- Add more users to the call queue
+- Monitor call progress
+- Stop the deployment
+- View call analytics
+
+### Adding Users to Active Deployments
+
+<Steps>
+  <Step title="Access Deployment">
+    Open the deployment details
+  </Step>
+  <Step title="Add Users">
+    Click "Add users to call queue"
+  </Step>
+  <Step title="Input Data">
+    Upload new user data or enter it manually
+  </Step>
+  <Step title="Schedule">
+    For outbound calls, set a schedule time
+  </Step>
+  <Step title="Confirm">
+    Add users to the queue
+  </Step>
+</Steps>
+
+### Stopping a Deployment
+
+To stop a deployment:
+
+1. Navigate to the deployment details
+2. Click "Stop Deployment"
+3. Confirm the action
+
+<Callout type="warning">
+  Stopped deployments cannot be restarted. Create a new deployment if needed.
+</Callout>
+
+## Deployment History
+
+The system maintains a history of all your deployments, including:
+
+- Start and stop times
+- Total calls made/received
+- Success rates
+- Associated workflow versions
+
+## Best Practices
+
+<Cards>
+  <Card title="Testing">
+    Always test your workflow thoroughly before deployment
+  </Card>
+  <Card title="Scheduling">
+    For outbound calls, consider your timezone and user availability
+  </Card>
+  <Card title="Monitoring">
+    Regularly check active deployments for performance
+  </Card>
+  <Card title="Data Quality">
+    Ensure user data is properly formatted and complete
+  </Card>
+  <Card title="Capacity Planning">
+    Monitor system resources and call volumes
+  </Card>
+</Cards>
+
+## Related Resources
+
+<Cards>
+  <Card title="Workflow Creation Guide" href="/docs/workflows" />
+  <Card title="Voice Configuration Settings" href="/docs/voice-config" />
+  <Card title="Call Handling Documentation" href="/docs/call-handling" />
+  <Card title="Analytics and Reporting" href="/docs/analytics" />
+</Cards>
+
+For technical details about deployment configuration, refer to our [API documentation](/api-docs).
+
+---
+
+<ContactSupport>
+  Need help? Contact our support team for assistance with your deployments.
+</ContactSupport>

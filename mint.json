@@ -6,82 +6,77 @@
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
-  "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+  "font": {
+    "headings": {
+      "family": "Plus Jakarta Sans"
+    },
+    "body": {
+      "family": "Plus Jakarta Sans"
     }
+  },
+  "modeToggle": {
+    "default": "light",
+    "isHidden": false
+  },
+  "colors": {
+    "primary": "#393E41",
+    "light": "#ABDBDE",
+    "dark": "#2F6D72"
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:support@inquira.health"
+      "name": "Back to Inquira Website",
+      "url": "https://inquira.health"
     }
   ],
   "topbarCtaButton": {
-    "name": "inquira.health",
-    "url": "https://www.inquira.health"
+    "name": "Sign-up",
+    "url": "https://web.inquira.app/register"
   },
   "tabs": [
     {
       "name": "API Reference",
       "url": "api-reference",
-      "openapi": "/openapi-spec.yml"
+      "openapi": "/api-reference/openapi-spec.yml"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+        "name": "Enterprise Support",
+        "icon": "building",
+        "url": "https://cal.com/umarniz/inquira-30-min"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "introduction"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Concepts",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "concepts/workflows",
+        "concepts/deployments",
+        "concepts/phone-numbers",
+        "concepts/logs"
+      ]
+    },
+    {
+      "group": "Reference",
+      "pages": [
+        "reference/languages"
       ]
     },
     {
       "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
+      "pages": ["api-reference/introduction"]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "linkedin": "https://www.linkedin.com/company/inquira-health/",
+    "x": "https://x.com/InquiraHealth",
+    "github": "https://github.com/InquiraHealth"
   }
 }

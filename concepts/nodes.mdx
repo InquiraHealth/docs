@@ -1,0 +1,73 @@
+---
+title: 'Nodes'
+description: 'Understanding different types of nodes in the workflow builder'
+---
+
+# Nodes
+
+Nodes are the building blocks of your conversation workflow. Each node type serves a specific purpose and helps you create dynamic and interactive conversations. Here's a detailed overview of each node type available in the workflow builder.
+
+## Default State Node
+
+The Default State Node is the entry point of any new conversation state. It marks the beginning of a conversation flow and initializes the conversation context.
+
+- **Purpose**: Serves as the starting point for a new conversation state
+- **Icon**: Message icon
+- **Use Case**: Always used as the first node when creating a new conversation state
+
+## Default Node
+
+The Default Node is your basic conversation building block that can deliver messages to the user.
+
+- **Purpose**: Sends messages to the user
+- **Icon**: Message icon
+- **Features**:
+  - Can send fixed (pre-written) messages
+  - Supports AI-driven dynamic responses
+  - Ideal for basic conversation interactions
+
+## Function Node
+
+The Function Node adds logic and data processing capabilities to your conversation flow.
+
+- **Purpose**: Executes specific functions or operations
+- **Icon**: Function icon
+- **Common Use Cases**:
+  - Verify Date of Birth
+  - Match names or other data
+  - Perform data validation
+  - Execute custom business logic
+
+## Transition Node
+
+The Transition Node allows you to switch between different conversation states, enabling complex conversation flows.
+
+- **Purpose**: Changes the current state of the conversation
+- **Icon**: Arrow right icon
+- **Use Cases**:
+  - Move to a different conversation topic
+  - Switch to error handling states
+  - Transition to follow-up conversations
+  - Change conversation context
+
+## Control Node
+
+The Control Node manages the flow and behavior of the conversation at a system level.
+
+- **Purpose**: Controls conversation flow and system actions
+- **Icon**: Hierarchy icon
+- **Features**:
+  - Conversation termination (Hangup)
+  - Call transfers
+  - System-level controls
+  - Flow control operations
+
+## Best Practices
+
+When using nodes in your workflow:
+
+1. Always start with a Default State Node when creating a new conversation state
+2. Use Default Nodes for simple message exchanges
+3. Implement Function Nodes for data validation and processing
+4. Use Transition Nodes to create complex, multi-state conversations
+5. Apply Control Nodes for system-level operations and flow management 

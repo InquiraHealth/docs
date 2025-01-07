@@ -1,33 +1,38 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'Introduction to the Inquira REST API'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+<Info>
+  The API is only available for Inquira Pro and Enterprise customers.
+</Info>
 
 ## Welcome
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+To understand the terminology and concepts in Inquira, view the [Documentation](/introduction).
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+<CardGroup cols={2}>
+  <Card title="OpenAPI Specification" href="https://github.com/InquiraHealth/docs/blob/main/api-reference/openapi-spec.yml">
+    Click here to view the underlying OpenAPI Specification file for the REST APIs.
+  </Card>
+  <Card title="Insomnia Collection" href="https://github.com/InquiraHealth/docs/blob/main/api-reference/Insomnia_2025-01-07.json">
+    Click here to view the Insomnia collection file for the REST APIs.
+  </Card>
+</CardGroup>
+
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All API endpoints are authenticated using an API Key. You can get the API Key by going to the [API Keys page](https://web.inquira.app/api-keys).
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+Create an API Key with a relevant expiration date and copy the API Key to your clipboard.
+
+Now you can use the API Key in your requests by adding an `x-api-key` header to your request.
+
+Example CURL request:
+
+```bash
+curl --request GET \
+  --url https://web.inquira.app/api/v1//workflows \
+  --header 'x-api-key: YOUR_API_KEY'
 ```

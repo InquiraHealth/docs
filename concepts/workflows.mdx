@@ -1,0 +1,178 @@
+---
+title: 'Workflows'
+description: 'Workflows are the core of Inquira. They are the building blocks of your Inquira agent.'
+icon: 'sitemap'
+---
+
+A workflow is like a map that guides your AI agent through conversations. Think of it as a flowchart where each step represents what the agent should say or do next.
+
+![Workflow Editor](/images/workflows/editor.png)
+
+## The Editor Layout
+
+The editor has three main parts:
+
+- **Left Side**: Your workflow canvas where you build the conversation flow
+- **Right Side**: Properties panel where you customize the selected elements
+- **Top Bar**: Toolbar with buttons to manage your workflow
+
+A workflow is made up of several states. Each state has nodes that are connected by edges.
+
+## Workflow Nodes
+
+You can add a new node to the workflow by pressing the `+` button in the canvas.
+
+![Add Node](/images/workflows/add-node.png)
+
+Workflows currently supports the following nodes:
+
+- **Default State Node**: The first node of a new conversation [state](/concepts/workflows#workflow-states)
+- **Default Node**: Says a fixed or AI-driven message.
+
+Fixed messages are said as is without any changes while AI-driven messages are processed by the AI agent to come-up with answers themselves.
+
+- **Function Node**: Performs specific functions like verifying Date of Birth or matching names
+- **Transition Node**: Switches the state of the conversation
+- **Control Node**: Controls conversation flow with actions like Hangup or Transfer
+
+## Workflow States
+
+A state is a collection of nodes that are connected by edges. States are used to organize longer conversations.
+
+Consider each state as a seperate objective of the conversation.
+
+For each state you can define a state prioritiy of **None**, **Secondary** or **Primary**.
+
+<Note>
+    If a state has a **Primary** priority and that state is never reached in a call then we consider the call to be failed.
+</Note>
+
+## Making Your Workflow Dynamic
+
+### Using Variables
+
+Variables make your conversations personalized. For example:
+- `Hello $Input.first_name!` becomes "Hello Jane!"
+- `Your appointment is on $Input.appointment_date` becomes "Your appointment is on 12 March 2025"
+
+To set up variables:
+1. Click the "Variables" button in the top bar
+2. Go to the Schema Editor tab and add your variables and their types
+3. Specify a value for the variable in the Input Variables tab to test your workflow
+4. Now you can use `$Input.variable_name` in the Fixed or AI-driven messages of your nodes.
+
+<Info>
+    If your variable is detected, `$Input.variable_name` will be replaced with the value of the variable.
+</Info>
+
+### Variable Functions
+
+Some variable types support special functions to make the value more usable in a conversation.
+
+This allows an appointment_date_time value of "12 March 2025 10:00" to be converted to "Wednesday" or "12 March" or "10 AM".
+
+Currently the functions are only available for functions with format "date" or "date-time" and the following fucntions are supported:
+
+- `formatDayOfWeek`
+Returns the day of the week in the format "Wednesday"
+
+- `formatShortDate`
+Returns the short date in the format "12 March"
+
+- `formatLongDate`
+Returns the full date in the format "12 March 2025"
+
+- `formatLocalizedTime`
+Returns localized time in the format "10 AM" (localised in the language of the workflow)
+
+To use these you can use the following syntax:
+
+`$Input.appointment_date_time.formatDayOfWeek`
+
+### Testing Your Flow
+
+Use the chat preview in the right panel to:
+- Test how your workflow runs
+- See how variables perform
+- Check different conversation paths
+
+## Organizing Your Workflow
+
+### States
+
+States help organize longer conversations:
+- Group related steps together
+- Create clear sections (like "Greeting", "Appointment Booking", "Farewell")
+- Keep your workflow neat and manageable
+
+### Best Practices
+
+1. **Keep it Simple**
+   - Break complex conversations into smaller states
+   - Use clear, conversational language
+   - Test each path thoroughly
+
+2. **Save Your Work**
+   - Create new versions for major changes
+   - Test before publishing
+   - Keep notes about what changed
+
+## Publishing Your Workflow
+
+When you're ready to make your workflow live:
+
+1. Click "Publish" in the top bar
+2. Review your changes
+3. Confirm [deployment](/concepts/deployments)
+
+## Customizing Your Agent
+
+### Voice Settings
+Click the "Voice" button to:
+
+- Choose your agent's voice and language
+
+Inquira supports 57+ languages and has support for 100+ voices.
+
+See a full list of [supported languages](/reference/languages)
+
+## Need Help?
+
+- Look for the (?) help icons throughout the editor
+- Use the chat preview to test your changes
+- Contact support if you get stuck
+
+## Quick Tips
+
+1. **Preview Often**: Test your workflow frequently
+2. **Start Small**: Begin with simple flows and expand
+3. **Use States**: Organize complex conversations into states
+4. **Version Control**: Create new versions for major changes
+5. **Test Variables**: Verify all personalized content works
+
+Remember: The best workflows feel natural and conversational while efficiently achieving their goals.
+
+## Keyboard Shortcuts
+
+Make your editing faster with these shortcuts:
+
+- **Undo**: Ctrl/Cmd + Z
+- **Redo**: Ctrl/Cmd + Shift + Z
+- **Delete Node**: Delete/Backspace
+- **Duplicate Node**: D
+- **Move Canvas**: Hold Space + Drag
+- **Zoom**: Ctrl/Cmd + Mouse Wheel
+
+## Common Questions
+
+### How do I start a new workflow?
+Click "Create New Workflow" from the workflows dashboard and choose either a blank workflow or a template.
+
+### How do I test my workflow?
+Use the chat preview panel on the right side of the editor to run through your conversation flows.
+
+### When should I create a new version?
+Create a new version when making significant changes that you want to track separately.
+
+### How do I use variables?
+Add variables through the Variables button, then use them in messages with `$Input.variable_name`.
