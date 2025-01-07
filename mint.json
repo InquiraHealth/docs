@@ -57,7 +57,11 @@
     {
       "group": "Concepts",
       "pages": [
-        "concepts/workflows",
+        {
+          "group": "Workflows",
+          "icon": "sitemap",
+          "pages": ["concepts/workflows/introduction", "concepts/workflows/inputs", "concepts/workflows/outputs"]
+        },
         "concepts/deployments",
         "concepts/phone-numbers",
         "concepts/logs"

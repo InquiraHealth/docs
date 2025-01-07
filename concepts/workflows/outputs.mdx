@@ -1,0 +1,82 @@
+---
+title: 'Workflow Outputs'
+description: 'Understanding Call Data and Analysis'
+---
+
+After your AI agent completes conversations, Inquira provides several ways to analyze and collect data from these interactions. This includes conversation transcripts, data collected explicitly during the call and call analysers that you can define.
+
+![](/images/workflows/output-log.png)
+
+## Conversation Transcripts
+
+Every call generates a detailed transcript that captures the entire conversation between the AI agent and the user. The system is built to include every word understood by the AI and every word actually spoken to the user to be visible in the transcripts.
+
+The transcripts also include underling function calls and what data was passed to the underlying functions.
+
+Transcripts are available immediately after a call ends and can be accessed through the Logs page or via the API.
+
+## Call Collectors
+
+Call collectors are specific data points extracted from the conversation. 
+
+You can define collectors in your Workflow default nodes:
+
+<Frame caption="Default node with a collector">
+  <img width="400" src="/images/workflows/output-node-collector.png" />
+</Frame>
+
+Collectors of type Text, Number and Date and can also be used in Function nodes.
+
+This allows you to collect data from the conversation and use it in other parts of your workflow.
+
+Example function node using a collector and an Input variable to compare the dates:
+
+<Frame caption="Function node using a collector and an Input variable to compare the dates">
+  <img width="400" src="/images/workflows/output-function-usage.png" />
+</Frame>
+
+## Call Analyzers
+
+Call analyzers are questions or analysis that you can run on each call transcript once its finished.
+
+You can define analyzers by going to the Agent settings in the top navigation bar in the Workflow Editor and then clicking on the Analysis tab.
+
+<Frame caption="Specifying an analyser in the Agent settings">
+  <img  src="/images/workflows/output-analyser.png" />
+</Frame>
+
+### Setting Up Call Analyzers
+
+![](/images/workflows/call-analyzer-setup.png)
+
+Call analyzers can be configured in the Workflow Editor under the Analysis tab. You can set up multiple analyzers to track different aspects of your conversations.
+
+## Accessing Output Data
+
+All output data can be accessed through the Deployment page in the WebUI or via the [API](api-reference/deployments/list-deployment-calls).
+
+<Frame caption="The deployment page with records selected">
+  <img  src="/images/workflows/output-sample-export.png" />
+</Frame>
+
+## Best Practices
+
+1. **Regular Analysis**
+   - Review transcripts periodically
+   - Monitor analyzer trends
+   - Update collectors based on needs
+
+2. **Data Organization**
+   - Use consistent naming conventions
+   - Group related collectors
+   - Tag important conversations
+
+## Privacy and Security
+
+All conversation data is:
+- Encrypted at rest and in transit
+- Stored according to compliance requirements
+- Accessible only to authorized users
+- Retained based on your configuration
+
+For detailed API documentation on accessing output data, see the [API Reference](api-reference/analytics/get-call-data).

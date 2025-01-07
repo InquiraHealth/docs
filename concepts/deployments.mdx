@@ -3,9 +3,6 @@ title: 'Deployments'
 description: 'Deployments are the instances of your Inquira agent.'
 icon: 'paper-plane'
 ---
-# Understanding Deployments
-
-## What is a Deployment?
 
 A Deployment is how you make your workflow available to interact with users. It represents an active instance of your workflow that can handle either incoming or outgoing calls. When you create a deployment, you're essentially making your workflow "live" and ready to interact with users.
 
@@ -29,148 +26,68 @@ There are currently two types of deployments available:
   Chat deployments are coming soon! If this is something you need early access to, please contact us.
 </Info>
 
-## Creating a Deployment
-
-To create a new deployment:
-
-1. Navigate to the Deployments page
-2. Click "Create Deployment"
-3. Select a workflow release
-4. Choose the deployment type
-5. Configure the following settings:
-
 ### Input Data
 
-<Steps>
-  <Step title="Prepare User Data">
-    Upload or enter user data that your workflow needs
-  </Step>
-  <Step title="Map Fields">
-    Match columns to your workflow's input requirements
-  </Step>
-  <Step title="Verify">
-    For outbound calls, ensure contact information is included
-  </Step>
-</Steps>
+First read the [Workflow Inputs](/concepts/workflows/inputs) page to understand how to define the input data for your workflow.
 
-### Model Configuration
+Once you have an input schema, you can use it in your deployment by uploading a CSV file or using the [API](api-reference/deployments/add-users-to-deployment).
 
-<Properties>
-  <Property name="Voice Settings">
-    Choose between Azure TTS, ElevenLabs, or OpenAI
-  </Property>
-  <Property name="Language">
-    Set language preferences
-  </Property>
-  <Property name="Speech Recognition">
-    Configure speech recognition settings
-  </Property>
-</Properties>
+To try an example, create a new Template deployment with the Appointment Reminder workflow and use the [sample input data](https://github.com/InquiraHealth/docs/tree/main/files/sample-appointment-inputs.csv).
 
-### Deployment Configuration
+When you pass this data to an outbound deployment, the system will automatically schedule outgoing calls to your users based on the phone numbers you provide.
 
-<Properties>
-  <Property name="Timing">
-    Set start time and end time
-  </Property>
-  <Property name="Timezone">
-    Configure timezone settings
-  </Property>
-  <Property name="Call Handling">
-    Set call handling preferences
-  </Property>
-</Properties>
+If it is an inbound deployment, the system will map the user data depending on the incoming phone number.
 
-## Managing Active Deployments
+<Info>
+  Note: We map the inbound phone number to the user based on the caller ID that the users phone number advertises.
+</Info>
 
-The Deployments dashboard shows you:
+### Outbound Deployment Settings
 
-- Active deployments
-- Call statistics
-- Deployment status
-- Associated phone numbers
+![](/images/deployments/outbound-config.png)
 
-For each active deployment, you can:
+When setting up an outbound deployment, you can configure various call handling parameters:
 
-- Add more users to the call queue
-- Monitor call progress
-- Stop the deployment
-- View call analytics
+### Outbound Call Configuration
 
-### Adding Users to Active Deployments
+#### Call Limits
+| Setting | Description | Default |
+|---------|-------------|---------|
+| Maximum Retry Attempts | Number of times to retry a failed call | 3 |
+| Maximum Call Duration | Maximum length of each call in minutes | 10 |
+| Wait Between Calls | Minutes to wait before calling the next user | 5 |
 
-<Steps>
-  <Step title="Access Deployment">
-    Open the deployment details
-  </Step>
-  <Step title="Add Users">
-    Click "Add users to call queue"
-  </Step>
-  <Step title="Input Data">
-    Upload new user data or enter it manually
-  </Step>
-  <Step title="Schedule">
-    For outbound calls, set a schedule time
-  </Step>
-  <Step title="Confirm">
-    Add users to the queue
-  </Step>
-</Steps>
+#### Call Window
+| Setting | Description | Example |
+|---------|-------------|---------|
+| Start Time | When to begin making calls each day | 09:00 |
+| End Time | When to stop making calls each day | 17:00 |
 
-### Stopping a Deployment
+#### No Response & Busy Line Handling
+| Scenario | Setting | Default |
+|----------|---------|---------|
+| No Answer | Retry Interval | 180 minutes |
+| Busy Line | Retry Interval | 15 minutes |
 
-To stop a deployment:
+<Info>
+  All time settings are configured in the deployment's timezone. Make sure to set the correct timezone before configuring call windows.
+</Info>
 
-1. Navigate to the deployment details
-2. Click "Stop Deployment"
-3. Confirm the action
+<Warning>
+  Call recordings may be subject to legal requirements in your jurisdiction. Ensure compliance before enabling this feature.
+  Currently call recordings are disabled to avoid abuse.
+</Warning>
 
-<Callout type="warning">
-  Stopped deployments cannot be restarted. Create a new deployment if needed.
-</Callout>
+## Incoming Call Deployment Settings
 
-## Deployment History
+For inbound deployments, you can configure the following settings:
 
-The system maintains a history of all your deployments, including:
+### Inbound Call Configuration
 
-- Start and stop times
-- Total calls made/received
-- Success rates
-- Associated workflow versions
+Phone Number - The phone number that will be used to receive inbound calls.
 
-## Best Practices
+Max Call Duration - The maximum duration of an inbound call in minutes.
 
-<Cards>
-  <Card title="Testing">
-    Always test your workflow thoroughly before deployment
-  </Card>
-  <Card title="Scheduling">
-    For outbound calls, consider your timezone and user availability
-  </Card>
-  <Card title="Monitoring">
-    Regularly check active deployments for performance
-  </Card>
-  <Card title="Data Quality">
-    Ensure user data is properly formatted and complete
-  </Card>
-  <Card title="Capacity Planning">
-    Monitor system resources and call volumes
-  </Card>
-</Cards>
-
-## Related Resources
-
-<Cards>
-  <Card title="Workflow Creation Guide" href="/docs/workflows" />
-  <Card title="Voice Configuration Settings" href="/docs/voice-config" />
-  <Card title="Call Handling Documentation" href="/docs/call-handling" />
-  <Card title="Analytics and Reporting" href="/docs/analytics" />
-</Cards>
-
-For technical details about deployment configuration, refer to our [API documentation](/api-docs).
-
----
-
-<ContactSupport>
-  Need help? Contact our support team for assistance with your deployments.
-</ContactSupport>
+<Note>
+  A phone number may only be associated with a single inbound deployment.
+</Note>

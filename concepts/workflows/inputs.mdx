@@ -1,0 +1,54 @@
+---
+title: 'Workflow Inputs'
+description: 'Making Your Workflow Dynamic with Variables'
+---
+
+Input variables allow you to personalize your AI agent's conversations by injecting dynamic data. These variables can represent anything from user information to appointment details, making each conversation contextual and personalized.
+
+## Setting Up Input Variables
+
+![](/images/workflows/input-schema.png)
+
+
+Inputs are first defined in the Schema Editor as shown above.
+
+A schema is a definition of the underlying variable that is used in your workflow. This defines what group a property belongs to and what the name and type of the property is expected to be.
+
+Once you define the schema of a property you can use it in your Workflow.
+
+![](/images/workflows/input-workflow-variables.png)
+
+
+Eventually when you create a deployment, you can use the same Input properties in your deployment in your CSV file ([example](https://github.com/InquiraHealth/docs/tree/main/files/sample-appointment-inputs.csv)) or using the [API](api-reference/deployments/add-users-to-deployment).
+
+
+## Using Variables in Your Workflow
+
+### Basic Variable Usage
+
+Insert variables into your messages using the `$Input.<variable_name>` syntax.
+
+Example:
+
+`"Hello $Input.first_name, your appointment is scheduled for $Input.appointment_date"`
+
+You can use this text in a Fixed message or an AI-Driven message in the Workflow Editor.
+
+If you syntax is correct and the variable exists, you should see the value of the variable in the message.
+
+![](/images/workflows/input-correct-syntax.png)
+
+### Variable Functions
+
+For variables with the Format `date` or `date-time`, you can use special formatting functions:
+
+| Variable Format | Function | Description |
+|------------|------------------|------------------|
+| `date` or `date-time` | `formatDayOfWeek` | Returns the day of the week |
+| `date` or `date-time` | `formatShortDate` | Returns the short date in the format **12 March** |
+| `date` or `date-time` | `formatLongDate` | Returns the full date in the format **12 March 2025** |
+| `date-time` | `formatLocalizedTime` | Returns localized time in the format **10 AM** (localised in the language of the workflow) |
+
+You use these functions by following the syntax: `$Input.<variable_name>.formatDayOfWeek`
+
+These functions help utilise a single variable such as appointment_date_and_time to create a message that is more understandable for end users.

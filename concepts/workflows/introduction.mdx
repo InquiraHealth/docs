@@ -1,7 +1,6 @@
 ---
 title: 'Workflows'
 description: 'Workflows are the core of Inquira. They are the building blocks of your Inquira agent.'
-icon: 'sitemap'
 ---
 
 A workflow is like a map that guides your AI agent through conversations. Think of it as a flowchart where each step represents what the agent should say or do next.
@@ -49,45 +48,7 @@ For each state you can define a state prioritiy of **None**, **Secondary** or **
 
 ## Making Your Workflow Dynamic
 
-### Using Variables
-
-Variables make your conversations personalized. For example:
-- `Hello $Input.first_name!` becomes "Hello Jane!"
-- `Your appointment is on $Input.appointment_date` becomes "Your appointment is on 12 March 2025"
-
-To set up variables:
-1. Click the "Variables" button in the top bar
-2. Go to the Schema Editor tab and add your variables and their types
-3. Specify a value for the variable in the Input Variables tab to test your workflow
-4. Now you can use `$Input.variable_name` in the Fixed or AI-driven messages of your nodes.
-
-<Info>
-    If your variable is detected, `$Input.variable_name` will be replaced with the value of the variable.
-</Info>
-
-### Variable Functions
-
-Some variable types support special functions to make the value more usable in a conversation.
-
-This allows an appointment_date_time value of "12 March 2025 10:00" to be converted to "Wednesday" or "12 March" or "10 AM".
-
-Currently the functions are only available for functions with format "date" or "date-time" and the following fucntions are supported:
-
-- `formatDayOfWeek`
-Returns the day of the week in the format "Wednesday"
-
-- `formatShortDate`
-Returns the short date in the format "12 March"
-
-- `formatLongDate`
-Returns the full date in the format "12 March 2025"
-
-- `formatLocalizedTime`
-Returns localized time in the format "10 AM" (localised in the language of the workflow)
-
-To use these you can use the following syntax:
-
-`$Input.appointment_date_time.formatDayOfWeek`
+You can use variables to make your workflow dynamic. See the [Inputs](/concepts/workflows/inputs) and [Outputs](/concepts/workflows/outputs) pages for more information.
 
 ### Testing Your Flow
 

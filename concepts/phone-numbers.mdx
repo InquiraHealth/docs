@@ -4,34 +4,44 @@ description: 'Phone numbers are used to identify and contact your customers.'
 icon: 'phone'
 ---
 
-## Basic
+With Inquira you can bring your own phone numbers or buy one of our pre-provisioned numbers to use with your deployments.
 
-### Inline Code
+## Managing Phone Numbers
 
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
+Request a phone number from the Inquira UI by clicking the "Request a Number" button.
 
-```
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
-```
+We use [Telnyx](https://telnyx.com/) to provision and manage phone numbers.
 
-### Code Block
+### Data Requirements When Requesting a Number
 
-Use [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) by enclosing code in three backticks and follow the leading ticks with the programming language of your snippet to get syntax highlighting. Optionally, you can also write the name of your code after the programming language.
+To ensure the phone number is provisioned correctly, Telnyx will require the following information from your organization:
 
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
+- Contact Info
 
-````md
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-````
+Your full name, phone number and organisation name.
+
+- Organisation Address
+
+Your organisation address.
+
+- Passport or ID Copy
+
+A copy of your passport or ID.
+
+- Company Registration Certificate
+
+A copy of your company registration certificate.
+
+- Proof of Address
+
+A copy of a recent utility bill or bank statement to prove your address.
+
+### Bring your own numbers
+
+We provide SIP Trunking for outbound and inbound calls.
+
+Internally we support the G.711U and G.722 codecs.
+
+SIP Authentication is done via credentials and for incoming calls we would need to know the IP address of your server to ensure the call is not blocked by firewalls.
+
+Contact support to get started.
