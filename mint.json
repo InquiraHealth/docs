@@ -38,6 +38,10 @@
       "name": "API Reference",
       "url": "api-reference",
       "openapi": "/api-reference/openapi-spec.yml"
+    },
+    {
+      "name": "Security",
+      "url": "https://www.inquira.health/legal/security"
     }
   ],
   "anchors": [
