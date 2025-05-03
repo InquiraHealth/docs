@@ -4,7 +4,7 @@ info:
   title: Inquira API
   description: Documentation for the Inquira API
 servers:
-  - url: https://web.inquira.app/api/v1
+  - url: https://eu.inquira.app/api/v1
 security:
   - ApiKeyAuth: []
 components:
@@ -14,6 +14,11 @@ components:
       in: header
       name: x-api-key
       description: API key for authentication
+    DeploymentKeyAuth:
+      type: apiKey
+      in: body
+      name: deployment_key
+      description: Deployment key for authentication
   schemas:
     transcript_schema:
       type:
@@ -448,6 +453,7 @@ paths:
               - user_rejected
               - user_unavailable
               - normal
+              - unknown
             description: Filter by call end reason
           required: false
           description: Defines the reason why a call ended.
@@ -1041,6 +1047,150 @@ paths:
                     description: Detailed workflow information
                 required:
                   - workflow
+        "400":
+          description: Bad Request - Invalid input parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                  - error
+                description: Validation error message
+        "401":
+          description: Unauthorized - Invalid or missing API key
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                  - error
+                description: Authentication error message
+        "403":
+          description: Forbidden - Team is inactive or lacks permissions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                  - error
+                description: Authorization error message
+        "404":
+          description: Not Found - Requested resource does not exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                  - error
+                description: Resource not found message
+        "422":
+          description: Unprocessable Entity - Input validation failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  details:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        field:
+                          type: string
+                        message:
+                          type: string
+                        code:
+                          type: string
+                      required:
+                        - field
+                        - message
+                        - code
+                required:
+                  - error
+                  - details
+                description: Validation error details
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                  - error
+                description: Internal server error message
+  /chat:
+    post:
+      tags:
+        - Chat
+      summary: Create Chat Room
+      description: Creates a LiveKit chat room and returns connection details
+      security:
+        - DeploymentKeyAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                deployment_key:
+                  type: string
+                  description: Deployment key for authentication
+                user_id:
+                  type: string
+                  description: Unique identifier for the user
+                user_name:
+                  type: string
+                  description: Display name for the user
+                user_email:
+                  type: string
+                  format: email
+                  description: Email address of the user
+                user_phone:
+                  type: string
+                  description: Phone number of the user (optional)
+              required:
+                - deployment_key
+                - user_id
+                - user_name
+                - user_email
+      responses:
+        "200":
+          description: LiveKit connection details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  room_name:
+                    type: string
+                    description: Name of the created chat room
+                  token:
+                    type: string
+                    description: LiveKit token for connecting to the room
+                  url:
+                    type: string
+                    description: WebSocket URL for connecting to LiveKit
+                required:
+                  - room_name
+                  - token
+                  - url
         "400":
           description: Bad Request - Invalid input parameters
           content:

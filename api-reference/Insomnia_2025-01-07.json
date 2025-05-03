@@ -319,7 +319,7 @@
       "modified": 1736231801973,
       "created": 1728405371265,
       "name": "Base Environment",
-      "data": { "baseURL": "https://web.inquira.app/api/v1/", "apiKey": "" },
+      "data": { "baseURL": "https://eu.inquira.app/api/v1/", "apiKey": "" },
       "dataPropertyOrder": { "&": ["baseURL", "apiKey"] },
       "color": null,
       "isPrivate": false,
