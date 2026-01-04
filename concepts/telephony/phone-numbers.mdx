@@ -1,7 +1,6 @@
 ---
 title: 'Phone Numbers'
 description: 'Phone numbers are used to identify and contact your customers.'
-icon: 'phone'
 ---
 
 With Inquira you can bring your own phone numbers or buy one of our pre-provisioned numbers to use with your deployments.
@@ -10,7 +9,7 @@ With Inquira you can bring your own phone numbers or buy one of our pre-provisio
 
 Request a phone number from the Inquira UI by clicking the "Request a Number" button.
 
-We use [Telnyx](https://telnyx.com/) and [CM](https://www.cm.com) to provision and manage phone numbers.
+We use [Telnyx](https://telnyx.com/) and [CM](https://www.cm.com) to provision and manage phone numbers but support bringing any SIP based trunk provider such as [Twilio](http://twilio.com/) or [vCare](https://www.vcareconnect.nl/).
 
 ### Data Requirements When Requesting a Number
 
@@ -38,14 +37,6 @@ A copy of a recent utility bill or bank statement to prove your address.
 
 ### Bring your own numbers
 
-We provide SIP Trunking for outbound and inbound calls.
-
-Internally we support the G.711U and G.722 codecs.
-
-SIP Authentication is done via credentials and for incoming calls we would need to know the IP address of your server to ensure the call is not blocked by firewalls.
-
-For SIP signalling we support UDP/TCP and TLS, whereas for media encryption we support SRTP.
-
-Contact support to get started.
+We provide SIP trunking for inbound and outbound calling. See `concepts/telephony/sip` for full configuration details.
 
 <script defer src="https://umami.umarniz.com/script.js" data-website-id="c1526d42-6c87-4389-9877-edbdbde4d624"></script>

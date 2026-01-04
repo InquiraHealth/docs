@@ -1,0 +1,55 @@
+---
+title: 'SIP Trunking'
+description: 'Configure inbound and outbound SIP connectivity with Inquira.'
+---
+
+Use this guide to connect your SBC/PBX to Inquira for inbound and outbound calling.
+
+## Inbound SIP Configuration
+
+Send incoming calls from your network to Inquira’s SIP edge.
+
+- **Signaling**
+  - Protocol: SIP
+  - Transports & ports:
+    - UDP 5060
+    - TCP 5060
+    - TLS 5061 (SIPS)
+  - Ensure your SBC/PBX can reach our hosts on the relevant ports (egress from you → ingress to us).
+- **Media**
+  - Codecs: G.722, G.711 (PCMU/PCMA)
+  - Encryption: SRTP supported
+- **Source IP whitelisting (required)**
+  - We restrict ingress by source IP. Provide the public IP address(es) your SBC/PBX uses to originate calls so we can whitelist them. Calls from non-whitelisted IPs are rejected.
+- **SIP edge hosts**
+  - Staging: `sip-staging-1.inquira.app`, `sip-staging-2.inquira.app`, `sip-staging-3.inquira.app`
+  - Production: `sip1.inquira.app`, `sip2.inquira.app`, `sip3.inquira.app`
+  - Recommendation: configure all three hosts for round-robin and failover.
+- **Call routing**
+  - To: route inbound calls to the selected Inquira host over your chosen transport.
+  - From: present CLI/ANI in E.164.
+  - Early media: supported.
+  - Failover recommendation: configure a failsafe destination number on your SBC/PBX so if Inquira does not respond within your timeout threshold, calls automatically forward to a live line.
+- **TLS/SRTP notes (if using encrypted signaling/media)**
+  - SIP over TLS: connect to 5061 using `tls` transport.
+  - Media: offer/answer with SRTP for encrypted RTP.
+  - Certificates: use standard public CAs and ensure your SBC trusts common roots.
+- **What we need from you**
+  - Source IPs for whitelisting (all egress addresses you might use).
+  - Environment you’ll connect to (staging or production).
+  - Transport you intend to use (UDP/TCP/TLS).
+  - Codec list you will offer (must include G.722 and/or G.711).
+- **Optional SBC/PBX hints**
+  - Enable keepalives/OPTIONS if supported.
+  - Set reasonable SIP and media timeouts and enable failover across our host list.
+  - Prefer G.722 when wideband is available; fall back to G.711.
+  - Test call-forwarding/failover routing periodically to confirm resiliency.
+
+If you need test windows or a specific routing/CNAM policy, share details along with your source IPs and we’ll complete the whitelist and confirm readiness.
+
+## Outbound SIP Configuration
+
+- We support URL- or auth-based outbound trunks; provide the SIP URI for your trunk plus credentials if required.
+- Transports: UDP, TCP, TLS.
+- Media: SRTP supported; codecs G.722 and G.711 (PCMU/PCMA).
+- Share your desired transport, authentication details, and any CNAM/routing requirements so we can validate and confirm readiness.

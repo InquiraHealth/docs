@@ -41,7 +41,7 @@
     },
     {
       "name": "Security",
-      "url": "https://www.inquira.health/legal/security"
+      "url": "https://inquira.health/en/trust-center"
     }
   ],
   "anchors": [
@@ -67,7 +67,11 @@
           "pages": ["concepts/workflows/introduction", "concepts/workflows/inputs", "concepts/workflows/outputs"]
         },
         "concepts/deployments",
-        "concepts/phone-numbers",
+        {
+          "group": "Telephony",
+          "icon": "phone",
+          "pages": ["concepts/telephony/phone-numbers", "concepts/telephony/sip"]
+        },
         "concepts/logs"
       ]
     },
