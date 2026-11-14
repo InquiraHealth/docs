@@ -1,0 +1,300 @@
+---
+title: 'Online afspraken maken en verzetten'
+description: 'Cliënten boeken, verzetten en annuleren zelf hun afspraak, op basis van de echte agenda’s in je EPD.'
+icon: 'calendar-check'
+---
+
+Je cliënt krijgt een link per sms of e-mail, of vindt die op je website. Hij kiest een tijd die echt vrij is in de agenda van de behandelaar, en krijgt direct een bevestiging. Verzetten of afzeggen kan via de link in die bevestiging, binnen de regels die jij kiest. De afspraak komt zelf in je EPD. Je secretariaat hoeft minder te bellen en te mailen. Bij praktijken die live zijn, gebeurt een groot deel van de boekingen buiten kantoortijd.
+
+## Past dit bij jouw praktijk?
+
+- **Goed voor:** praktijken die veel tijd kwijt zijn aan afspraken plannen en verzetten. Ook goed als je wilt dat cliënten 's avonds of in het weekend zelf een tijd kiezen.
+- **Goed voor:** afspraaktypen met een vaste lengte die in het rooster van de behandelaar staan, zoals een intake, behandelgesprek of familiegesprek.
+- **Niet voor:** afspraken waarbij een medewerker eerst inhoudelijk moet beoordelen wie wanneer komt, zonder vaste regels. Dan kun je wel *goedkeuring vooraf* gebruiken (stap 9), maar je wint minder tijd.
+- **Niet voor:** afspraken waarvoor een ruimte, apparaat of stagiair beschikbaar moet zijn. Inquira kijkt alleen naar het rooster van de behandelaar, niet naar ruimtes of resources in je EPD.
+- **Let op:** groepsbehandelingen en trajecten met meerdere afspraken (intake + vervolg) werken met *samengestelde afspraken*. Die richt Inquira op maat in; voor groepen zie [Groepsbehandeling](/praktijk/groepsbehandeling). Deze gids gaat over losse afspraken.
+- **Werkt met:**
+  - **Medicore:** boeken, verzetten en annuleren worden teruggeschreven. Afspraken die je zelf in Medicore plant, kan Inquira overnemen, zodat de cliënt ook die online kan verzetten. Roosterregels komen binnen via de Inquira-extensie, omdat Medicore geen rooster-API heeft.
+  - **Nedap ONS:** nieuwe boekingen worden in ONS gezet. Verschuift een medewerker de afspraak in ONS, dan verschuift die in Inquira mee en krijgt de cliënt bericht.
+  - **Zonder EPD:** tijden komen uit gekoppelde agenda's (Google of Microsoft) of uit tijdslots die je zelf plant. Boekingen staan dan alleen in Inquira of in die agenda.
+
+## Wat je nodig hebt
+
+- [ ] Een Inquira-account met beheerdersrechten en de gebruikers van je secretariaat. Zie [Starten met Inquira](/praktijk/starten).
+- [ ] Een werkende koppeling met je EPD, met de agenda's van je behandelaars zichtbaar in Inquira. Zie [Starten met Inquira](/praktijk/starten).
+- [ ] Bij Medicore: de Inquira-extensie geïnstalleerd bij de mensen die het rooster beheren.
+- [ ] Een gedeelde mailbox voor meldingen aan het secretariaat (bijvoorbeeld planning@ of secretariaat@), en de afzendernaam voor sms. Zie [Starten met Inquira](/praktijk/starten).
+- [ ] Een **testbehandelaar** in je EPD: een eigen agenda met een rooster, die niemand anders gebruikt.
+- [ ] Een of twee **testcliënten** in je EPD, met jouw eigen mobiele nummer en e-mailadres.
+- [ ] Een lijst van je afspraaktypen: naam, afspraaksoorten in het EPD, lengte, en wat de cliënt zelf mag (boeken, verzetten, annuleren).
+
+## Doorlooptijd
+
+Reken op **3 tot 6 weken**. Het instellen zelf kost een paar dagen. De meeste tijd zit in:
+- het gelijktrekken van je afspraaktypen en lengtes met je EPD (vaak blijken er meer afspraaksoorten of afwijkende lengtes te zijn dan gedacht);
+- een testweek met testcliënten, voordat een echte cliënt iets krijgt;
+- bij Medicore: het rooster op orde krijgen, zodat elk roosterblok de juiste afspraaksoorten heeft.
+
+Een praktijk die live is, deed er ongeveer 5 weken over: 1 week voor de lijst met afspraaktypen, 3 weken testen met drie behandelaars, en daarna live met iedereen.
+
+## Stappen
+
+### Voorbereiden
+
+<Steps>
+  <Step title="1. Kies welke afspraaktypen online mogen">
+    **Wie:** Jij · **Waar:** in een lijst, die je naar Inquira stuurt
+
+    Maak per afspraaktype één regel met:
+    - de naam die de cliënt ziet;
+    - de afspraaksoorten in je EPD die erbij horen;
+    - de lengte in minuten;
+    - wat de cliënt mag: nieuw boeken, alleen verzetten, ook annuleren;
+    - of een medewerker het eerst moet goedkeuren.
+
+    Een afspraaktype moet even lang zijn als alle EPD-afspraaksoorten eronder. Heeft de online variant een andere lengte dan de variant op locatie? Maak dan twee afspraaktypen. Anders past Inquira bij verzetten de lengte in je EPD aan.
+
+    **Klaar als:** elk afspraaktype in je lijst precies één lengte heeft en gekoppeld is aan bestaande afspraaksoorten in je EPD.
+  </Step>
+  <Step title="2. Kies per afspraaktype hoe vrije tijden ontstaan">
+    **Wie:** Jij · **Waar:** in dezelfde lijst
+
+    Er zijn twee manieren:
+    - **Uit het rooster.** Inquira leest de roosterblokken van de behandelaar en de afspraaksoorten die daarin geboekt mogen worden. Bestaande afspraken gaan eraf. Dit past bij de meeste behandelgesprekken.
+    - **Uit geplande tijdslots.** Je zet zelf vaste tijden klaar in de **Planner**, bijvoorbeeld vaste blokken voor familiegesprekken per kwartaal. Dit past als een behandelaar maar op een paar vaste momenten beschikbaar is.
+
+    Inquira kijkt naar de afspraaksoorten in het roosterblok, niet naar de naam van het blok. De naam van een blok mag je dus veranderen. Een nieuwe afspraaksoort in een blok moet wel aan een afspraaktype gekoppeld worden.
+
+    **Klaar als:** per afspraaktype vastligt: "uit het rooster" of "uit geplande tijdslots".
+  </Step>
+</Steps>
+
+### Inrichten
+
+<Steps>
+  <Step title="3. Maak de afspraaktemplates aan">
+    **Wie:** Inquira (één template kun je ook zelf maken) · **Waar:** **Scheduling → Scheduling Templates → New template**
+
+    Elk afspraaktype wordt een template. Bij meer dan een paar templates zet Inquira ze in één keer klaar vanuit je lijst (stap 1). Ze staan dan eerst op inactief.
+
+    Zelf een template maken of nalopen kan op het tabblad **Basics**: **Template Name**, **Default language** (Nederlands) en **Time format** (24-hour).
+
+    Bij **Availability** kies je de **Availability source**:
+    - uit het rooster: **Team Member Availability** met **Computing engine** op **Inquira (roster rules)**;
+    - uit tijdslots: **Appointment Slots (Planner)**.
+
+    **Klaar als:** al je afspraaktypen als template in de lijst staan, met de status inactief.
+  </Step>
+  <Step title="4. Koppel de templates aan je EPD">
+    **Wie:** Inquira · **Waar:** bij Medicore: **Apps → Medicore → Appointment template links**. Bij Nedap ONS: in de ONS-app, onder **Write bookings to Nedap ONS**
+
+    Per template legt Inquira vast welke EPD-afspraaksoorten erbij horen en wat er naar het EPD gaat (zie stap 10). Jij levert aan:
+    - de status voor een geboekte afspraak, en de status voor een afspraak die nog wacht op goedkeuring (bijvoorbeeld "aangevraagd");
+    - de locatie die gebruikt wordt als het roosterblok geen locatie heeft;
+    - welke afspraken die je zelf in het EPD plant, de cliënt online mag verzetten.
+
+    Bij Medicore zet Inquira daarvoor **Mirror Medicore appointments into Inquira** aan. Met **Send this template's booking notifications for mirrored appointments** krijgt de cliënt ook voor zo'n afspraak een bevestiging en een herinnering.
+
+    **Klaar als:** elke template een koppeling heeft, en het koppelscherm geen rode melding toont ("Writeback will fail until this is fixed").
+  </Step>
+  <Step title="5. Koppel de agenda's van je behandelaars">
+    **Wie:** Jij · **Waar:** **Scheduling → Scheduling Templates → template → Edit → Availability → Team calendars**
+
+    Kies bij **Agendas** de optie **All agendas**, of een rol (bijvoorbeeld alle GZ-psychologen). Dan komen nieuwe collega's vanzelf mee. Het rooster bepaalt daarna wie welke afspraak echt kan doen.
+
+    Kies je losse agenda's? Dan moet je bij elke nieuwe collega alle templates aanpassen. Vergeet je er één, dan krijgen cliënten van die collega geen bevestiging en geen herinnering. Dat ging bij meerdere praktijken mis.
+
+    **Klaar als:** bij **Agendas** staat **All agendas** (of de juiste rol), en het aantal agenda's klopt met je team.
+  </Step>
+  <Step title="6. Zorg dat er vrije tijden zijn">
+    **Wie:** Jij · **Waar:** je EPD en de Inquira-extensie (rooster), of **Scheduling → Planner** (tijdslots)
+
+    **Uit het rooster:**
+    - Zet in je EPD in elk roosterblok de afspraaksoorten die daar geboekt mogen worden.
+    - Bij Medicore: druk na een roosterwijziging op de sync-knop in de Inquira-extensie. Wacht na een wijziging in Medicore ongeveer 30 minuten voor je synct, anders kloppen de tijden nog niet.
+
+    **Uit tijdslots:**
+    - Open **Scheduling → Planner** en kies het template.
+    - Kies in het menu **⋮** (**Planner view options**) de optie **Plan Slots**. Kies de behandelaar, de dagen en de tijden.
+    - Kies de planningsperiode:
+      - **Rolling window**: er staan steeds tijden klaar tot een vast aantal dagen vooruit. Elke nacht schuift er een dag bij.
+      - **Entire date range**: alle tijden tussen een vaste begin- en einddatum worden in één keer gemaakt, bijvoorbeeld een heel kwartaal.
+    - Plan je steeds met dezelfde agenda en periode? Vink **Use these providers and this planning period for new rules** aan. Dan begint elke nieuwe regel daarmee.
+    - Wijzig of verwijder je later een regel, dan zie je eerst welke tijden al geboekt zijn. Geboekte tijden blijven staan, tenzij je ze aanvinkt.
+    - Feestdagen sla je over met **Settings → Scheduling → Holiday templates**.
+
+    **Klaar als:** de link van je testtemplate (stap 11) vrije tijden toont in de agenda van je testbehandelaar.
+  </Step>
+  <Step title="7. Stel de boekingsregels in">
+    **Wie:** Jij · **Waar:** template → **Edit → Booking rules**
+
+    - **Slot Duration**: even lang als de afspraaksoort in je EPD.
+    - **Minimum Notice**: hoe kort van tevoren iemand nog mag boeken, in minuten. Bijvoorbeeld 1440 voor 24 uur.
+    - **Available Days in Future**: hoe ver vooruit iemand mag boeken, bijvoorbeeld 28 of 60 dagen.
+    - **Allow Rescheduling**, met **Patients cannot reschedule within …**: tot hoeveel uur of dagen voor de afspraak de cliënt zelf mag verzetten.
+    - **Allow Cancelling**, met **Patients cannot cancel within …**: hetzelfde voor afzeggen. Veel ggz-praktijken zetten afzeggen uit en laten alleen verzetten toe.
+
+    Locaties en behandelaar regel je in **Settings → Scheduling → Booking policies**:
+    - **In-person appointments only** biedt geen online tijden aan. Zet deze alleen op de templates voor afspraken op locatie, niet op **All templates**. Anders vindt een cliënt met een online afspraak geen tijden.
+    - Moet een verzette afspraak bij dezelfde behandelaar blijven? Maak een policy met de regel **Keep previous (reschedule)** op **Practitioner (Provider)**.
+
+    **Klaar als:** het blok **How this template behaves** naast de regels beschrijft wat je wilt, en je policies alleen op de juiste templates staan.
+  </Step>
+  <Step title="8. Stel bevestigingen en meldingen in">
+    **Wie:** Jij · **Waar:** template → **Edit → Notifications**. De teksten pas je aan in **Client Content**
+
+    Voor de cliënt:
+    - **Send email notifications for booking events** en **Send SMS notifications for booking events**: bevestiging, verzetten en annuleren.
+    - **Send attendee cancellation email/SMS when cancelled by**: kies wie een afzegbericht naar de cliënt laat gaan. Bijvoorbeeld wel als de cliënt zelf afzegt, niet als jullie annuleren.
+    - **Send to**: alleen het hoofdadres, of **Every email address on file** (handig bij jeugd, ouders of een begeleider).
+    - Herinneringen stel je hier ook in. Zie [Herinneringen en bevestigingen](/praktijk/herinneringen).
+
+    Voor je team, welke mailbox krijgt wat:
+
+    | Melding | Waar je het instelt | Naar |
+    | --- | --- | --- |
+    | Er is een afspraak geboekt | **Staff Booking Notifications → Notify staff when a booking is made**, adressen bij **Additional notification emails** | je planningsmailbox |
+    | Een afspraak of vrij slot is gewijzigd, ook in het EPD | **Notify staff about appointment and external slot changes** | dezelfde ontvangers |
+    | Een boeking of verzetverzoek wacht op goedkeuring | **Basics → Organizer Confirmation Emails** (stap 9) | de mailbox van wie goedkeurt |
+    | Een boeking kan niet aan een cliënt in Medicore gekoppeld worden | Medicore-koppeling, **Email staff when patient lookup fails** (laat Inquira dit instellen) | je planningsmailbox |
+
+    Zet in een mail aan een gedeelde mailbox geen cliëntgegevens. Kies bij de velden voor de meldingen alleen datum en tijd; de mail bevat een link naar de boeking in Inquira. Wie de mailbox leest, heeft daarom een Inquira-account nodig.
+
+    **Klaar als:** in elk adresveld het echte adres staat (geen testadres of persoonlijk adres) en de teksten in **Client Content** in jullie eigen toon zijn ("je" of "u").
+  </Step>
+  <Step title="9. Kies of medewerkers boekingen eerst goedkeuren">
+    **Wie:** Jij (de afhandeling in het EPD stelt Inquira in) · **Waar:** template → **Edit → Basics**
+
+    - Vink **Requires organizer confirmation** aan.
+    - Vul bij **Organizer Confirmation Emails** de mailbox in van wie goedkeurt. Zonder adres gaat er geen mail uit en ziet niemand het verzoek.
+    - Bij **What happens next** zet je de tekst die de cliënt ziet na zijn aanvraag. Laat je die leeg, dan krijgt hij een standaardtekst.
+
+    Een medewerker opent de link in de mail, of gaat naar **Scheduling → Bookings** en filtert op **Pending**. Daar kiest hij **Confirm booking** of **Reject booking**. Pas na goedkeuring krijgt de cliënt zijn definitieve bevestiging.
+
+    Bij Medicore kiest Inquira wat er met de oude tijd gebeurt als een cliënt een goed te keuren afspraak verzet (**When a reschedule requires organizer confirmation**). Kies bijna altijd **Keep the original time and hold the new time; mark both pending**. Dan houdt de cliënt zijn oude tijd tot er is beslist, en blijft bij afwijzen alles zoals het was.
+
+    Voor groepen en samengestelde afspraken heet de instelling **Staff confirm each booking**, met **Also e-mail each request to**. Dat richt Inquira samen met jou in.
+
+    **Klaar als:** een testaanvraag in de goedkeuringsmailbox aankomt, en je hem vanuit **Scheduling → Bookings** kunt goedkeuren en afwijzen.
+  </Step>
+  <Step title="10. Controleer wat er naar je EPD gaat">
+    **Wie:** Inquira stelt in, jij controleert · **Waar:** in je EPD, bij de afspraak van je testcliënt
+
+    Bij Medicore:
+    - **Nieuwe boeking:** er komt een afspraak in de agenda van de behandelaar, met de afspraaksoort, de status en de locatie van het roosterblok.
+    - **Wacht op goedkeuring:** de afspraak staat er met jullie status voor "aangevraagd".
+    - **Verzet:** de afspraak schuift mee, ook naar een andere locatie. De afspraaksoort en status blijven.
+    - **Geannuleerd in Inquira:** wat er in Medicore gebeurt, staat bij **When an appointment is cancelled in Inquira**: niets, een geannuleerd-status, of verwijderen.
+    - **Contactgegevens:** een nieuw telefoonnummer of e-mailadres dat de cliënt online invult, gaat **niet** naar het dossier. Pas dat zelf aan in het EPD.
+
+    Bij Nedap ONS komt een nieuwe boeking als afspraak in ONS. Bij **When a booked appointment is deleted in Nedap ONS** kies je wat Inquira doet als jullie de afspraak in ONS verwijderen.
+
+    **Klaar als:** de testboeking, het verzetten en het annuleren er in je EPD uitzien zoals je secretariaat verwacht.
+  </Step>
+</Steps>
+
+### Testen
+
+<Steps>
+  <Step title="11. Test met een testbehandelaar en testcliënt">
+    **Wie:** Jij, samen met Inquira · **Waar:** de booking link (**Scheduling Templates → ⋮ → Share booking link**), je EPD en je mailboxen
+
+    Laat Inquira de koppeling eerst beperken tot de agenda van je testbehandelaar. Dan kan er tijdens het testen niets bij echte behandelaars of cliënten terechtkomen. Activeer de templates (**⋮ → Activate**) en loop het testscript hieronder door.
+
+    **Klaar als:** alle testgevallen in [Testen voor livegang](#testen-voor-livegang) "goed" zijn.
+  </Step>
+</Steps>
+
+### Live gaan
+
+<Steps>
+  <Step title="12. Zet het aan voor alle behandelaars">
+    **Wie:** Inquira (koppeling), Jij (links delen) · **Waar:** Medicore- of ONS-koppeling, je website en je berichten
+
+    - Inquira zet de koppeling van de testagenda over naar alle agenda's in de templates.
+    - Zet de link op je website, of laat Inquira de link opnemen in de uitnodigings-sms van je cliëntroute.
+    - Zeg tegen je team wanneer het live gaat, en wie de goedkeuringsmailbox leest.
+
+    **Klaar als:** de eerste echte boeking in je EPD staat en de bevestiging bij de cliënt is aangekomen.
+  </Step>
+</Steps>
+
+## Testen voor livegang
+
+**Wie test:** iemand van het secretariaat die later ook goedkeurt, plus een behandelaar die zijn eigen agenda kent. Inquira kijkt mee. Neem een week, voordat een echte cliënt iets krijgt. Maak bij elke wijziging in de meldingen een schermafdruk van de instellingen, zodat je later kunt nagaan wat er aan stond.
+
+**Testagenda:** de testbehandelaar, met een rooster van een paar dagdelen per week en de afspraaksoorten van je templates. **Testcliënt:** een cliënt in je EPD met jouw eigen mobiele nummer en e-mailadres.
+
+| # | Geval | Wat je doet | Goed is |
+| --- | --- | --- | --- |
+| 1 | Boeken | Boek via de link een afspraak bij de testbehandelaar | Bevestiging per e-mail (en sms als dat aan staat). De afspraak staat in het EPD met de juiste soort, status en locatie. De planningsmailbox krijgt een melding zonder cliëntgegevens |
+| 2 | Verzetten | Verzet de afspraak via de link in de bevestiging | De afspraak schuift in het EPD. De oude tijd komt weer vrij. De cliënt krijgt een bericht |
+| 3 | Te laat verzetten | Probeer te verzetten binnen de termijn van **Patients cannot reschedule within** | De link biedt geen verzetten meer aan |
+| 4 | Goedkeuren | Vraag een afspraak aan op een template met goedkeuring, en keur hem goed | De mail komt aan in de goedkeuringsmailbox. Na **Confirm booking** krijgt de cliënt de bevestiging |
+| 5 | Afwijzen van verzetten | Verzet een goed te keuren afspraak en wijs het verzoek af | De oude afspraak staat nog op de oude tijd, in de oude status |
+| 6 | Afspraak gepland in het EPD | Plan in het EPD een afspraak voor de testcliënt, met een gekoppelde soort | De cliënt krijgt een bevestiging en kan hem online verzetten. Een statuswijziging later geeft geen nieuwe bevestiging |
+| 7 | Annuleren door jullie | Verwijder of annuleer een afspraak in het EPD | De tijd komt weer vrij. De cliënt krijgt wel of geen bericht, zoals je bij stap 8 koos |
+| 8 | Online en op locatie | Verzet een online afspraak, en daarna een afspraak op locatie | Online biedt online tijden aan, ook bij een andere vestiging met die afspraaksoort. Op locatie biedt geen online tijden aan |
+| 9 | Nieuwe collega | Voeg een testagenda toe aan je team | Die agenda verschijnt vanzelf in de templates (bij **All agendas**) |
+| 10 | Ander e-mailadres | Vul bij het boeken een ander e-mailadres in dan in het EPD | De bevestiging van Inquira gaat naar het ingevulde adres. Het EPD houdt het oude adres |
+
+Dingen die in echte praktijken misgingen, en die je daarom extra test:
+- **Meldingen naar een testadres.** Na het testen bleven meldingen naar het persoonlijke adres van de tester gaan. Zet bij livegang alle adressen om en test nog één boeking.
+- **Goedkeuringsmail zonder ontvanger.** Bij een leeg adresveld ging de mail nergens heen. Test geval 4 voor elk template met goedkeuring.
+- **Link in de goedkeuringsmail.** Bij de allereerste keer inloggen kom je op het overzicht in plaats van bij het verzoek. Klik daarna nog een keer op de link, of open **Scheduling → Bookings**.
+- **Tijdelijke reserveringen blijven staan.** Werd een verzetverzoek geannuleerd terwijl het nog wachtte, dan bleef de tijdelijke reservering in Medicore staan en blokkeerde die het slot. Kijk na geval 5 of er in het EPD niets is achtergebleven.
+- **Rooster niet bijgewerkt.** Een maandelijkse afwezigheid kwam op de verkeerde dag terecht, waardoor er over een overleg heen geboekt werd. Controleer de vrije tijden in de week na een roosterwijziging.
+
+## Live gaan en de eerste week
+
+**Aanzetten:**
+1. Templates op **Activate**.
+2. De koppeling van de testagenda naar alle agenda's (Inquira).
+3. De link delen: website, uitnodigings-sms of e-mail.
+
+**Elke dag in de eerste week:**
+- **Scheduling → Bookings**: staan er verzoeken op **Pending** die nog niet zijn afgehandeld? Staan er boekingen bij **Patient not linked**? Koppel die zelf aan de juiste cliënt.
+- **De planningsmailbox:** komen de meldingen aan, en kloppen ze?
+- **Je EPD:** steekproef van een paar online boekingen. Kloppen de soort, status, locatie en lengte?
+- **Klachten of vragen van cliënten:** noteer ze, en bespreek ze na een week met Inquira.
+
+**Stabiel** is het als er een week lang geen boeking met de hand verbeterd hoefde te worden en elk verzoek binnen een werkdag is afgehandeld. Bij de meeste praktijken is dat na 1 tot 2 weken. Daarna kun je meer afspraaktypen toevoegen of afzeggen online toestaan, één wijziging tegelijk.
+
+## Veelgestelde vragen
+
+<AccordionGroup>
+  <Accordion title="Kijkt Inquira naar de naam van het roosterblok of naar de afspraaksoorten erin?">
+    Naar de afspraaksoorten. De naam van het blok is alleen een label. Je kunt een blok dus hernoemen zonder dat er iets verandert. Voeg je een nieuwe afspraaksoort toe aan een blok, laat die dan aan een template koppelen.
+  </Accordion>
+  <Accordion title="Waarom kreeg een cliënt van een nieuwe collega geen bevestiging?">
+    Bijna altijd stond de agenda van die collega niet in het template. Inquira neemt alleen afspraken over uit agenda's die in een template staan. Kies bij **Agendas** de optie **All agendas** of een rol. Dan komen nieuwe collega's vanzelf mee.
+  </Accordion>
+  <Accordion title="Kan een cliënt een online afspraak verzetten naar een andere vestiging?">
+    Ja, als het rooster op die vestiging dezelfde afspraaksoort heeft. Ziet de cliënt geen tijden? Kijk dan of **In-person appointments only** op alle templates staat. Zet die policy alleen op de templates voor afspraken op locatie.
+  </Accordion>
+  <Accordion title="Wat gebeurt er met de oude tijd als een verzetverzoek eerst goedgekeurd moet worden?">
+    Dat hangt af van de koppeling met je EPD. Met **Keep the original time and hold the new time; mark both pending** blijft de oude tijd staan tot iemand beslist. Bij afwijzen verandert er niets. Met de andere keuze komt de oude tijd meteen vrij. Bij afwijzen zet Inquira de afspraak dan terug als de oude tijd nog vrij is.
+  </Accordion>
+  <Accordion title="Gaat de bevestiging naar het e-mailadres dat de cliënt online invult?">
+    Ja. De bevestiging van Inquira gaat naar het adres dat de cliënt bij het boeken invult. Inquira past het dossier in je EPD niet aan, dus werk het adres daar zelf bij. Krijgt de cliënt ook een mail op zijn oude adres? Dan komt die van je EPD zelf.
+  </Accordion>
+  <Accordion title="Krijgt een cliënt een bevestiging als we in het EPD de status van een afspraak wijzigen?">
+    Nee. Een bevestiging gaat alleen uit als er een nieuwe afspraak in het EPD komt. Afspraken die al in je EPD stonden voordat Inquira de agenda volgde, krijgen achteraf ook geen bevestiging.
+  </Accordion>
+  <Accordion title="We annuleren in het EPD. Komt de tijd dan weer vrij?">
+    Dat stel je in bij **Settings → Scheduling → Roster → Existing appointments**. Vink je **Cancelled** en **No-show / late cancellation** uit, dan komt de tijd weer vrij. Of de cliënt een bericht krijgt, staat in het template bij **Send attendee cancellation email/SMS when cancelled by**. Test dit met je eigen manier van annuleren: bij sommige praktijken telde alleen het verwijderen van een afspraak als annulering, niet een status als "geannuleerd".
+  </Accordion>
+  <Accordion title="Houdt Inquira rekening met stagiairs of ruimtes op een afspraak?">
+    Nee. Inquira kijkt alleen naar het rooster van de behandelaar. Een resource op de afspraak blijft bij verzetten staan. Een extra medewerker op de afspraak kan bij verzetten verdwijnen. Test dit als jullie dit gebruiken.
+  </Accordion>
+  <Accordion title="Onze e-mails komen bij cliënten in de spam. Wat nu?">
+    Het afzendadres is ingericht met de standaarden waarmee mailproviders een afzender controleren. Vraag de cliënt de mail als "geen spam" te markeren of het afzendadres aan zijn contacten toe te voegen. Wil je mailen vanaf een adres van je eigen domein? Zie [Starten met Inquira](/praktijk/starten).
+  </Accordion>
+  <Accordion title="Kunnen we een bevestiging opnieuw sturen?">
+    Nog niet met één knop. Verzet de afspraak in je EPD of in Inquira, dan krijgt de cliënt een nieuw bericht met de actuele tijd.
+  </Accordion>
+</AccordionGroup>
+
+## Hulp nodig?
+
+Stel je vraag via het vraagteken rechtsboven in Inquira, of mail naar support@inquira.health.

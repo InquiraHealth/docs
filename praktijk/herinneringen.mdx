@@ -1,0 +1,260 @@
+---
+title: 'Herinneringen en bevestigingen'
+description: 'Minder no-shows met automatische herinneringen per sms en e-mail, en eventueel een herinneringsgesprek door de spraakassistent.'
+icon: 'bell'
+---
+
+Je cliënt krijgt na het plannen een bevestiging, en een paar dagen of uren voor de afspraak een herinnering per sms of e-mail. In het bericht staat een link om te verzetten, als je dat toestaat. Wil je meer, dan belt de spraakassistent van je praktijk de cliënt: hij noemt dag, tijd en plaats, en vraagt of de afspraak doorgaat. Zegt een cliënt af, dan komt de tijd weer vrij voor iemand anders. Je team belt minder na, en er blijven minder stoelen leeg.
+
+## Past dit bij jouw praktijk?
+
+- **Goed voor:** elke praktijk die afspraken via Inquira laat boeken of verzetten. Sms- en e-mailherinneringen staan dan in een paar minuten aan.
+- **Goed voor:** praktijken met veel no-shows bij intakes of eerste afspraken. Daar helpt een herinneringsgesprek het meest.
+- **Niet voor:** herinneringen voor afspraken die alleen in je EPD staan en die Inquira niet volgt. Dan moet Inquira die afspraken eerst overnemen (stap 2).
+- **Beperking bij gesprekken:** in de belscripts die nu live zijn, bevestigt de cliënt de afspraak of hoort hij hoe hij kan afzeggen. De assistent annuleert of verzet zelf nog niets in je EPD; je team krijgt de uitkomst en handelt die af.
+- **Werkt met:**
+  - **Medicore:** herinneringen voor boekingen via Inquira, en voor afspraken die je zelf in Medicore plant als Inquira die overneemt.
+  - **Nedap ONS:** herinneringen voor boekingen via Inquira. Voor afspraken die je alleen in ONS plant, bespreek je met Inquira wat er kan.
+  - **Zonder EPD:** herinneringen voor boekingen via Inquira. Belgesprekken kunnen ook met een bellijst die je zelf uploadt.
+
+## Wat je nodig hebt
+
+- [ ] Online afspraken ingericht, of in ieder geval de afspraaktemplates. Zie [Online afspraken maken en verzetten](/praktijk/online-afspraken).
+- [ ] Een afzendernaam voor sms (maximaal 11 tekens). Zie [Starten met Inquira](/praktijk/starten).
+- [ ] Een goed mobiel nummer en e-mailadres bij je cliënten in het EPD. Bewaar buitenlandse nummers met landcode (+32, +49), niet als 0032 of zonder plus.
+- [ ] Voor herinneringsgesprekken: een telefoonnummer waarmee de assistent belt, het liefst het nummer van je praktijk. Zie [Starten met Inquira](/praktijk/starten).
+- [ ] Een testcliënt met jouw eigen mobiele nummer en e-mailadres, en een testagenda.
+
+## Doorlooptijd
+
+- **Sms en e-mail:** 1 tot 2 weken. Het instellen kost een uur. De rest is een testweek met testcliënten en het afstemmen van de teksten.
+- **Herinneringsgesprekken:** 3 tot 6 weken. De tijd zit in het belscript samen valideren, het nummer laten doorschakelen of tonen bij je telefonieleverancier, en afspreken hoe de bellijst bij Inquira komt. Bij ziekenhuizen komt daar vaak een privacytoets bij.
+
+## Stappen
+
+### Voorbereiden
+
+<Steps>
+  <Step title="1. Kies per afspraaktype het kanaal en het moment">
+    **Wie:** Jij · **Waar:** in een korte lijst voor je team
+
+    Leg per afspraaktype vast: e-mail, sms of allebei, en hoeveel uur of dagen vooraf. Voorbeelden uit praktijken die live zijn:
+    - e-mail 7 dagen vooraf, en sms 24 uur vooraf;
+    - één sms 72 uur vooraf.
+
+    Stem het moment af op je eigen regels:
+    - Moet een cliënt 24 of 48 uur vooraf afzeggen om geen boete te krijgen? Laat de herinnering ruim daarvoor komen.
+    - Mag de cliënt online verzetten tot een bepaalde termijn? Laat de herinnering vóór die termijn komen, anders werkt de verzetlink in de sms niet meer.
+    - Doe je zelf een vaste ronde, bijvoorbeeld op vrijdag om 12:00? Kijk of de herinnering voor maandag en dinsdag daar nog vóór valt.
+
+    **Klaar als:** per afspraaktype het kanaal en het moment vastliggen, en dat moment vóór je eigen afzeg- en verzettermijn valt.
+  </Step>
+  <Step title="2. Zorg dat afspraken uit je EPD meetellen">
+    **Wie:** Inquira · **Waar:** **Apps → Medicore → Appointment template links**
+
+    Herinneringen gaan uit voor afspraken die Inquira kent. Boekingen via Inquira kent Inquira altijd. Afspraken die jullie zelf in Medicore plannen, neemt Inquira over als in de koppeling **Mirror Medicore appointments into Inquira** aan staat, met **Send this template's booking notifications for mirrored appointments**.
+
+    Jij levert aan welke afspraaksoorten een herinnering moeten krijgen. Zorg ook dat de agenda's van alle behandelaars in de templates staan (**All agendas**, zie [Online afspraken](/praktijk/online-afspraken)).
+
+    **Klaar als:** een afspraak die je in het EPD plant voor je testcliënt binnen een paar minuten in **Scheduling → Bookings** staat.
+  </Step>
+</Steps>
+
+### Sms en e-mail inrichten
+
+<Steps>
+  <Step title="3. Zet de herinneringen aan per template">
+    **Wie:** Jij · **Waar:** **Scheduling → Scheduling Templates → template → Edit → Notifications → Appointment Reminders**
+
+    Klik op **Add reminder** en vul in:
+    - **Time before start** en **Unit** (**Minutes**, **Hours** of **Days (24h)**). 72 uur is dus 3 dagen.
+    - **Channel**: **Email** of **SMS**.
+    - **Send to**: bij sms altijd **Guests only** (de cliënt).
+    - **Guest message**: laat leeg voor de standaardtekst, of kies je eigen tekst.
+    - **Skip if booked within**: geen herinnering als de afspraak pas zo kort vooraf is gemaakt. Bijvoorbeeld 8 uur bij een sms 24 uur vooraf.
+
+    Wil je twee herinneringen, bijvoorbeeld e-mail en sms? Klik nog een keer op **Add reminder**.
+
+    Je kunt het moment later veranderen. Wie de herinnering op het oude moment al kreeg, krijgt hem niet nog een keer.
+
+    **Klaar als:** elk template uit je lijst de herinneringen toont die je bij stap 1 koos.
+  </Step>
+  <Step title="4. Schrijf de teksten">
+    **Wie:** Jij · **Waar:** **Client Content**, bij de berichten van het template
+
+    - Houd een sms bij één bericht. Laat bijvoorbeeld de locatie weg en noem alleen dag, datum en tijd.
+    - Zet de verzetlink erin als de cliënt mag verzetten. Mag hij niet zelf afzeggen? Haal dan de afzeglink uit de tekst, en noem je telefoonnummer.
+    - Gebruik dezelfde toon als in je andere berichten ("je" of "u").
+    - Noem in de herinnering geen behandelinhoud. Een sms kan door iemand anders gelezen worden.
+
+    **Klaar als:** je de herinnering voor je testcliënt hebt ontvangen en de tekst, de afzender en de link kloppen.
+  </Step>
+  <Step title="5. Kies wat er gebeurt als een sms niet aankomt">
+    **Wie:** Jij (de kolom in je cliëntroute: Inquira) · **Waar:** **Settings → SMS delivery**
+
+    - **Resend client SMS that could not be delivered**: aan.
+    - **How long the network keeps trying**: standaard 4 uur. Een telefoon die even uit staat, krijgt het bericht zodra hij weer aan gaat.
+    - **Wait before resending**: standaard 2 uur. Een tweede poging gaat de volgende ochtend om 9:00. Tussen 21:00 en 08:00 gaat er niets uit.
+    - **Resends at most**: 1 tot 3, standaard 2.
+
+    Nummers die nooit een sms kunnen ontvangen, krijgen geen nieuwe poging. Is een cliënt na alle pogingen niet bereikt, dan kan Inquira hem in je cliëntroute in een kolom "Niet bereikbaar" zetten. Daar belt je team hem na.
+
+    Op de tijdlijn van de cliënt (**Clients** → cliënt → filter op sms) zie je per bericht of het is aangekomen en welke poging er nog komt.
+
+    **Klaar als:** de instellingen zijn opgeslagen, en je weet wie de cliënten in "Niet bereikbaar" belt.
+  </Step>
+  <Step title="6. Bepaal wat er gebeurt als een cliënt afzegt">
+    **Wie:** Jij · **Waar:** **Settings → Scheduling → Roster → Existing appointments**, en het template (**Notifications**)
+
+    - Zegt een cliënt online af (als je dat toestaat), dan komt de tijd direct weer vrij. Wat er in je EPD gebeurt, staat in de koppeling (zie stap 10 van [Online afspraken](/praktijk/online-afspraken)).
+    - Werk je met een bellijst die je zelf uploadt? Haal cliënten die al hebben afgezegd er dan zelf uit.
+    - Zeggen jullie af in het EPD? Vink bij **Existing appointments** de statussen **Cancelled** en **No-show / late cancellation** uit. Dan komt die tijd in Inquira weer vrij.
+    - Kies in het template bij **Send attendee cancellation email/SMS when cancelled by** wie de cliënt een afzegbericht laat krijgen.
+    - Een vrijgekomen tijd vul je vanuit **Scheduling → Planner** met **Fill from waiting list**. Wil je dat Inquira cliënten van de wachtlijst belt of sms't voor een vrijgekomen plek? Zie [Vrije plekken vullen vanuit de wachtlijst](/praktijk/wachtlijst-vullen).
+
+    **Klaar als:** een geannuleerde testafspraak binnen een paar minuten weer als vrije tijd te boeken is.
+  </Step>
+</Steps>
+
+### Herinneringsgesprekken (optioneel)
+
+<Steps>
+  <Step title="7. Vul de voorbereiding voor uitgaande gesprekken in">
+    **Wie:** Jij · **Waar:** het voorbereidingsformulier van Inquira, per e-mail
+
+    Leg vast:
+    - **Wie** gebeld wordt (bijvoorbeeld iedereen met een intake over 2 dagen), en wie niet.
+    - **Wanneer**: dagen, tijden, aantal pogingen en de tijd ertussen.
+    - **Verificatie**: de cliënt noemt zijn geboortedatum voordat de assistent afspraakinformatie noemt. Een extra vraag, zoals een cliëntnummer, verlaagt de respons sterk.
+    - **Wat de assistent vertelt**: dag, tijd, plaats, en wat de cliënt moet voorbereiden.
+    - **Wat de cliënt kan doen**, en wie wat afhandelt: bevestigen, wil verzetten, wil afzeggen, vraag of terugbelverzoek, niet bereikt, verificatie mislukt.
+    - **Of er een sms gaat**: vóór het eerste gesprek, of na een gemist gesprek.
+
+    **Klaar als:** het formulier is ingevuld en naar Inquira gestuurd.
+  </Step>
+  <Step title="8. Laat Inquira het belscript en de bellijst bouwen">
+    **Wie:** Inquira · **Waar:** **Workflows**, **Deployments** en **Automations** in Inquira
+
+    Inquira bouwt het gesprek en zet een uitgaande deployment klaar op je nummer. De bellijst komt op een van deze manieren binnen:
+    - **Automatisch uit je EPD:** een automation zet elke cliënt met een passende afspraak op het juiste moment op de bellijst.
+    - **Met een bestand:** een medewerker uploadt een lijst in de deployment (**Import CSV Data → Upload CSV**). Zet in het bestand ook tot wanneer er gebeld mag worden, bijvoorbeeld tot de dag vóór de afspraak.
+    - **Via de API:** je eigen IT of BI-team levert de lijst aan.
+
+    Elke extra taal zet Inquira pas aan nadat je het script in die taal samen hebt gecontroleerd.
+
+    **Klaar als:** je zelf een testgesprek hebt gekregen en het script hebt goedgekeurd.
+  </Step>
+  <Step title="9. Stel de belmomenten en pogingen vast">
+    **Wie:** Inquira stelt in, jij keurt goed · **Waar:** **Deployments** → de deployment → instellingen
+
+    - **Calling hours** en de beldagen. Bel liefst binnen kantoortijd, zodat de cliënt jullie kan terugbellen.
+    - **Do not call on holidays in**: Nederland.
+    - **Retry Call**, **Retry interval (minutes)** en **Stop retrying after**: het aantal pogingen.
+    - **Consider answering machine as unanswered**: bij een voicemail geen bericht achterlaten, maar later opnieuw bellen.
+    - **SMS Notifications**, met **Trigger Event**: **Before First Call** (aankondiging) of **First Missed Call** (na een gemist gesprek).
+
+    Voorbeelden die live zijn:
+    - werkdagen 9:00–19:00, één nieuwe poging, en een sms na het eerste gemiste gesprek;
+    - werkdagen 15:00–20:30, tot drie nieuwe pogingen met 90 minuten ertussen;
+    - vier avonden per week 18:00–20:00, één nieuwe poging, en een sms vóór het eerste gesprek.
+
+    **Klaar als:** de instellingen overeenkomen met je formulier uit stap 7.
+  </Step>
+</Steps>
+
+### Testen en live gaan
+
+<Steps>
+  <Step title="10. Test met testcliënten">
+    **Wie:** Jij, samen met Inquira · **Waar:** je testagenda, je eigen telefoon en **Scheduling → Bookings**
+
+    Loop het testscript hieronder door. Tijdens het testen staat de deployment op **Enable testing mode**: de assistent belt dan alleen nummers die vooraf zijn goedgekeurd.
+
+    **Klaar als:** alle testgevallen in [Testen voor livegang](#testen-voor-livegang) "goed" zijn.
+  </Step>
+  <Step title="11. Zet het aan">
+    **Wie:** Jij (sms en e-mail), Inquira (gesprekken) · **Waar:** templates en deployment
+
+    - Sms en e-mail: de herinneringen gelden zodra het template actief is en de agenda's erin staan.
+    - Gesprekken: Inquira zet de testmodus uit en de deployment live.
+    - Zeg tegen je team dat er meer telefoontjes kunnen komen van cliënten die terugbellen of willen verzetten.
+
+    **Klaar als:** de eerste echte herinneringen zijn verstuurd en op de tijdlijn van de cliënten als afgeleverd staan.
+  </Step>
+</Steps>
+
+## Testen voor livegang
+
+**Wie test:** iemand van het secretariaat, met een testcliënt met het eigen mobiele nummer en e-mailadres. **Testagenda:** de testbehandelaar uit [Online afspraken](/praktijk/online-afspraken).
+
+Plan de testafspraken zo dat het herinneringsmoment binnen een paar uur valt. Bij een sms 24 uur vooraf: maak een afspraak over 26 uur.
+
+| # | Geval | Wat je doet | Goed is |
+| --- | --- | --- | --- |
+| 1 | Gewone herinnering | Boek een afspraak met het herinneringsmoment over een paar uur | De herinnering komt binnen een paar minuten na het moment. Afzender, tekst en link kloppen |
+| 2 | Kort vooraf geboekt | Boek binnen de tijd van **Skip if booked within** | Geen herinnering |
+| 3 | Wacht op goedkeuring | Vraag een afspraak aan op een template met goedkeuring, en keur hem niet goed | Geen herinnering zolang hij niet is goedgekeurd |
+| 4 | Gepland in het EPD | Plan een afspraak in het EPD voor de testcliënt | Bevestiging en herinnering komen, net als bij een online boeking |
+| 5 | Afgezegd | Annuleer een afspraak vóór het herinneringsmoment | Geen herinnering. De tijd is weer vrij |
+| 6 | Sms komt niet aan | Gebruik een testcliënt met een nummer dat niet bestaat | Nieuwe pogingen volgens **Settings → SMS delivery**. Daarna staat de cliënt als niet bereikbaar op zijn tijdlijn (en in de kolom "Niet bereikbaar" als je die hebt) |
+| 7 | Gesprek: bevestigen | Neem op, noem je geboortedatum, bevestig | De uitkomst staat bij het gesprek in **Deployments** |
+| 8 | Gesprek: verificatie mislukt | Noem drie keer een verkeerde geboortedatum | De assistent noemt geen afspraakgegevens, verwijst naar de praktijk en hangt op |
+| 9 | Gesprek: niet opnemen | Neem niet op | Een nieuwe poging binnen de belttijden. De sms na een gemist gesprek komt aan, als je die hebt |
+| 10 | Gesprek: kan niet komen | Zeg dat je niet kunt | De assistent zegt hoe je afzegt. De uitkomst komt bij je team terecht |
+| 11 | Buitenlands nummer | Zet de testcliënt op een buitenlands nummer met landcode | Het gesprek en de sms komen aan |
+
+Dingen die in echte praktijken misgingen, en die je daarom extra test:
+- **Herinnering te laat.** Een sms 72 uur vooraf viel na de termijn waarbinnen de cliënt nog online mocht verzetten. De link in de sms werkte dus niet meer. Controleer geval 1 ook voor de verzetlink.
+- **Geen herinnering bij afspraken uit het EPD.** Herinneringen gingen alleen uit voor online boekingen, omdat Inquira de afspraken uit het EPD niet overnam. Test geval 4.
+- **Steeds dezelfde mislukte sms.** Een cliënt kreeg tientallen keren dezelfde uitnodiging, omdat medewerkers hem met de hand opnieuw stuurden. Het nummer werkte niet. Bel zo'n cliënt, en verbeter het nummer in het EPD.
+- **Buitenlandse nummers niet gebeld.** Nummers die in het EPD als 0049… of zonder plus stonden, werden niet gebeld. Test geval 11, en bewaar nummers met +landcode.
+
+## Live gaan en de eerste week
+
+**Aanzetten:** de herinneringen in de templates (stap 3) en, voor gesprekken, de deployment op live (Inquira).
+
+**Elke dag in de eerste week:**
+- **Clients** → een paar cliënten met een afspraak → tijdlijn met filter op sms: zijn de herinneringen afgeleverd?
+- **Deployments** → de deployment → de gesprekken van gisteren: hoeveel bereikt, hoeveel bevestigd, wie wil afzeggen of verzetten? Zorg dat iemand die laatste groep dezelfde dag afhandelt.
+- De kolom "Niet bereikbaar" (als je die hebt): wie belt deze cliënten?
+- De terugbellers op je eigen telefoonlijn: kan je team ze opvangen?
+
+**Stabiel** is het als een week lang alle herinneringen op tijd zijn afgeleverd, behalve bij nummers die echt niet werken, en elke afzegging uit een gesprek dezelfde dag is verwerkt. Meet na 4 tot 6 weken je no-shows en vergelijk ze met de periode ervoor.
+
+## Veelgestelde vragen
+
+<AccordionGroup>
+  <Accordion title="Kunnen we twee herinneringen sturen, bijvoorbeeld 7 dagen en 1 dag vooraf?">
+    Ja. Klik in het template bij **Appointment Reminders** twee keer op **Add reminder**, en kies voor elke herinnering het moment en het kanaal.
+  </Accordion>
+  <Accordion title="Waarom kreeg een cliënt geen herinnering?">
+    De meest voorkomende redenen:
+    - de afspraak is gemaakt binnen de tijd van **Skip if booked within**;
+    - de afspraak kwam pas in Inquira toen het herinneringsmoment al meer dan 6 uur voorbij was;
+    - de afspraak wacht nog op goedkeuring, of is geannuleerd;
+    - de agenda van de behandelaar staat niet in het template;
+    - de cliënt heeft geen mobiel nummer, of de sms kwam niet aan (kijk op zijn tijdlijn).
+  </Accordion>
+  <Accordion title="Kunnen we het moment van de herinnering later veranderen?">
+    Ja. Afspraken die de herinnering op het oude moment al kregen, krijgen hem niet nog een keer. Kies wel een moment dat vóór je afzeg- en verzettermijn valt.
+  </Accordion>
+  <Accordion title="Wat gebeurt er als een sms niet aankomt? Kunnen we stoppen na drie pogingen?">
+    Inquira probeert het automatisch opnieuw, volgens **Settings → SMS delivery** (standaard twee keer). Daarna komt de cliënt als niet bereikbaar in je cliëntroute. Stuur je zelf daarna nog een bericht, dan telt dat als een nieuwe poging. Er is nog geen maximum voor alle pogingen samen. Bel zo'n cliënt liever.
+  </Accordion>
+  <Accordion title="Kost een sms die niet aankomt ook credits?">
+    Een sms die de provider heeft aangenomen, telt in principe als verstuurd, ook als hij daarna niet aankomt. Hoe dat in jouw afspraak met Inquira zit, vraag je aan Inquira.
+  </Accordion>
+  <Accordion title="Kan een cliënt in het herinneringsgesprek afzeggen of verzetten?">
+    In de belscripts die nu live zijn, zegt de assistent hoe de cliënt kan afzeggen of verzetten, bijvoorbeeld via de link in de sms of door te bellen. De uitkomst komt bij je team. De assistent past de afspraak in je EPD niet zelf aan.
+  </Accordion>
+  <Accordion title="Krijgen deelnemers aan een groep voor elke bijeenkomst een herinnering?">
+    Ja, voor elke bijeenkomst. En pas als de groep echt doorgaat, niet al terwijl de groep nog vol loopt.
+  </Accordion>
+  <Accordion title="Met welk nummer belt de assistent?">
+    Bij voorkeur met het nummer van je praktijk. Dat wordt veel vaker opgenomen dan een onbekend nummer. Of dat kan, hangt af van je telefonieleverancier. Zie [Starten met Inquira](/praktijk/starten).
+  </Accordion>
+</AccordionGroup>
+
+## Hulp nodig?
+
+Stel je vraag via het vraagteken rechtsboven in Inquira, of mail naar support@inquira.health.

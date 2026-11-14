@@ -1,0 +1,236 @@
+---
+title: 'Vragenlijsten'
+description: 'Vragenlijsten en gevalideerde meetinstrumenten per sms, e-mail of telefoon, met herinneringen en de ingevulde pdf in het dossier.'
+icon: 'clipboard-list'
+---
+
+De cliënt krijgt een sms of e-mail met een beveiligde link. Hij logt in met een sms-code en een controle, zoals zijn geboortedatum, en vult de vragenlijst in op zijn telefoon. Vult hij niet in, dan krijgt hij een herinnering, en na een paar dagen ziet je secretariaat dat er gebeld moet worden. De ingevulde vragenlijst komt als pdf in het dossier in je EPD. Een vragenlijst kan ook telefonisch: de telefoonassistent stelt de vragen, ook in een andere taal. Je praktijk hoeft geen papier meer na te jagen en heeft de antwoorden vóór het gesprek.
+
+## Past dit bij jouw praktijk?
+
+- **Goed voor:**
+  - aanmeldvragenlijsten, intakegegevens en toestemmingen vóór de intake;
+  - gevalideerde vragenlijsten zoals PHQ-9, GAD-7, WHO-5, AUDIT en SQ-48, met score en verloop per cliënt;
+  - tevredenheids- en ervaringsvragenlijsten per telefoon, ook anoniem.
+- **Niet voor:**
+  - instrumenten met een licentie die Inquira niet heeft, zoals OQ-45 of 4DKL. Die staan in de bibliotheek, maar zijn op slot.
+  - vaste meetmomenten tijdens de behandeling ("elke 2 weken"). Dat bestaat nog niet als instelling; Inquira kan het per geval als automation bouwen.
+  - één overzicht van alle antwoorden op een webformulier, voor alle cliënten samen. Antwoorden via de link bekijk je per cliënt. Een export van alle antwoorden bestaat alleen voor telefonische vragenlijsten.
+  - een sms met invullink als de cliënt de telefonische vragenlijst niet opneemt. Dat is nog niet beschikbaar.
+- **Werkt met:**
+  - **Medicore:** de pdf komt als document in een documentcategorie die je kiest. Inquira kan ook antwoorden per vraag in een Medicore-formulier zetten; dat richt Inquira in.
+  - **Nedap ONS:** de antwoorden komen als rapportage of als ONS-vragenlijst in het dossier. ONS-formulieren die je zelf in ONS invult, haalt Inquira elke twee uur op.
+  - **Zonder EPD:** het werkt ook. De antwoorden blijven dan in Inquira, op de pagina van de cliënt.
+
+## Wat je nodig hebt
+
+- [ ] Een account, gebruikers en de koppeling met je EPD. Zie [Starten met Inquira](/praktijk/starten).
+- [ ] De sms-afzendernaam en het terugbelnummer dat in de berichten staat. Zie [Starten met Inquira](/praktijk/starten).
+- [ ] De inhoud van je vragenlijst als Word-bestand of pdf, of de naam van het gevalideerde instrument.
+- [ ] Voor een licentie-instrument: het bewijs van jullie licentie.
+- [ ] Alleen Medicore: de naam van de documentcategorie waar de pdf moet komen. Controleer dat die categorie actief is.
+- [ ] Een testcliënt in je EPD met een echt mobiel nummer en e-mailadres.
+- [ ] Telefonisch afnemen: een telefoonnummer voor de assistent en de lijst met cliënten die gebeld worden. Zie [Starten met Inquira](/praktijk/starten).
+
+## Doorlooptijd
+
+- **Een vragenlijst per link, met de pdf in het dossier:** 1 tot 2 weken. De meeste tijd zit in het meelezen van de teksten en het controleren van de pdf in het EPD.
+- **Antwoorden per vraag in een EPD-formulier:** reken op 2 tot 4 weken extra. Het formulier moet in het EPD bestaan en per vraag gekoppeld worden.
+- **Telefonisch, in meerdere talen:** 6 tot 10 weken. De tijd zit in het belscript: jouw team keurt elke taal apart goed, en talen gaan pas aan na die goedkeuring.
+
+## Stappen
+
+### Voorbereiden
+
+<Steps>
+  <Step title="1. Kies welke vragenlijst, voor wie en wanneer">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Schrijf per vragenlijst op:
+
+    - voor welke cliënten (bijvoorbeeld alle nieuwe aanmeldingen, of iedereen na de laatste afspraak);
+    - wanneer hij gaat: los, door een medewerker, of automatisch als onderdeel van het [aanmeldproces](/praktijk/aanmeldproces);
+    - per link of per telefoon;
+    - na hoeveel dagen een herinnering gaat en wanneer er gebeld moet worden (vaak 3 en 7 dagen);
+    - of de antwoorden aan de cliënt gekoppeld zijn of anoniem.
+
+    **Klaar als:** elke vragenlijst heeft een doelgroep, een moment en een kanaal.
+  </Step>
+  <Step title="2. Lever de inhoud aan">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Stuur je eigen vragenlijst als Word-bestand, met de verplichte vragen gemarkeerd. Voor een gevalideerd instrument noem je alleen de naam; de vragen staan al in Inquira. Stuur ook de introductietekst en de sms-tekst, of laat Inquira een eerste versie schrijven.
+
+    Vraag je naar een BSN of een identiteitsbewijs? Bedenk dan of dat in het dossier moet. Zulke antwoorden bewaart Inquira versleuteld, en ze komen niet in de pdf.
+
+    **Klaar als:** Inquira heeft de complete inhoud.
+  </Step>
+  <Step title="3. Kies wat in het dossier komt">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Kies één van deze, of een combinatie:
+
+    - **De pdf** van de ingevulde vragenlijst in het dossier (Medicore: in een documentcategorie; Nedap ONS: als rapportage). De meeste praktijken kiezen dit.
+    - **De ondertekende pdf** van een toestemming of overeenkomst, met het ondertekeningsbewijs.
+    - **De antwoorden per vraag** in een bestaand EPD-formulier. Alleen nodig als je behandelaar ermee rekent of filtert in het EPD.
+    - **Niets:** de antwoorden blijven alleen in Inquira.
+
+    **Klaar als:** je weet per vragenlijst waar de antwoorden landen, en (bij Medicore) in welke documentcategorie.
+  </Step>
+</Steps>
+
+### Inrichten
+
+<Steps>
+  <Step title="4. Bouw en publiceer de vragenlijst">
+    **Wie:** Inquira (of jij, als beheerder) · **Waar:** **Client Content → Forms**
+
+    Een eigen vragenlijst begint met **New form**. Een gevalideerd instrument kies je in de **Clinical instrument library**. Inquira bouwt de eerste versie van je eigen vragenlijst uit je Word-document; jij leest mee in de voorbeeldweergave. Controleer in **Template settings**:
+
+    - **Verified client (SMS code + identity check)** staat aan. Dit is de aanbevolen instelling.
+    - **Staff review required** staat uit, tenzij je team een coördinatiewachtrij heeft. Anders kan Inquira de vragenlijst niet versturen.
+
+    Moeten toestemming en vragenlijst samen in één link? Dan zet Inquira ze in **Client Content → Action bundles**.
+
+    **Klaar als:** de vragenlijst staat als gepubliceerd en je hebt hem zelf op je telefoon ingevuld.
+  </Step>
+  <Step title="5. Controleer hoe de cliënt inlogt">
+    **Wie:** Jij · **Waar:** **Settings → Client actions → Client verification**
+
+    Hier kies je welke gegevens de cliënt moet invullen na de sms-code. De meeste praktijken kiezen geboortedatum. Die moet dan wel kloppen in het EPD.
+
+    **Klaar als:** je testcliënt kan inloggen met sms-code en geboortedatum.
+  </Step>
+  <Step title="6. Zet het versturen op">
+    **Wie:** Jij (los versturen) of Inquira (automatisch) · **Waar:** de pagina van de cliënt, of **Automations**
+
+    - **Los, door een medewerker:** open de cliënt, kies bij **Client actions** de knop **New Action**, en kies **Fill in a form** (of **Send an action bundle (multiple steps)**). Bij **Reminders and overdue deadline** kies je de standaard of eigen termijnen.
+    - **Automatisch:** Inquira bouwt een automation met de stap **Send client action link**, bijvoorbeeld op een kolom van het aanmeldbord (trigger **Client Journey Stage Changed**). Daarin staan de herinneringen en de termijn waarna de vragenlijst "te laat" is.
+
+    Kies een eigen sms-tekst in **Client Content → Messages**. Zonder eigen tekst gaat er een standaardzin uit die je praktijk niet noemt.
+
+    **Klaar als:** je testcliënt krijgt de sms met jouw tekst en jouw afzendernaam.
+  </Step>
+  <Step title="7. Zet het verslag in het dossier aan">
+    **Wie:** Inquira (of jij, als beheerder) · **Waar:** **Settings → EHR reporting**
+
+    Inquira maakt een profiel met **New profile**:
+
+    - **When to report:** **Client action completed** voor een ingevulde vragenlijst, of **Document signed** voor een ondertekende toestemming.
+    - **Medicore document category:** de categorie uit stap 3. De keuzelijst toont de naam en tussen haakjes Medicore's eigen nummer. Dat nummer kan afwijken van het nummer dat jij in Medicore ziet; kies dus op naam.
+    - **Document content:** **Completed form PDF (pages and answers)**.
+
+    Nieuwe profielen staan eerst op pauze. Met **Test on an EHR client** zet Inquira een testdocument bij je testcliënt.
+
+    **Klaar als:** je opent de pdf in het dossier van je testcliënt en ziet de antwoorden.
+  </Step>
+  <Step title="8. Koppel antwoorden aan een EPD-formulier (alleen als je dat koos)">
+    **Wie:** Inquira · **Waar:** **Apps → Medicore → Patients → EHR form import** en in de vragenlijst onder **Template settings → EHR binding**
+
+    Inquira haalt het EPD-formulier op en koppelt elke vraag aan een veld. Vragen zonder koppeling blijven alleen in Inquira. Dit kan nu alleen voor Medicore. Versleutelde antwoorden gaan niet mee.
+
+    **Klaar als:** bij je testcliënt staat een ingevuld EPD-formulier met de juiste antwoorden.
+  </Step>
+  <Step title="9. Telefonisch afnemen (optioneel)">
+    **Wie:** Inquira, en jij voor de goedkeuring · **Waar:** per e-mail aan Inquira
+
+    Inquira bouwt een belgesprek dat de vragen één voor één stelt en de antwoorden per vraag opslaat. Jij kiest:
+
+    - **anoniem of gekoppeld:** anoniem betekent geen naam in de antwoorden of de export, en alleen de datum, geen tijd;
+    - **talen:** Nederlands, en daarnaast bijvoorbeeld Engels, Turks of Arabisch. Webformulieren kunnen alleen Nederlands en Engels; andere talen kunnen alleen telefonisch;
+    - **belmomenten, aantal pogingen en of de assistent een voicemail inspreekt.**
+
+    Inquira stuurt je per taal het belscript. Jouw team keurt het goed, het liefst door een moedertaalspreker. Een taal gaat pas aan na die goedkeuring.
+
+    **Klaar als:** je hebt elk belscript goedgekeurd en zelf een proefgesprek gevoerd op het testnummer.
+  </Step>
+</Steps>
+
+### Testen en live gaan
+
+<Steps>
+  <Step title="10. Test met je testcliënt">
+    **Wie:** Jij · **Waar:** je telefoon en het EPD
+
+    Loop het testscript hieronder door.
+
+    **Klaar als:** alle gevallen doen wat je verwacht.
+  </Step>
+  <Step title="11. Ga live en bekijk de antwoorden">
+    **Wie:** Inquira zet aan, jij kijkt · **Waar:** de pagina van de cliënt, of **Deployments**
+
+    Inquira zet het verslagprofiel en de automation aan. Antwoorden bekijk je zo:
+
+    - **Per link:** op de pagina van de cliënt onder **Records → Forms**. Bij een gevalideerd instrument zie je de score en het verloop onder **Measurements**.
+    - **Per telefoon:** open de deployment onder **Deployments** en kies het tabblad **Responses**. Met **Export** kies je **CSV with answer codes**, **CSV with answer labels**, **JSON, full record** of een pdf per antwoord. De export volgt je filters.
+
+    **Klaar als:** de eerste echte antwoorden staan in Inquira en in het dossier.
+  </Step>
+</Steps>
+
+## Testen voor livegang
+
+**Wie test:** iemand van het secretariaat, en voor telefonische vragenlijsten iemand die elke taal spreekt. Gebruik alleen testcliënten.
+
+| Geval | Wat je doet | Goed is |
+| --- | --- | --- |
+| Invullen | Open de link, log in, vul alles in | De antwoorden staan bij de cliënt onder **Records → Forms** |
+| Pdf in het dossier | Open het document in het EPD | Het staat in de goede categorie en je ziet de **antwoorden**, niet alleen de vragen |
+| Toestemming | Onderteken een toestemming | De ondertekende pdf staat in het dossier |
+| Inloggen mislukt | Vul een verkeerde geboortedatum in | De cliënt komt er niet in |
+| Herinnering | Open de link niet | Herinnering op de dag die je koos; daarna te laat (of de kolom Nabellen op het aanmeldbord) |
+| Verplichte vraag | Sla een verplichte vraag over | Versturen lukt niet |
+| Telefoon: overslaan | Zeg "niet van toepassing" bij een vraag met een vervolgvraag | De vervolgvraag wordt overgeslagen |
+| Telefoon: ophangen | Hang halverwege op | Het antwoord staat als gedeeltelijk in **Responses** |
+| Telefoon: taal | Kies een andere taal aan het begin | Het hele gesprek is in die taal; open antwoorden krijgen een Nederlandse vertaling |
+
+Twee lessen uit eerdere praktijken:
+
+- **Een pdf kan in het dossier leeg lijken.** Antwoorden die versleuteld worden bewaard (zoals BSN of documentnummer) staan in de pdf als "Versleuteld opgeslagen". Moet zo'n antwoord in het dossier, bespreek dan met Inquira hoe de vraag wordt opgeslagen.
+- **Een document wordt geweigerd als de categorie in het EPD niet actief is.** Zet je een categorie in Medicore op inactief, zeg het dan tegen Inquira, anders komen documenten niet meer aan.
+
+## Live gaan en de eerste week
+
+**Aanzetten (Inquira):** het verslagprofiel onder **Settings → EHR reporting** (schakelaar op **Active**) en de automation. Voor telefonische vragenlijsten: de deployment en de bellijst.
+
+**Dagelijks kijken:**
+
+- **Settings → EHR reporting**, onderaan **Reports:** staat er een melding op "blocked"? Dan kwam een document niet in het dossier. Meld het aan Inquira.
+- Open elke dag één nieuw document in het EPD. Staan de antwoorden erin?
+- **Deployments → Responses:** het overzicht bovenaan toont gesprekken, voltooid, gedeeltelijk en het percentage voltooid. Veel gedeeltelijke antwoorden op dezelfde vraag? Dan is die vraag aan de telefoon onduidelijk.
+- **Settings → Usage & credits:** klopt het aantal sms'jes en belminuten?
+
+**Stabiel** is het na een week zonder geweigerde documenten en zonder klachten van cliënten over inloggen.
+
+## Veelgestelde vragen
+
+<AccordionGroup>
+  <Accordion title="Het document in Medicore is leeg. Wat ging er mis?">
+    Meestal zijn de antwoorden versleuteld opgeslagen. Die staan in de pdf als "Versleuteld opgeslagen" en blijven alleen in Inquira. In Inquira zie je ze wel. Bespreek met Inquira welke vragen in het dossier moeten.
+  </Accordion>
+  <Accordion title="De pdf staat in de verkeerde categorie. Kan dat anders?">
+    Ja. Inquira past de categorie aan in het verslagprofiel. Let op: de keuzelijst in Inquira toont Medicore's interne nummer, dat kan afwijken van het nummer dat je in Medicore ziet. Noem daarom de naam van de categorie.
+  </Accordion>
+  <Accordion title="Kan een behandelaar de antwoorden eerst beoordelen?">
+    Ja, met **Staff review required**. Daarvoor moet je team wel een coördinatiewachtrij hebben (**Settings → Client actions → Coordination**). Zonder wachtrij kan Inquira de vragenlijst niet versturen.
+  </Accordion>
+  <Accordion title="In welke talen kan een cliënt invullen?">
+    Via de link in het Nederlands en Engels. Telefonisch ook in andere talen, zoals Turks of Arabisch, maar pas als jouw team het belscript in die taal heeft goedgekeurd. Open antwoorden in een andere taal krijgen een Nederlandse vertaling.
+  </Accordion>
+  <Accordion title="Is een telefonisch afgenomen PHQ-9 even betrouwbaar als een zelf ingevulde?">
+    Niet helemaal. Een gevalideerd instrument is gevalideerd voor zelf invullen. Telefonisch afnemen kan, maar bespreek met je behandelaars hoe ze de score lezen.
+  </Accordion>
+  <Accordion title="Zijn anonieme antwoorden echt anoniem?">
+    In de antwoorden en de export staat geen naam en geen tijd, alleen de datum. Het gesprek zelf (telefoonnummer en transcript) blijft wel bewaard, maar alleen beheerders met toegang tot de gesprekken kunnen het openen. Vermeld dat in je uitleg aan cliënten.
+  </Accordion>
+  <Accordion title="We vullen zelf een formulier in het EPD in. Kan Inquira daarop reageren?">
+    Ja. Inquira kan gekozen velden van een EPD-formulier meelezen en daarop een regel of automation laten lopen. Bij Medicore gaat dat binnen enkele minuten, bij Nedap ONS elke twee uur. Laat de automation dan reageren op de kolom van het bord, niet op het formulier zelf: als Inquira iets terugschrijft, ontstaat een nieuwe versie van het formulier.
+  </Accordion>
+  <Accordion title="Kan ik alle antwoorden op een webformulier in één keer exporteren?">
+    Nog niet. Antwoorden via de link bekijk je per cliënt, onder **Records → Forms**. Een export van alle antwoorden is er voor telefonische vragenlijsten, onder **Deployments → Responses**.
+  </Accordion>
+</AccordionGroup>
+
+## Hulp nodig?
+
+Stel je vraag via het vraagteken rechtsboven in Inquira, of mail support@inquira.health.

@@ -1,0 +1,237 @@
+---
+title: 'Vrije plekken vullen vanuit de wachtlijst'
+description: 'Komt er een intakeplek vrij, dan biedt Inquira die per telefoon of sms aan cliënten op de wachtlijst aan en zet de afspraak in je EHR.'
+icon: 'list-check'
+---
+
+Er valt een intake uit, of een behandelaar heeft deze week nog ruimte. Je secretaresse kiest de vrije plek in Inquira en start een belronde. De digitale assistent belt de cliënten op de wachtlijst één voor één. De cliënt bevestigt wie hij is en hoort dag, tijd en locatie. Zegt de cliënt ja, dan staat de intake direct in je EHR en stopt de belronde. Zegt hij nee, dan blijft hij op de wachtlijst en belt de assistent de volgende. Zo raakt een plek op korte termijn toch gevuld, zonder dat je secretariaat een middag de wachtlijst afbelt.
+
+## Past dit bij jouw praktijk?
+
+- **Goed voor:**
+  - Praktijken met een lange wachtlijst voor intake, waar plekken op korte termijn nu leeg blijven.
+  - Plekken die binnen een paar dagen vallen. Daar werkt bellen beter dan een sms aan een grote groep.
+- **Niet voor:**
+  - Matchen op specialisme of methode (bijvoorbeeld EMDR of schematherapie) als dat in je EHR alleen als vrije tekst staat. Inquira kan daarop zoeken, maar niet betrouwbaar automatisch kiezen. De secretaresse kiest dan zelf de cliënten.
+  - Groepsbehandelingen. Daarvoor is een aparte werkwijze.
+- **Werkt met:**
+  - **Medicore:** de wachtlijst komt uit een veld in Medicore (bijvoorbeeld "Wachttijd: ja"). De afspraak wordt in de agenda van de behandelaar gezet, met de status die je kiest.
+  - **Nedap ONS:** de wachtlijst houd je in Inquira bij (**Clients → Waiting lists**). Vraag Inquira wat er in jouw ONS-agenda geschreven kan worden.
+  - **Zonder EHR-koppeling:** kan met een bellijst die je aanlevert. De assistent belt en mailt een samenvatting; je zet de afspraak zelf in je agenda. Een grotere zorginstelling vult zo ongeveer een kwart van de vrijgekomen plekken.
+
+## Wat je nodig hebt
+
+- Een Inquira-account met accounts voor de secretaresses. Zie [Starten met Inquira](/praktijk/starten).
+- Een werkende EHR-koppeling, met de agenda's van alle behandelaars die intakes doen. Zie [Starten met Inquira](/praktijk/starten).
+- Een afsprakentemplate voor de intake, met vrije plekken die online of door Inquira geboekt kunnen worden. Zie [Online afspraken maken](/praktijk/online-afspraken).
+- Een uitgaand telefoonnummer, liefst het nummer van je praktijk. Zie [Starten met Inquira](/praktijk/starten).
+- Een sms-afzendernaam. Zie [Starten met Inquira](/praktijk/starten).
+- Alleen als je na een ja wilt doorverbinden naar het secretariaat: een route naar je telefooncentrale. Zie [Virtuele receptionist](/praktijk/virtuele-receptionist).
+
+## Doorlooptijd
+
+Reken op **4 tot 8 weken**. Het belscript staat binnen een week. De tijd zit in testen en bijstellen: wat de assistent zegt als een cliënt nee zegt, de voicemail- en sms-tekst, de status in het EHR en de duur van de intake. Elke ronde testen en aanpassen kost een paar dagen. Bij één praktijk duurde het van eerste testgesprek tot klaar voor livegang ongeveer acht weken, mede door wachten op een notitieformulier in het EHR en een nieuw belnummer.
+
+## Stappen
+
+### Voorbereiden
+
+<Steps>
+  <Step title="1. Leg je werkwijze vast">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Spreek af en stuur naar Inquira:
+    - Welk afspraaktype je aanbiedt (meestal de intake) en hoe lang die duurt.
+    - **Welke behandelaars intakes doen.** Alleen hun agenda's worden aangeboden.
+    - Bellen, sms of allebei. Plekken op korte termijn bied je meestal telefonisch aan.
+    - Wanneer de assistent belt. Alleen tijdens de uren dat het secretariaat bereikbaar is, als je wilt doorverbinden.
+    - Wat er na een ja gebeurt: doorverbinden naar het secretariaat voor de administratie, of niet.
+    - Je teksten: het aanbod, de voicemail en de sms na een gemiste oproep.
+
+    **Klaar als:** Inquira heeft je werkwijze, de lijst met behandelaars en je teksten bevestigd.
+  </Step>
+  <Step title="2. Zet de wachtlijst klaar">
+    **Wie:** Inquira (eerste keer), daarna jij · **Waar:** **Apps → Medicore → Patients → Waiting list rules**, of **Clients → Waiting lists**
+
+    Op Medicore leest Inquira de wachtlijst uit een formulier in Medicore. Bij **Waiting list rules** kies je het afsprakentemplate, het Medicore-formulier en het antwoord dat betekent "staat op de wachtlijst". Andere velden (aanmelddatum, voorkeurslocatie, hulpvraag) kun je als wachtdatum, voorkeur of notitie meenemen. Zonder Medicore zet je cliënten zelf op de wachtlijst met **Add client to waiting list**.
+
+    **Klaar als:** onder **Clients → Waiting lists** staat ongeveer hetzelfde aantal wachtenden als in je EHR, met de juiste **Waiting since**.
+  </Step>
+  <Step title="3. Controleer de contactgegevens">
+    **Wie:** Jij · **Waar:** in je EHR
+
+    De assistent belt het primaire telefoonnummer. Zorg dat het een mobiel nummer is (06 of +31). Zet buitenlandse nummers met + en landcode; die worden op dit moment niet altijd gebeld. Cliënten die geen sms willen, krijgen geen sms.
+
+    **Klaar als:** je hebt een steekproef van tien wachtenden gecontroleerd en de nummers kloppen.
+  </Step>
+</Steps>
+
+### Inrichten
+
+<Steps>
+  <Step title="4. Laat de agenda's koppelen die intakes aanbieden">
+    **Wie:** Inquira, jij controleert · **Waar:** **Apps → Medicore → Calendars → Appointment template links** → jouw intake-template → **Agendas**
+
+    Hier staat welke agenda's vrije plekken leveren. Tijdens het testen is dat een testagenda (**Agendas attached to this template**). Voor livegang kies je **Medicore employees, a role or all agendas** en dan de behandelaars die intakes doen, een rol of **All agendas**.
+
+    <Warning>
+    Een echte valkuil: bij een praktijk was alles getest en goedgekeurd, maar bood Inquira nog alleen plekken uit de testagenda aan. Zet de agenda's van alle intake-behandelaars aan vóór de livegang, en controleer het met één echte vrije plek.
+    </Warning>
+
+    **Klaar als:** onder **Scheduling → Planner** zie je vrije intakeplekken in de agenda's van alle behandelaars die intakes doen, en niet meer in de testagenda.
+  </Step>
+  <Step title="5. Laat instellen wat er in je EHR komt bij een boeking">
+    **Wie:** Inquira, jij levert de keuzes · **Waar:** **Apps → Medicore → Calendars → Appointment template links** → jouw template → **Appointments**
+
+    Inquira stelt in:
+    - **Confirmed status:** de status van de geboekte afspraak in je EHR. Kies een status die je secretariaat herkent, bijvoorbeeld "Intake". Zonder keuze krijgt de afspraak een algemene status.
+    - **Pending status** en **Create pending appointment while a time is held:** tijdens de belronde zet Inquira een blok in de agenda, zodat niemand anders de plek boekt. Niemand ja gezegd? Dan verdwijnt het blok weer.
+    - **De duur** van de afspraak. Controleer die: bij een praktijk stond de intake eerst op 90 minuten in plaats van 60.
+
+    **Klaar als:** een testboeking staat in je EHR met de juiste status, het juiste afspraaktype en de juiste duur.
+  </Step>
+  <Step title="6. Laat het belscript en de deployment bouwen">
+    **Wie:** Inquira · **Waar:** **Workflows** en **Deployments** (Inquira bouwt, jij kijkt mee)
+
+    Het gesprek gaat zo:
+    - De assistent stelt zich voor, zegt dat er een intakeplek vrij is en vraagt of de cliënt even tijd heeft.
+    - De cliënt bevestigt wie hij is (geboortedatum, postcode en huisnummer). Pas daarna noemt de assistent dag, tijd en locatie.
+    - **Ja:** de intake staat vast. Wil je dat, dan verbindt de assistent door naar het secretariaat voor de administratie.
+    - **Nee of past niet:** de assistent zegt dat de cliënt op de wachtlijst blijft en niet hoeft terug te bellen. Hij biedt géén doorverbinden aan.
+    - **Voicemail:** een korte tekst zonder datum of tijd, met "u hoeft niet terug te bellen".
+
+    De deployment belt per vrije plek één cliënt tegelijk en stopt bij de eerste ja (**First Positive Wins**).
+
+    **Klaar als:** onder **Deployments** staat de wachtlijst-deployment met **Scheduling Strategy** op First Positive Wins.
+  </Step>
+  <Step title="7. Controleer beltijden, herhalingen en sms">
+    **Wie:** Jij · **Waar:** **Deployments** → wachtlijst-deployment → icoon **Edit deployment configuration**
+
+    - **Schedule:** **Call From**, **Start Time** en **Stop calling after**, en de beldagen.
+    - **If Group Slot Unfilled:** met **Retry Group** belt de assistent na een volledige ronde de gemiste cliënten nog eens, na het **Group retry interval (minutes)**.
+    - **SMS Notifications:** een sms na een gemiste oproep (**First Missed Call** of **Call Attempts Completed**), bijvoorbeeld: "We belden je over een vrijgekomen intakeplek. Je hoeft niet terug te bellen. Je blijft op de wachtlijst." Wil je cliënten vooraf waarschuwen, kies dan **Before First Call**.
+
+    **Klaar als:** de beltijden vallen binnen de uren van je secretariaat en de sms-tekst is door jou goedgekeurd.
+  </Step>
+  <Step title="8. Kies of een annulering vanzelf een aanbod start">
+    **Wie:** Inquira, op jouw verzoek · **Waar:** per e-mail aan Inquira (geen scherm voor praktijken)
+
+    Standaard gebeurt er niets als een geboekte afspraak wordt geannuleerd: je start elke belronde zelf (stap 11). Wil je dat een annulering vanzelf een aanbod start, dan zet Inquira één van deze keuzes aan:
+    - **Ter controle:** de plek komt klaar te staan met een voorstel van cliënten; je secretaresse start de belronde.
+    - **Automatisch bellen:** de assistent belt meteen, standaard de eerste 5 passende cliënten.
+    - **Sms met boekingslink:** de eerste 5 wachtenden krijgen een sms met een link. Wie het eerst boekt, krijgt de plek. De link is standaard 2 uur geldig.
+
+    <Warning>
+    Laat de sms-variant pas aanzetten als de sms-tekst in het Nederlands is en je afzendernaam klopt. Bij een praktijk stond dit vroeger standaard aan: na drie annuleringen kregen vijftien wachtende cliënten een Engelse sms zonder afzender. Sinds november 2026 staat het standaard uit.
+    </Warning>
+
+    **Klaar als:** je hebt Inquira per mail laten weten welke keuze je wilt, en Inquira heeft bevestigd dat het zo staat.
+  </Step>
+  <Step title="9. Stel doorverbinden en verslaglegging in">
+    **Wie:** Inquira, samen met jou · **Waar:** **Settings → EHR reporting**; doorverbinden per e-mail aan Inquira
+
+    - **Verslag:** elk gesprek en elke sms komt in je EHR via het profiel onder **Settings → EHR reporting**. Kies een eigen formulier voor Inquira-notities, niet het verslag van de behandelaar. Test met **Test on an EHR client**.
+    - **Doorverbinden:** werkt alleen met een route naar je telefooncentrale. Zie [Virtuele receptionist](/praktijk/virtuele-receptionist).
+
+    **Klaar als:** een testgesprek staat als notitie op de goede plek in je EHR, en doorverbinden is getest of bewust uitgezet.
+  </Step>
+</Steps>
+
+### Testen en live gaan
+
+<Steps>
+  <Step title="10. Test met een testagenda en je eigen nummer">
+    **Wie:** Jij · **Waar:** **Scheduling → Planner** en je EHR
+
+    Volg het testscript hieronder.
+
+    **Klaar als:** alle situaties uit het testscript gaan goed.
+  </Step>
+  <Step title="11. Vul een vrije plek">
+    **Wie:** Jij (secretaresse) · **Waar:** **Scheduling → Planner**
+
+    Dit doe je bij elke vrije plek:
+    1. Klik in de kalender op de vrije plek en klik **Fill slot**. Je ziet **Fill from waiting list**.
+    2. De wachtenden staan op volgorde: eerst wie het best past (locatie, labels), daarna wie het langst wacht. Zoek met **Search client** op naam, plaats of notitie.
+    3. Vink de cliënten aan die je wilt laten bellen. In de bellijst zet je iemand eerder of later (**Call earlier**, **Call later**).
+    4. Klik **Offer slot via Deployment**, kies de wachtlijst-deployment en bevestig.
+
+    De plek staat nu op **Calling waiting list**. Wil je stoppen, klik dan **Stop calling and release slot**.
+
+    **Klaar als:** de plek staat op **Calling waiting list** en de eerste cliënt wordt gebeld.
+  </Step>
+  <Step title="12. Geef een plek op de goede manier vrij in je EHR">
+    **Wie:** Jij · **Waar:** in je EHR
+
+    Zegt een cliënt een intake af? Haal dan de cliënt uit de afspraak en laat de afspraak zelf staan. Dan komt de plek weer vrij in Inquira. Verwijder of annuleer de hele afspraak niet: dan verdwijnt de plek en wordt een latere plek aangeboden.
+
+    **Klaar als:** na het vrijgeven zie je de plek kort daarna weer als vrij in **Scheduling → Planner**.
+  </Step>
+  <Step title="13. Begin klein en kijk elke dag mee">
+    **Wie:** Jij · **Waar:** **Deployments** → wachtlijst-deployment → **Conversations**, en **Logs**
+
+    Start met 2 of 3 plekken per secretaresse. Lees de gesprekken terug en vraag cliënten die doorverbonden worden hoe ze het vonden.
+
+    **Klaar als:** een week lang zijn de geboekte intakes goed in je EHR gezet en zijn er geen klachten van gebelde cliënten.
+  </Step>
+</Steps>
+
+## Testen voor livegang
+
+**Wie test:** de projectleider van de praktijk en één secretaresse.
+
+**Wat je nodig hebt:** een testagenda met vrije intakeplekken, een testcliënt op de wachtlijst met jouw eigen mobiele nummer, en een tweede testcliënt met het nummer van een collega.
+
+| # | Situatie | Wat je doet | Goed als |
+|---|---|---|---|
+| 1 | Cliënt zegt ja | Vul een plek, neem op, bevestig je gegevens, zeg ja | Dag, tijd en locatie kloppen met de plek; afspraak in je EHR met de juiste status en duur; cliënt is van de wachtlijst af |
+| 2 | Cliënt zegt nee | Zeg nee | Assistent zegt "u blijft op de wachtlijst, u hoeft niet terug te bellen", biedt geen doorverbinden aan; daarna wordt de tweede testcliënt gebeld |
+| 3 | Cliënt neemt niet op | Laat je telefoon overgaan | Voicemail zonder datum of tijd; sms "u hoeft niet terug te bellen"; volgende cliënt wordt gebeld |
+| 4 | Verificatie | Geef eerst alleen je geboortedatum, daarna een postcode met een fout | Assistent vraagt door, leest de postcode terug en hangt niet na één fout op |
+| 5 | Plek vrijgeven | Haal in je EHR de cliënt uit een geplande intake | De plek komt terug in Inquira en wordt aangeboden, niet een latere plek |
+
+Let ook op deze dingen, die bij echte praktijken misgingen:
+- **Locatie.** Noemt de assistent de juiste locatie? Bij een praktijk noemde hij een oude locatie, omdat die nog aan de agenda hing.
+- **Doorverbinden na een ja.** Valt de lijn weg? Test op een tijdstip dat het secretariaat bereikbaar is.
+- **Het nummer.** Ziet de cliënt het nummer van je praktijk?
+- **De agenda's.** Komen er na het omzetten (stap 4) ook plekken uit de echte agenda's?
+
+## Live gaan en de eerste week
+
+- **Aanzetten:** Inquira zet de agenda's van de intake-behandelaars aan (stap 4) en de deployment op live. Spreek een datum af en laat vóór die dag de secretaresses inloggen; uitnodigingen zijn 7 dagen geldig.
+- **Elke dag:** kijk in **Deployments → Conversations** hoe de gesprekken liepen en of geboekte intakes goed in je EHR staan. In **Clients → Waiting lists** zie je wie op **Booked** staat.
+- **Let op:** cliënten die toch terugbellen, plekken die op **Calling waiting list** blijven staan, en cliënten die vaak gebeld worden zonder resultaat.
+- **Stabiel:** na een week met minstens tien gevulde plekken zonder correcties achteraf. Daarna kun je meer plekken per dag laten vullen.
+
+## Veelgestelde vragen
+
+<AccordionGroup>
+  <Accordion title="Wat gebeurt er als twee cliënten tegelijk ja zeggen?">
+    Bij bellen kan dat niet: de assistent belt per plek één cliënt tegelijk en stopt bij de eerste ja. Bij een sms met boekingslink krijgt degene die het eerst boekt de plek. De anderen zien dat de plek weg is, en hun aanbod vervalt.
+  </Accordion>
+  <Accordion title="In welke volgorde worden cliënten gebeld?">
+    Eerst wie het best past bij de plek (bijvoorbeeld de locatie), daarna wie het langst wacht. De secretaresse kan de volgorde aanpassen voordat de belronde start.
+  </Accordion>
+  <Accordion title="Hoeveel cliënten worden gebeld voor één plek?">
+    Zoveel als je in de bellijst zet; de assistent stopt bij de eerste ja. Start een annulering vanzelf een aanbod (stap 8), dan zijn het standaard 5 cliënten.
+  </Accordion>
+  <Accordion title="Krijgen cliënten een sms als ze niet opnemen?">
+    Ja, als je dat instelt (stap 7). Ook de voicemail zegt dat terugbellen niet nodig is. De voicemail kan niet altijd weten of de plek inmiddels vergeven is; de sms vangt dat op.
+  </Accordion>
+  <Accordion title="Belt de assistent dezelfde cliënt steeds opnieuw?">
+    Wie nee zegt, blijft op de wachtlijst en kan bij een volgende plek weer gebeld worden. Kijk daarom bij het aanvinken (stap 11) wie je kort geleden al liet bellen. Zegt een cliënt in het gesprek dat hij niet door een computer gebeld wil worden, dan legt Inquira dat vast in het gespreksverslag; laat die cliënt dan voortaan weg uit de bellijst.
+  </Accordion>
+  <Accordion title="Kan de assistent matchen op behandelmethode of taal?">
+    Alleen als je EHR dat in een vast veld bijhoudt. Staat het als vrije tekst, dan zoekt de secretaresse met **Search client** en kiest zelf.
+  </Accordion>
+  <Accordion title="Waarom staat de afspraak met de verkeerde status of duur in mijn EHR?">
+    De status en duur stelt Inquira per afsprakentemplate in (stap 5). Mail Inquira welke status en duur je wilt; het is een instelling, geen bouwwerk.
+  </Accordion>
+  <Accordion title="Werkt dit ook zonder EHR-koppeling?">
+    Ja, met een bellijst die je aanlevert. De assistent belt bijvoorbeeld 's avonds, met één herhaling en een sms vooraf, en mailt een samenvatting. Je secretariaat zet de afspraak de volgende ochtend zelf in de agenda.
+  </Accordion>
+</AccordionGroup>
+
+## Hulp nodig?
+
+Stel je vraag via het vraagteken rechtsboven in Inquira, of mail support@inquira.health.

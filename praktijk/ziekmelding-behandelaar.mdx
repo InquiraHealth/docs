@@ -1,0 +1,230 @@
+---
+title: 'Ziekmelding behandelaar'
+description: 'Is een behandelaar ziek, dan belt en sms’t Inquira de cliënten van die dag, zegt de afspraak af en zet een notitie in je EHR.'
+icon: 'calendar-xmark'
+---
+
+Een behandelaar meldt zich 's ochtends ziek. Je secretaresse selecteert in Inquira de afspraken van die dag en start de belronde. De digitale assistent belt elke cliënt, vertelt dat de afspraak niet doorgaat en zegt wat er nu gebeurt. Neemt de cliënt niet op, dan hoort die een voicemail en krijgt een sms. De afspraak staat daarna geannuleerd in je EHR, met een notitie. Je secretariaat hoeft niet tien cliënten na te bellen, en kan zich richten op de cliënten die echt een nieuwe afspraak nodig hebben.
+
+## Past dit bij jouw praktijk?
+
+- **Goed voor:** praktijken waar een zieke behandelaar betekent dat het secretariaat 's ochtends snel 5 tot 15 cliënten moet bereiken. Werkt het best als de meeste cliënten een Nederlands mobiel nummer in het EHR hebben.
+- **Niet voor:**
+  - Een nieuwe tijd inplannen in hetzelfde gesprek. De assistent zegt de afspraak af. Een nieuwe afspraak maakt je secretariaat, na doorverbinden of terugbellen.
+  - Groepsbijeenkomsten. Die zeg je zelf af; de ziekmelding is gemaakt voor individuele afspraken.
+  - Cliënten met een buitenlands telefoonnummer. Die worden op dit moment niet altijd gebeld (zie stap 3). Bel die cliënten zelf.
+- **Werkt met:**
+  - **Medicore:** Inquira zet de afspraak op een annuleringsstatus die je kiest en schrijft een notitie bij de afspraak en in een formulier.
+  - **Nedap ONS:** Inquira past de afspraak aan (label of uursoort) en kan in de agenda van de behandelaar een onbeschikbaarheid "Ziek" zetten. Het verslag komt in de rapportage.
+  - **Zonder EHR:** kan, met een bellijst die je uploadt. Dan zet je de annulering zelf in je agenda.
+
+## Wat je nodig hebt
+
+- Een Inquira-account met accounts voor de secretaresses die de ziekmelding starten. Zie [Starten met Inquira](/praktijk/starten).
+- Een werkende koppeling met je EHR, met de agenda's van je behandelaars zichtbaar in Inquira. Zie [Starten met Inquira](/praktijk/starten).
+- Een uitgaand telefoonnummer. Cliënten nemen vaker op als ze het nummer van je praktijk zien. Zie [Starten met Inquira](/praktijk/starten) en, voor de koppeling met je telefooncentrale, [Virtuele receptionist](/praktijk/virtuele-receptionist).
+- Een sms-afzendernaam (de naam van je praktijk). Zie [Starten met Inquira](/praktijk/starten).
+- Alleen als je wilt doorverbinden naar het secretariaat: een route van Inquira naar je telefooncentrale. Zie [Virtuele receptionist](/praktijk/virtuele-receptionist).
+
+## Doorlooptijd
+
+Reken op **2 tot 4 weken**. Het bouwen van het belscript kost Inquira een paar dagen. De meeste tijd zit in twee dingen: de plek van de notitie in het EHR (soms moet je EHR-leverancier eerst een apart formulier maken, dat duurde bij een praktijk ruim een week) en het testen van de vier situaties (zie [Testen voor livegang](#testen-voor-livegang)). Wil je ook doorverbinden naar het secretariaat, dan hangt het verder af van je telefonieleverancier.
+
+## Stappen
+
+### Voorbereiden
+
+<Steps>
+  <Step title="1. Leg vast hoe jullie een ziekmelding afhandelen">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Spreek dit intern af en stuur het naar Inquira:
+    - Wie start de belronde (bijvoorbeeld de secretaresse die de ziekmelding aanneemt) en hoe laat.
+    - Welke afspraken mee gaan (alleen vandaag, of ook morgen; welke afspraaktypen niet).
+    - Hoe vaak de assistent belt. Veel praktijken kiezen één belpoging en daarna altijd een sms.
+    - Wat er gebeurt als de cliënt geen vervolgafspraak heeft: doorverbinden naar het secretariaat, of het secretariaat belt terug.
+    - Je teksten: wat de assistent zegt, de voicemail, en de sms met en zonder vervolgafspraak.
+
+    **Klaar als:** Inquira heeft je afspraken en teksten per mail ontvangen en bevestigd.
+  </Step>
+  <Step title="2. Kies waar de annulering en de notitie in je EHR komen">
+    **Wie:** Jij, soms met je leverancier · **Waar:** in je EHR, daarna per e-mail aan Inquira
+
+    Bepaal drie dingen:
+    - **De status** van de geannuleerde afspraak in je EHR (bijvoorbeeld een status voor annuleren binnen 24 uur).
+    - **De korte notitie** bij de afspraak, bijvoorbeeld "behandelaar ziek".
+    - **Waar het gespreksverslag komt.** Kies een eigen plek voor Inquira-notities, niet het verslag van de behandelaar. Praktijken op Medicore laten Medicore daarvoor een apart formulier op een eigen tabblad maken. Op Nedap ONS komt het in de rapportage.
+
+    <Warning>
+    Zet Inquira-notities niet in het inhoudelijke verslag van behandelaars. Die verslagen gaan mee in dossier-exports. Een praktijk moest de notities later laten verhuizen. Vraag een apart formulier bij je EHR-leverancier aan voordat je live gaat.
+    </Warning>
+
+    **Klaar als:** je weet de status, de notitietekst en het formulier (naam of nummer), en Inquira heeft ze.
+  </Step>
+  <Step title="3. Controleer de telefoonnummers in je EHR">
+    **Wie:** Jij · **Waar:** in je EHR
+
+    De assistent belt het eerste (primaire) telefoonnummer van de cliënt. Controleer dat dit een mobiel nummer is: beginnend met 06 of met +31. Zet buitenlandse nummers altijd met + en landcode in je EHR (bijvoorbeeld +32…), niet met 00.
+
+    <Warning>
+    **Bekend probleem:** cliënten met een buitenlands nummer werden niet gebeld. Er werd geen belpoging gestart, en de praktijk merkte het pas toen de cliënt niet op de hoogte bleek. Inquira zoekt dit uit. Tot het is opgelost: bel cliënten met een buitenlands nummer zelf, en controleer na elke belronde of iedereen een belpoging heeft (stap 12).
+    </Warning>
+
+    **Klaar als:** bij je behandelaars staan bijna alle cliënten met een 06- of +31-nummer, en je weet welke cliënten je zelf belt.
+  </Step>
+</Steps>
+
+### Inrichten
+
+<Steps>
+  <Step title="4. Laat het belscript en de deployment bouwen">
+    **Wie:** Inquira · **Waar:** **Workflows** en **Deployments** (Inquira bouwt, jij kijkt mee)
+
+    Inquira bouwt het gesprek in je eigen woorden en zet een uitgaande deployment klaar op je uitgaande nummer. Het gesprek gaat zo:
+    - De assistent stelt zich voor als de digitale assistent van je praktijk.
+    - Wil je dat, dan vraagt hij eerst de geboortedatum (en eventueel postcode) voordat hij iets over de afspraak zegt.
+    - Hij vertelt dat de afspraak van vandaag niet doorgaat omdat de behandelaar ziek is.
+    - Heeft de cliënt nog een vervolgafspraak, dan zegt hij dat die blijft staan. Zo niet, dan biedt hij doorverbinden aan of zegt hij dat het secretariaat terugbelt (wat je in stap 1 koos).
+    - Hij beantwoordt korte algemene vragen en sluit af met "u ontvangt zo een sms".
+    - Op een voicemail spreekt hij een vaste korte tekst in.
+
+    **Klaar als:** onder **Deployments** staat een uitgaande deployment voor de ziekmelding, gekoppeld aan je uitgaande nummer.
+  </Step>
+  <Step title="5. Controleer de beltijden en belpogingen">
+    **Wie:** Jij · **Waar:** **Deployments** → jouw ziekmelding-deployment → icoon **Edit deployment configuration**
+
+    Onder **Schedule** zet je **Call From** en **Start Time** (de vroegste beltijd), **Stop calling after** (de laatste beltijd) en de dagen. Zonder instelling belt Inquira tussen 09:00 en 17:00. Onder **If User Unavailable** staat of de assistent nog een keer belt (**Retry Call**, **Retry interval (minutes)**, **Stop retrying after**). Bel alleen op tijden dat je secretariaat bereikbaar is, want cliënten bellen terug.
+
+    **Klaar als:** de beltijden en het aantal pogingen kloppen met je afspraken uit stap 1.
+  </Step>
+  <Step title="6. Laat de EHR-acties bij de ziekmelding instellen">
+    **Wie:** Inquira · **Waar:** per e-mail aan Inquira (geen scherm voor praktijken)
+
+    Inquira stelt in wat er in je EHR gebeurt zodra de secretaresse afspraken aan de belronde toevoegt:
+    - **Medicore:** de status uit stap 2 en de notitie bij de afspraak.
+    - **Nedap ONS:** het label of de uursoort op de afspraak, en eventueel een onbeschikbaarheid "Ziek" in de agenda van de behandelaar, zodat niemand die dag nog iets inplant.
+
+    Jij levert de status, de notitietekst en (bij ONS) de labels of uursoort.
+
+    **Klaar als:** bij een testafspraak zie je na het toevoegen de juiste status en notitie in je EHR.
+  </Step>
+  <Step title="7. Laat de sms na het gesprek instellen">
+    **Wie:** Inquira, jij keurt de teksten goed · **Waar:** **Automations**
+
+    De sms gaat via een automation met trigger **Call Attempts Completed**: hij gaat dus pas weg als de belpogingen klaar zijn, of de cliënt nu opnam of niet. De automation kijkt of de cliënt nog een vervolgafspraak heeft en kiest de juiste tekst. Twee voorbeelden:
+    - Met vervolgafspraak: "Je afspraak is geannuleerd omdat je behandelaar ziek is. Je vervolgafspraak staat nog gepland. Vragen? Bel het secretariaat."
+    - Zonder vervolgafspraak: "Je afspraak is geannuleerd omdat je behandelaar ziek is. Het secretariaat neemt contact met je op voor een nieuwe afspraak."
+
+    **Klaar als:** onder **Automations** staat de sms-automation gepubliceerd en jij hebt beide teksten per mail goedgekeurd.
+  </Step>
+  <Step title="8. Stel de verslaglegging in je EHR in">
+    **Wie:** Inquira, samen met jou · **Waar:** **Settings → EHR reporting**
+
+    Hier staat het profiel dat elk gesprek en elke sms in je EHR vastlegt (**Set up patient contact reporting**). Kies onder **Where to report** het formulier of de rapportage uit stap 2. Met **Test on an EHR client** maak je één testverslag bij een testcliënt.
+
+    **Klaar als:** het profiel staat op **Active** en een testverslag staat op de goede plek in je EHR.
+  </Step>
+  <Step title="9. Beslis over doorverbinden naar het secretariaat">
+    **Wie:** Inquira en je leverancier · **Waar:** per e-mail aan Inquira
+
+    Doorverbinden werkt alleen als Inquira een route naar je telefooncentrale heeft. De assistent belt dan het secretariaat, vertelt kort wie er aan de lijn is, en de secretaresse zegt "doorgaan" (of drukt 1 of #) om het gesprek over te nemen. Zie [Virtuele receptionist](/praktijk/virtuele-receptionist) voor de koppeling.
+
+    <Warning>
+    Zet doorverbinden pas aan als het van begin tot eind getest is. Bij een praktijk kwam de cliënt na "ja, verbind me door" in het keuzemenu van de centrale en werd het daarna stil. Doorverbinden is toen uitgezet; cliënten krijgen nu een sms met het nummer van het secretariaat.
+    </Warning>
+
+    **Klaar als:** je hebt gekozen: doorverbinden (en de test in stap 10 is gelukt), of geen doorverbinden met terugbellen door het secretariaat.
+  </Step>
+</Steps>
+
+### Testen en live gaan
+
+<Steps>
+  <Step title="10. Test de vier situaties">
+    **Wie:** Jij · **Waar:** in je EHR en in Inquira
+
+    Volg het testscript hieronder met je eigen mobiele nummer bij een testcliënt.
+
+    **Klaar als:** alle vier de situaties gaan goed, en de status, notitie, voicemail en sms kloppen.
+  </Step>
+  <Step title="11. Start een ziekmelding">
+    **Wie:** Jij (secretaresse) · **Waar:** **Scheduling → Team Calendars**
+
+    Dit doe je bij elke ziekmelding:
+    1. Kies de agenda van de zieke behandelaar en filter op vandaag.
+    2. Vink de afspraken aan die niet doorgaan.
+    3. Klik **Add … to Deployment**.
+    4. Kies bij **Deployment** de ziekmelding-deployment en zet **Schedule Time** op nu (of het tijdstip waarop het mag).
+    5. Controleer de lijst. Afspraken met **Skip** missen gegevens, meestal een telefoonnummer; die bel je zelf. Een oranje knop betekent dat een cliënt kort geleden al gebeld is.
+    6. Klik **Yes, call … patients**.
+
+    **Klaar als:** de melding **Added to deployment** verschijnt en de afspraken staan geannuleerd in je EHR.
+  </Step>
+  <Step title="12. Controleer of iedereen bereikt is">
+    **Wie:** Jij · **Waar:** **Deployments** → ziekmelding-deployment → **Conversations**, en **Logs**
+
+    Kijk na een uur of elke cliënt een gesprek of belpoging heeft. In **Logs** zie je per cliënt de gesprekken en sms'jes. Bel zelf wie geen belpoging heeft (vaak: geen of een buitenlands nummer) en plan nieuwe afspraken voor cliënten zonder vervolgafspraak.
+
+    **Klaar als:** elke cliënt van de zieke behandelaar is gebeld of ge-sms't, en je weet wie het secretariaat nog moet terugbellen.
+  </Step>
+</Steps>
+
+## Testen voor livegang
+
+**Wie test:** de secretaresse die straks ziekmeldingen start, samen met de projectleider van de praktijk.
+
+**Wat je nodig hebt:** een testcliënt in je EHR met jouw eigen mobiele nummer, en twee afspraken bij een testbehandelaar (of testagenda): één vandaag en één vervolgafspraak volgende week.
+
+| # | Situatie | Wat je doet | Goed als |
+|---|---|---|---|
+| 1 | Cliënt neemt op, geen vervolgafspraak | Verwijder de vervolgafspraak, start de ziekmelding, neem op | Afspraak geannuleerd met notitie; assistent biedt doorverbinden aan of zegt dat het secretariaat belt; sms zonder vervolgafspraak |
+| 2 | Cliënt neemt op, wel vervolgafspraak | Start de ziekmelding, neem op | Assistent zegt dat de vervolgafspraak blijft; sms noemt dat de vervolgafspraak blijft staan |
+| 3 | Cliënt neemt niet op, geen vervolgafspraak | Laat je telefoon overgaan | Voicemail noemt je praktijk; sms komt binnen |
+| 4 | Cliënt neemt niet op, wel vervolgafspraak | Laat je telefoon overgaan | Voicemail en sms met de juiste tekst |
+
+Test daarna ook deze dingen, die bij echte praktijken misgingen:
+- **Notitie op de goede plek.** Open in je EHR het verslag van de behandelaar. Daar mag geen Inquira-notitie staan, alleen in het formulier uit stap 2.
+- **Doorverbinden.** Zeg "ja" op doorverbinden en blijf aan de lijn tot een collega opneemt. Wordt het stil of kom je in het keuzemenu, zet doorverbinden dan uit (stap 9).
+- **Het nummer dat je ziet.** Klopt het nummer op je telefoon met het nummer van je praktijk?
+- **Voicemail.** Noemt de voicemail de naam van je praktijk en "digitale assistent"?
+- **Buitenlands nummer.** Heb je cliënten met een buitenlands nummer, test dan één testcliënt met een buitenlands nummer en kijk of er een belpoging komt.
+
+## Live gaan en de eerste week
+
+- **Aanzetten:** Inquira zet de deployment op live nadat jullie test is gelukt. De eerste echte ziekmelding start je zelf (stap 11).
+- **Elke ziekmelding in de eerste week:** kijk in **Deployments → Conversations** of elk gesprek goed liep, en in je EHR of status en notitie kloppen. Lees een paar gesprekken terug.
+- **Let op:** cliënten die toch terugbellen naar het secretariaat. Komt dat vaak voor, pas dan de voicemail- of sms-tekst aan (mail Inquira).
+- **Stabiel:** na twee of drie ziekmeldingen zonder handwerk achteraf (geen verkeerde status, geen gemiste cliënt behalve bekende buitenlandse nummers).
+
+## Veelgestelde vragen
+
+<AccordionGroup>
+  <Accordion title="Kan de behandelaar zich zelf ziek melden in het EHR, zodat het vanzelf gaat?">
+    Nee, nog niet. De belronde start pas als iemand in Inquira de afspraken selecteert en aan de deployment toevoegt. Zo kiest een mens altijd welke afspraken echt niet doorgaan.
+  </Accordion>
+  <Accordion title="Plant de assistent meteen een nieuwe afspraak in?">
+    Nee. De assistent zegt de afspraak af en vertelt wat er gebeurt. Zonder vervolgafspraak verbindt hij door naar het secretariaat (als dat werkt bij jou) of zegt hij dat het secretariaat terugbelt.
+  </Accordion>
+  <Accordion title="Hoe vaak belt de assistent?">
+    Dat kies je zelf (stap 5). Veel praktijken kiezen één belpoging en altijd een sms erachteraan. Andere praktijken willen bij een spoedafmelding altijd bellen én sms'en.
+  </Accordion>
+  <Accordion title="Krijgt de cliënt ook een sms als hij heeft opgenomen?">
+    Ja, als je dat wilt. De sms gaat weg als alle belpogingen klaar zijn, ook na een goed gesprek. Zo heeft de cliënt het zwart op wit.
+  </Accordion>
+  <Accordion title="Waarom werd een cliënt met een buitenlands nummer niet gebeld?">
+    Dat is een bekend probleem dat Inquira onderzoekt. Er wordt dan geen belpoging gestart. Bel deze cliënten zelf en zet buitenlandse nummers in je EHR altijd met + en landcode.
+  </Accordion>
+  <Accordion title="Wat als een cliënt vraagt om een medewerker?">
+    Met doorverbinden aan verbindt de assistent door. Zonder doorverbinden zegt hij dat het secretariaat contact opneemt, en de sms noemt het nummer van het secretariaat.
+  </Accordion>
+  <Accordion title="Kan ik zien wat er met elke cliënt is gebeurd?">
+    Ja. Onder **Logs** zie je per cliënt de gesprekken en sms'jes, met de status van de sms. In je EHR staat het verslag in het formulier dat je koos.
+  </Accordion>
+  <Accordion title="Zegt de assistent iets op de voicemail?">
+    Ja, een vaste korte tekst: wie er belt en dat de afspraak niet doorgaat. Hij noemt geen behandelinhoud. De sms volgt.
+  </Accordion>
+</AccordionGroup>
+
+## Hulp nodig?
+
+Stel je vraag via het vraagteken rechtsboven in Inquira, of mail support@inquira.health.

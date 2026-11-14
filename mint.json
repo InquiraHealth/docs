@@ -35,6 +35,10 @@
   },
   "tabs": [
     {
+      "name": "Praktijkgidsen",
+      "url": "praktijk"
+    },
+    {
       "name": "API Reference",
       "url": "api-reference",
       "openapi": "/api-reference/openapi-spec.yml"
@@ -46,12 +50,32 @@
   ],
   "anchors": [
     {
-        "name": "Enterprise Support",
-        "icon": "building",
-        "url": "https://cal.com/umarniz/inquira-30-min"
+      "name": "Enterprise Support",
+      "icon": "building",
+      "url": "https://cal.com/umarniz/inquira-30-min"
     }
   ],
   "navigation": [
+    {
+      "group": "Praktijkgidsen",
+      "pages": [
+        "praktijk/overzicht",
+        "praktijk/starten"
+      ]
+    },
+    {
+      "group": "Per toepassing",
+      "pages": [
+        "praktijk/virtuele-receptionist",
+        "praktijk/online-afspraken",
+        "praktijk/herinneringen",
+        "praktijk/aanmeldproces",
+        "praktijk/vragenlijsten",
+        "praktijk/ziekmelding-behandelaar",
+        "praktijk/wachtlijst-vullen",
+        "praktijk/groepsbehandeling"
+      ]
+    },
     {
       "group": "Get Started",
       "pages": [
@@ -64,13 +88,20 @@
         {
           "group": "Workflows",
           "icon": "sitemap",
-          "pages": ["concepts/workflows/introduction", "concepts/workflows/inputs", "concepts/workflows/outputs"]
+          "pages": [
+            "concepts/workflows/introduction",
+            "concepts/workflows/inputs",
+            "concepts/workflows/outputs"
+          ]
         },
         "concepts/deployments",
         {
           "group": "Telephony",
           "icon": "phone",
-          "pages": ["concepts/telephony/phone-numbers", "concepts/telephony/sip"]
+          "pages": [
+            "concepts/telephony/phone-numbers",
+            "concepts/telephony/sip"
+          ]
         },
         "concepts/logs"
       ]
@@ -83,7 +114,9 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
+      "pages": [
+        "api-reference/introduction"
+      ]
     }
   ],
   "footerSocials": {
