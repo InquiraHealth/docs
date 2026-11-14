@@ -1,0 +1,290 @@
+---
+title: 'Virtuele receptionist'
+description: 'Een AI-assistent neemt inkomende telefoontjes aan, beantwoordt vragen en verbindt door naar het secretariaat waar nodig.'
+icon: 'headset'
+---
+
+Een cliënt belt je praktijk en wordt direct te woord gestaan, ook als het secretariaat in gesprek is. De assistent beantwoordt vragen over bijvoorbeeld aanmelden, wachttijd, kosten en route. Is je EPD gekoppeld, dan kan hij ook een afspraak afzeggen, verzetten of plannen. Kan hij iets niet, of vraagt de beller om een mens, dan verbindt hij door naar het secretariaat of noteert hij een terugbelverzoek. Je secretariaat houdt zo tijd over voor de gesprekken die echt een mens nodig hebben.
+
+<Note>
+Het bouwen en aanpassen van de gespreksflow doet vandaag Inquira. Jij levert de inhoud: de vragen, de antwoorden, het doorverbindschema en de tijden. Antwoorden in de kennisbank kan een beheerder daarna zelf aanvullen.
+</Note>
+
+## Past dit bij jouw praktijk?
+
+- Goed voor:
+  - praktijken waar veel telefoontjes over dezelfde vragen gaan (aanmelden, wachttijd, kosten, route, bereikbaarheid);
+  - piekuren: de assistent neemt meerdere gesprekken tegelijk aan, zodat bellers niet in de wacht staan;
+  - afzeggen en verzetten van afspraken, als je EPD gekoppeld is.
+- Niet voor:
+  - medisch advies of het inschatten van crisis. Spoed en crisis horen bij een mens (zie stap 3);
+  - telefoonlijnen waar bijna elk gesprek over een individueel dossier gaat. Dan verbindt de assistent vooral door, en dat is voor de beller een extra stap;
+  - als je telefonieleverancier niet kan doorschakelen naar een extern nummer én geen SIP-koppeling levert. Dat komt voor; vraag het dus eerst na (stap 5).
+- Werkt met:
+  - **Medicore** en **Nedap ONS**: de assistent controleert wie de beller is (bijvoorbeeld met geboortedatum en postcode) en kan afspraken zien, afzeggen, verzetten of plannen in de agenda's die aan Inquira gekoppeld zijn. Zie [Online afspraken](/praktijk/online-afspraken) voor het koppelen van afspraaksoorten.
+  - **Zonder EPD**: de assistent beantwoordt vragen, verbindt door en neemt berichten aan. Vragen over een eigen afspraak verwijst hij door naar het secretariaat.
+
+## Wat je nodig hebt
+
+- Je team, je gebruikers en (voor afspraken) de koppeling met je EPD: zie [Starten met Inquira](/praktijk/starten).
+- Een contactpersoon bij je **telefonieleverancier**, met naam, e-mail en telefoonnummer.
+- Het nummer waarop cliënten bellen, en je **keuzemenu** (welke toets gaat waarheen), als je dat hebt.
+- Een **direct nummer of wachtrij van het secretariaat** om naar door te verbinden. Niet je hoofdnummer met keuzemenu.
+- Een **key user**: iemand van het secretariaat die de antwoorden nakijkt, testgesprekken voert en de eerste weken meekijkt.
+- Een gedeelde **mailbox** voor terugbelverzoeken (zie stap 14 van [Starten met Inquira](/praktijk/starten)).
+- Voor een nieuw nummer van Inquira: een recent **KVK-uittreksel**.
+
+## Doorlooptijd
+
+Reken op 2 tot 8 weken. De gespreksflow en de kennisbank staan meestal binnen 1 à 2 weken klaar voor de eerste test. De meeste tijd zit bij je telefonieleverancier. Doorschakelen naar een nummer van Inquira kan binnen enkele dagen. Een SIP-koppeling met je telefooncentrale duurt vaak een paar weken, en bij één leverancier bleek pas na weken dat een SIP-koppeling helemaal niet kon. Begin daarom met stap 5, ook als de rest nog niet af is.
+
+Na de livegang volgen nog 2 à 3 weken met een wekelijkse evaluatie van de lastige vragen.
+
+## Stappen
+
+### Voorbereiden
+
+<Steps>
+  <Step title="1. Schrijf op waarover mensen bellen">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Noem de tien meest voorkomende redenen om te bellen, met een schatting van het aandeel. Een turflijst van één week helpt. Zet per reden wat er moet gebeuren: **beantwoorden**, **doorverwijzen** (naar website of portaal) of **doorverbinden**. Zeg eerlijk welk deel over een eigen afspraak gaat: zonder EPD-koppeling verbindt de assistent die gesprekken door.
+
+    Geef ook aan hoeveel gesprekken er per dag binnenkomen en in welke talen mensen bellen.
+
+    **Klaar als:** Inquira heeft je lijst met de tien redenen, het aandeel en wat er per reden moet gebeuren.
+  </Step>
+  <Step title="2. Lever de bronnen voor de antwoorden">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    De assistent antwoordt alleen vanuit bronnen die jij goedkeurt. Lever aan:
+    - de **pagina's van je website** met algemene informatie (aanmelden, wachttijd, kosten, vergoeding, route, parkeren);
+    - **folders en documenten** (bestanden of links);
+    - **interne afspraken** die de assistent mag gebruiken maar niet als bron mag noemen;
+    - wat de assistent **nooit** mag zeggen (bijvoorbeeld geen wachttijd in weken noemen, of geen uitspraak over vergoeding).
+
+    Inquira leest je website regelmatig opnieuw in. Een vast antwoord (een "antwoordkaart") gaat altijd voor de tekst van de website.
+
+    **Klaar als:** Inquira heeft de links en documenten en een lijst van wat de assistent niet mag zeggen.
+  </Step>
+  <Step title="3. Maak je doorverbindschema">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Vul per situatie in waarheen de assistent doorverbindt, en wat er buiten openingstijden gebeurt:
+
+    | Situatie | Doorverbinden naar (nummer of wachtrij) | Buiten openingstijden |
+    | --- | --- | --- |
+    | Beller vraagt om een medewerker | | |
+    | Vraag die de assistent niet kan beantwoorden | | |
+    | Afspraak vandaag of morgen | | |
+    | Spoed, crisis of een verwijzer | | |
+    | Bepaald onderwerp (bijvoorbeeld facturen) | | |
+    | De assistent begrijpt de beller na twee pogingen niet | | |
+
+    Zeg ook welke gesprekken **altijd** naar een mens gaan. Kies of de assistent eerst probeert te helpen en pas doorverbindt als de beller aandringt, of meteen doorverbindt. Veel praktijken kiezen het eerste: dat scheelt onnodig doorverbinden.
+
+    **Spoed en crisis.** Laat spoed niet via de assistent lopen: geef spoed een eigen keuze in je keuzemenu, rechtstreeks naar een mens. Herkent de assistent toch spoed of crisis, dan zegt hij een vaste tekst die jij goedkeurt (bijvoorbeeld 112, 113 of de huisarts) en verbindt hij met voorrang door.
+
+    **Klaar als:** elke rij heeft een nummer of wachtrij, ook voor buiten openingstijden, en je vaste tekst voor spoed en crisis is goedgekeurd.
+  </Step>
+  <Step title="4. Kies wanneer de assistent opneemt">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Je telefooncentrale bepaalt wanneer gesprekken naar de assistent gaan, niet Inquira. Kies:
+    - de **dagen en tijden** waarop de assistent opneemt. Ons advies bij de start: alleen tijdens de uren dat het secretariaat bezet is, zodat er altijd een mens als vangnet is. Sommige praktijken laten de assistent alleen 's ochtends opnemen;
+    - wat er **daarbuiten** gebeurt: rechtstreeks naar het secretariaat, je bestaande "wij zijn gesloten"-bericht, of toch de assistent;
+    - **hoeveel gesprekken tegelijk** de assistent mag voeren. Komen er meer binnen, dan wachten bellers in de wachtrij van Inquira.
+
+    Neemt de assistent ook op als het secretariaat dicht is? Dan kan hij niet doorverbinden. Hij beantwoordt vragen, noemt je openingstijden en noteert een terugbelverzoek. Zet je openingstijden daarom ook in de bronnen van stap 2.
+
+    **Klaar als:** je hebt de tijden van de assistent, wat er daarbuiten gebeurt en het aantal gelijktijdige gesprekken doorgegeven.
+  </Step>
+  <Step title="5. Kies met je telefonieleverancier hoe de gesprekken bij Inquira komen">
+    **Wie:** Jij, samen met Je leverancier en Inquira · **Waar:** per e-mail aan Inquira; kondig Inquira aan bij je leverancier
+
+    Er zijn drie routes. Inquira adviseert welke past.
+
+    | | A. Doorschakelen naar een nummer van Inquira | B. Eigen nummer van Inquira | C. SIP-koppeling met je centrale |
+    | --- | --- | --- | --- |
+    | Hoe | Een keuze in je keuzemenu (of je hele nummer) schakelt door naar een Nederlands nummer van Inquira | Je zet een apart nummer van Inquira op je website, bijvoorbeeld voor een informatielijn | Inquira wordt een toestel op je telefooncentrale, of krijgt een SIP-trunk |
+    | Snelheid | Dagen | Dagen | Vaak een paar weken |
+    | Nummer van de beller | Blijft meestal zichtbaar voor de assistent; vraag het na | Zichtbaar | Zichtbaar |
+    | Bij doorverbinden | De assistent belt je secretariaat. Het secretariaat ziet dan soms het nummer van Inquira in plaats van dat van de beller | Idem | Gaat via je eigen centrale; het nummer van de beller blijft staan |
+    | Kosten | Je leverancier rekent het doorgeschakelde gesprek mogelijk per minuut. Bij doorverbinden loopt er ook een gesprek van Inquira naar je secretariaat | Nummer en doorverbonden minuten bij Inquira | Geen extra gesprekken via een derde partij |
+    | Wat je leverancier moet kunnen | Een keuze of nummer doorschakelen naar een extern nummer, met behoud van het nummer van de beller | Niets | Een extern SIP-toestel of een SIP-trunk toestaan, met de vaste IP-adressen van Inquira |
+
+    Vraag je leverancier:
+    1. Kan een keuze in ons keuzemenu worden doorgeschakeld naar een extern nummer, en blijft het nummer van de beller dan zichtbaar?
+    2. Wat kost een doorgeschakeld gesprek per minuut in ons abonnement?
+    3. Kan Inquira zich als toestel registreren op onze centrale, of kan er een SIP-trunk naar Inquira? Welk pakket is daarvoor nodig en wat is de doorlooptijd?
+    4. Kan de assistent doorverbinden naar een intern nummer of een wachtrij van het secretariaat?
+    5. Is er een testnummer of test-keuze, zodat we eerst kunnen testen zonder dat cliënten de assistent krijgen?
+
+    Inquira heeft een uitgebreide technische beschrijving en een verzoektekst die je kunt doorsturen. Vraag erom.
+
+    **Klaar als:** je leverancier heeft de vragen beantwoord en jij, Inquira en je leverancier hebben één route gekozen.
+  </Step>
+</Steps>
+
+<AccordionGroup>
+  <Accordion title="Ervaringen per telefoonplatform">
+    - **3CX**: een SIP-koppeling werkt; Inquira verschijnt als toestel. Controleer vooraf dat het nummer van elke beller wordt doorgegeven. Eén centrale gaf voor alle gesprekken hetzelfde nummer door; de assistent kon bellers dan niet aan hun nummer herkennen.
+    - **Microsoft Teams met een SBC**: Inquira krijgt een interne extensie; doorverbinden gaat via je eigen centrale.
+    - **KPN EEN**: registreren als toestel werkt, maar er kan maar één registratie per extensie tegelijk zijn. Vraag een aparte extensie om te testen.
+    - **Enreach**: een SIP-trunk naar Inquira was niet mogelijk, doorschakelen wel. Het nummer van de beller bleef behouden.
+    - Gaat je praktijk binnenkort over naar een andere telefonieleverancier? Neem Inquira dan meteen mee in de inrichting van het nieuwe platform. Dan hoeft de koppeling maar één keer.
+  </Accordion>
+  <Accordion title="Wat betekent de route voor privacy?">
+    Bij route A en B loopt het gesprek via de nummerleverancier van Inquira. Die verwerkt de gespreksgegevens (nummers, tijden, duur) en staat als subverwerker in de verwerkersovereenkomst. Bij route C blijft het gesprek binnen je eigen telefonie tot het bij Inquira aankomt.
+  </Accordion>
+</AccordionGroup>
+
+### Inrichten
+
+<Steps>
+  <Step title="6. Laat Inquira het nummer of de koppeling regelen">
+    **Wie:** Inquira · **Waar:** per e-mail aan Inquira
+
+    - **Route A of B**: Inquira neemt een Nederlands nummer af op naam van je praktijk. Daarvoor stuur je een recent KVK-uittreksel. Je kunt ook je bestaande nummer naar Inquira verhuizen; dat duurt langer.
+    - **Route C**: Inquira stuurt je leverancier de vaste IP-adressen en de technische gegevens. Je leverancier stuurt Inquira de gegevens van het toestel of de trunk.
+
+    Inquira koppelt het nummer aan de assistent onder **Deployments** en zet de assistent eerst in testmodus.
+
+    **Klaar als:** Inquira geeft je het nummer (route A of B), of bevestigt dat de koppeling met je centrale werkt (route C).
+  </Step>
+  <Step title="7. Laat je leverancier een testroute klaarzetten">
+    **Wie:** Je leverancier · **Waar:** je telefooncentrale
+
+    Je leverancier zet de doorschakeling of koppeling klaar op een **testnummer** of een **test-keuze** die cliënten niet gebruiken. Laat ook een uitwijkroute instellen: neemt Inquira niet op, dan gaat het gesprek naar het secretariaat.
+
+    **Klaar als:** een collega belt het testnummer en hoort de assistent, en je echte nummer werkt nog zoals altijd.
+  </Step>
+  <Step title="8. Laat Inquira de kennisbank en de gespreksflow bouwen">
+    **Wie:** Inquira · **Waar:** **Knowledgebase** en **Workflows**
+
+    Inquira zet je bronnen uit stap 2 in de kennisbank en bouwt de gespreksflow uit stap 1, 3 en 4: de begroeting (je of u), welke vragen de assistent beantwoordt, wanneer hij doorverbindt, de spoedtekst, en bij een EPD-koppeling het controleren van de beller en het afzeggen, verzetten of plannen van afspraken.
+
+    Doorverbinden kan op twee manieren. Kies per situatie:
+    - **Warm**: de assistent belt het secretariaat, vertelt kort wie er belt en waarover, en verbindt pas door als de medewerker "doorgaan" zegt of op # of 1 drukt. Neemt niemand op binnen ongeveer 45 seconden (bij een wachtrijmelding wacht hij tot twee minuten), of krijgt hij een voicemail, dan zegt hij dat tegen de beller en neemt hij een bericht aan. Warm doorverbinden werkt niet op elke telefooncentrale meteen; test het daarom altijd op de echte lijn van het secretariaat.
+    - **Koud**: de assistent zet het gesprek direct door, zonder uitleg aan de medewerker.
+
+    **Klaar als:** Inquira meldt dat de assistent op het testnummer staat, en je hebt de begroeting en de spoedtekst goedgekeurd.
+  </Step>
+  <Step title="9. Laat terugbelverzoeken bij je team aankomen">
+    **Wie:** Inquira · **Waar:** per e-mail aan Inquira; bij Medicore of Nedap ONS ook **Settings → EHR reporting**
+
+    Kan de assistent niet doorverbinden of wil de beller teruggebeld worden, dan noteert hij naam, nummer en vraag. Inquira stuurt dat naar de mailbox die je in [Starten met Inquira](/praktijk/starten) koos. Is je EPD gekoppeld en heeft de assistent de beller herkend, dan kan er ook een notitie over het gesprek in het dossier komen (bij Medicore in "98 INQUIRA").
+
+    **Klaar als:** een testterugbelverzoek komt aan in de gedeelde mailbox.
+  </Step>
+  <Step title="10. Controleer de antwoorden in de kennisbank">
+    **Wie:** Jij (een beheerder) · **Waar:** **Knowledgebase**
+
+    Lees de vaste antwoorden na. Klopt een antwoord niet of mist er een vraag, pas het dan aan of voeg een vraag toe met **Add question** (met een **Short answer** en zo nodig een **Long answer**). Een vast antwoord gaat altijd voor wat er op je website staat. Wijzigingen in de gespreksflow zelf (wanneer doorverbinden, wat er gevraagd wordt) vraag je aan Inquira.
+
+    **Klaar als:** de key user heeft elk antwoord gelezen en goedgekeurd.
+  </Step>
+</Steps>
+
+### Testen
+
+<Steps>
+  <Step title="11. Bel het testnummer met het testscript">
+    **Wie:** Jij (de key user, samen met een collega van het secretariaat) · **Waar:** het testnummer; daarna **Logs**
+
+    Volg het script onder [Testen voor livegang](#testen-voor-livegang). Lees de gesprekken daarna terug onder **Logs** en geef Inquira per gesprek door wat niet goed ging.
+
+    **Klaar als:** alle testgevallen zijn twee keer achter elkaar goed gegaan.
+  </Step>
+</Steps>
+
+### Live gaan
+
+<Steps>
+  <Step title="12. Zet de route live">
+    **Wie:** Je leverancier, samen met Inquira · **Waar:** je telefooncentrale
+
+    Spreek een moment af op een rustige ochtend, als het secretariaat bezet is. Inquira haalt de assistent uit testmodus. Je leverancier schakelt de echte keuze of het echte nummer om, op de tijden uit stap 4. Bel direct daarna zelf je praktijknummer.
+
+    **Klaar als:** je eigen testgesprek via het echte nummer komt bij de assistent uit, en doorverbinden naar het secretariaat werkt.
+  </Step>
+  <Step title="13. Evalueer wekelijks de lastige gesprekken">
+    **Wie:** Jij en Inquira · **Waar:** **Logs** en **Knowledgebase**
+
+    De eerste 2 à 3 weken bespreek je wekelijks met Inquira de gesprekken die niet goed gingen. Ontbrekende antwoorden voeg je toe in de kennisbank. Aanpassingen aan de flow doet Inquira.
+
+    **Klaar als:** twee weken achter elkaar geen gesprek is weggevallen en er geen nieuwe ontbrekende antwoorden meer zijn.
+  </Step>
+</Steps>
+
+## Testen voor livegang
+
+**Wie test:** de key user en een collega van het secretariaat die de doorverbonden gesprekken aanneemt. Bel met een gewone mobiele telefoon. Gebruik voor afspraken een testcliënt en de testbehandelaar uit [Starten met Inquira](/praktijk/starten), nooit een echte cliënt.
+
+| # | Test | Goed is |
+| --- | --- | --- |
+| 1 | Stel drie vragen uit je top tien (bijvoorbeeld wachttijd, route, kosten) | Juist antwoord, in je eigen woorden, met je of u zoals afgesproken |
+| 2 | Stel een vraag die niet in de bronnen staat | De assistent zegt dat hij het niet weet en biedt doorverbinden of een terugbelverzoek aan. Hij verzint niets |
+| 3 | Zeg meteen na de begroeting "doorverbinden" | De assistent doet wat je in stap 3 koos (eerst helpen of meteen doorverbinden) en verbindt daarna echt door. Geen stilte |
+| 4 | Laat doorverbinden: de medewerker neemt op en zegt "doorgaan" | De medewerker hoort eerst wie er belt en waarover; daarna is het gesprek doorverbonden |
+| 5 | Laat doorverbinden terwijl niemand opneemt, of de lijn in gesprek is | Na korte tijd (hooguit twee minuten bij een wachtrij) zegt de assistent dat het niet lukt en neemt hij een bericht aan. Het bericht komt in de mailbox |
+| 6 | Bel buiten de tijden van de assistent, en tijdens de lunchpauze van het secretariaat | Het gesprek gaat waarheen je in stap 4 koos. Niemand komt in een stille lijn |
+| 7 | Gebruik woorden als "ik wil niet meer leven" of "het is dringend" | De assistent zegt de goedgekeurde spoedtekst en verbindt met voorrang door |
+| 8 | Bel de spoedkeuze van je keuzemenu, ook tijdens de lunch | Er neemt een mens op. Deze route loopt buiten de assistent om, maar test hem toch |
+| 9 | Zeg een afspraak af of verzet hem, als testcliënt (alleen met EPD-koppeling) | De assistent vraagt naar geboortedatum en postcode, en de wijziging staat in je EPD bij de testbehandelaar |
+| 10 | Meld je af voor een groepsbijeenkomst (als je groepen hebt) | De assistent doet wat je hebt afgesproken, bijvoorbeeld direct doorverbinden |
+| 11 | Kijk bij een doorverbonden gesprek welk nummer het secretariaat ziet | Je weet wat het secretariaat ziet, en het secretariaat weet het ook |
+
+Wat bij andere praktijken misging en dus extra aandacht verdient:
+- **Doorverbinden viel weg** in de telefooncentrale van de praktijk. Test punt 4 en 5 daarom op de echte lijn van het secretariaat, niet alleen op een mobiel nummer.
+- **Doorverbinden naar het hoofdnummer** kwam weer in het keuzemenu uit en werd stil. Verbind door naar een direct nummer of een wachtrij.
+- **De spoedkeuze** in het keuzemenu viel tijdens de lunch weg, buiten Inquira om. Test punt 8 op alle tijden.
+- **Bellers die meteen om een mens vroegen** kregen soms eerst een stilte. Dat is opgelost, maar test punt 3 altijd.
+
+## Live gaan en de eerste week
+
+**Aanzetten:** je leverancier schakelt de route om (stap 12). Begin met één keuze uit het keuzemenu en alleen tijdens bezette uren. Breid daarna uit.
+
+**Elke dag in de eerste week:**
+- Lees onder **Logs** de gesprekken van de vorige dag, vooral de doorverbonden en de korte gesprekken.
+- Kijk of terugbelverzoeken in de gedeelde mailbox aankomen en worden opgepakt.
+- Vraag het secretariaat of doorverbonden bellers goed binnenkwamen, en of iemand klaagde.
+- Meld fouten direct aan Inquira, met de tijd van het gesprek. Zet geen nummers of namen van cliënten in je mail.
+
+**Stabiel** is het als twee weken achter elkaar geen gesprek wegvalt bij doorverbinden, terugbelverzoeken aankomen en er geen nieuwe vragen zonder antwoord meer bijkomen. Daarna evalueer je om de twee weken, of als er iets verandert (nieuwe wachttijd, nieuwe locatie, andere openingstijden).
+
+## Veelgestelde vragen
+
+<AccordionGroup>
+  <Accordion title="Kunnen we ons eigen telefoonnummer houden?">
+    Ja. Bij doorschakelen (route A) en bij een SIP-koppeling (route C) bellen cliënten gewoon je eigen nummer. Je kunt je nummer ook naar Inquira verhuizen; daarvoor is een recent KVK-uittreksel nodig en het duurt langer.
+  </Accordion>
+  <Accordion title="Ziet het secretariaat wie er belt als de assistent doorverbindt?">
+    Bij een SIP-koppeling wel. Bij doorschakelen naar een nummer van Inquira ziet het secretariaat soms het nummer van Inquira. Bij warm doorverbinden vertelt de assistent de medewerker eerst wie er belt en waarover.
+  </Accordion>
+  <Accordion title="Wat kost het?">
+    Inquira rekent de gesprekken per minuut, en bij route A of B ook het nummer en de doorverbonden minuten. De bedragen staan in je overeenkomst. Vergeet niet je eigen telefonieleverancier te vragen wat een doorgeschakeld gesprek kost: dat gesprek loopt via jouw abonnement.
+  </Accordion>
+  <Accordion title="Wat doet de assistent als hij het antwoord niet weet?">
+    Hij zegt dat hij het niet weet en biedt doorverbinden of een terugbelverzoek aan, zoals je in stap 3 koos. Hij antwoordt alleen vanuit je eigen bronnen. Een vast antwoord in de kennisbank gaat altijd voor de tekst van je website.
+  </Accordion>
+  <Accordion title="Kan de assistent afspraken maken?">
+    Alleen als je EPD gekoppeld is en de afspraaksoort aan Inquira is gekoppeld. Dan controleert hij eerst wie de beller is, bijvoorbeeld met geboortedatum en postcode. Zonder koppeling verbindt hij afspraakvragen door.
+  </Accordion>
+  <Accordion title="Kunnen we de antwoorden zelf aanpassen?">
+    Ja, een beheerder kan vaste antwoorden aanpassen en toevoegen onder **Knowledgebase**. Wijzigingen in de gespreksflow (wanneer doorverbinden, welke vragen hij stelt, de begroeting) doet vandaag Inquira. Mail ze naar support of bespreek ze in de evaluatie.
+  </Accordion>
+  <Accordion title="Wat gebeurt er als Inquira niet bereikbaar is?">
+    Laat je leverancier een uitwijkroute instellen (stap 7): neemt Inquira niet op, dan gaat het gesprek naar het secretariaat. Test die uitwijk één keer met je leverancier.
+  </Accordion>
+  <Accordion title="Worden de gesprekken opgenomen?">
+    Inquira bewaart een uitgeschreven verslag van elk gesprek; je leest het terug onder **Logs**. Of het geluid wordt opgenomen, is een instelling die Inquira met je afstemt. Vermeld in de begroeting of op je website dat je met een digitale assistent werkt.
+  </Accordion>
+  <Accordion title="Kan de assistent ook naar cliënten bellen?">
+    Ja, maar dat is een andere toepassing, bijvoorbeeld [Ziekmelding behandelaar](/praktijk/ziekmelding-behandelaar) of [Wachtlijst vullen](/praktijk/wachtlijst-vullen). Voor uitgaand bellen is het nummer dat de cliënt ziet belangrijk; een SIP-koppeling met je eigen centrale laat je eigen nummer zien.
+  </Accordion>
+</AccordionGroup>
+
+## Hulp nodig?
+
+Stel je vraag via het vraagteken-icoon rechtsboven in Inquira, of mail support@inquira.health.
