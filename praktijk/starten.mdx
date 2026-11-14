@@ -1,0 +1,292 @@
+---
+title: 'Starten met Inquira'
+description: 'Je team, je gebruikers, de koppeling met je EPD en de basisinstellingen die elke toepassing nodig heeft.'
+icon: 'rocket'
+---
+
+Deze gids doe je één keer, vóór je eerste toepassing. Daarna kunnen je collega's veilig inloggen, ziet Inquira je behandelaren, agenda's en cliënten uit Medicore of Nedap ONS, en weten cliënten van wie een sms of e-mail komt. Elke andere praktijkgids gaat ervan uit dat deze stappen klaar zijn.
+
+## Past dit bij jouw praktijk?
+
+- Goed voor: elke praktijk die Inquira gaat gebruiken. Ook als je met maar één toepassing begint.
+- Niet voor: het inrichten van een toepassing zelf (online afspraken, telefoon, vragenlijsten). Daarvoor is er een eigen gids.
+- Werkt met:
+  - **Medicore**: Medicore zet de koppeling aan en levert de sleutels aan Inquira. Roosterregels komen binnen via de Inquira-extensie voor Chrome of Edge, omdat Medicore daar geen koppeling voor heeft. Notities van Inquira komen in een eigen formulier "98 INQUIRA".
+  - **Nedap ONS**: je ONS-beheerder keurt de Inquira-app met één klik goed in ONS Podium. Roosters komen via de koppeling binnen.
+  - **Zonder EPD**: sla stap 6 tot en met 12 over. Inquira werkt dan zonder agenda's en cliënten uit je EPD. Dat beperkt wat je kunt: zonder koppeling kan Inquira bijvoorbeeld geen afspraken in je agenda zien of plannen.
+
+## Wat je nodig hebt
+
+- Een getekende overeenkomst met Inquira.
+- Eén persoon die beheerder wordt in Inquira (meestal de praktijkmanager of de leidinggevende van het secretariaat).
+- De functioneel beheerder van je EPD (iemand met beheerrechten in Medicore of Nedap ONS).
+- Een lijst van de collega's die moeten inloggen, met e-mailadres en taak.
+- Een gedeelde mailbox voor meldingen, bijvoorbeeld het algemene adres van het secretariaat.
+- Een telefoon met een authenticator-app (bijvoorbeeld Microsoft Authenticator of Google Authenticator) voor elke gebruiker.
+
+Gebruik je de telefoonassistent? Dan heb je ook je telefonieleverancier nodig. Dat staat in de gids [Virtuele receptionist](/praktijk/virtuele-receptionist).
+
+## Doorlooptijd
+
+Reken op 1 tot 4 weken. Inloggen en collega's uitnodigen kan op één dag. De meeste tijd zit bij je EPD-leverancier: Medicore moet de koppeling aanzetten en het formulier "98 INQUIRA" aanmaken. Bij andere praktijken duurde elk van die twee tussen 1 dag en 4 weken. Bij Nedap ONS gaat het meestal sneller: als je ONS-beheerder het verzoek ziet, is het één klik.
+
+Begin daarom met stap 6 (Medicore) of stap 11 (Nedap ONS), ook als de rest nog niet af is.
+
+## Stappen
+
+<Note>
+Stap 6 tot en met 10 zijn alleen voor Medicore. Stap 11 en 12 zijn alleen voor Nedap ONS. Doe alleen het deel van jouw EPD.
+</Note>
+
+### Account en gebruikers
+
+<Steps>
+  <Step title="1. Ontvang je team en log in">
+    **Wie:** Inquira, daarna Jij · **Waar:** per e-mail aan Inquira, daarna het inlogscherm van Inquira
+
+    Na de ondertekening maakt Inquira het team van je praktijk aan. Geef Inquira de naam en het e-mailadres van de persoon die beheerder wordt. Die persoon krijgt een account met de rol **Admin** en logt in met een code per e-mail, of met **Sign in with Microsoft** als je praktijk met Microsoft werkt.
+
+    Werkt je praktijk met Microsoft? Dan vraagt Microsoft bij de eerste keer inloggen soms of de Inquira-app toegang mag krijgen. Een Microsoft-beheerder van je praktijk geeft die toestemming één keer.
+
+    **Klaar als:** de beheerder is ingelogd en ziet onder **Settings → General** de naam van de praktijk.
+  </Step>
+  <Step title="2. Laat je netwerk Inquira doorlaten">
+    **Wie:** Je leverancier (je ICT-beheerder) · **Waar:** het webfilter of de proxy van je praktijk
+
+    Vraag je ICT-beheerder om `*.inquira.app` en `*.inquira.health` door te laten. Anders kunnen collega's op het praktijknetwerk soms niet inloggen, of komen e-mails met links niet goed aan.
+
+    **Klaar als:** een collega op een praktijkcomputer kan inloggen en de pagina's van Inquira laden.
+  </Step>
+  <Step title="3. Zet tweestapsverificatie aan voor iedereen">
+    **Wie:** Jij · **Waar:** **Settings → Account security** en **Settings → Sign-in & security**
+
+    Inquira bevat cliëntgegevens. Daarom log je in met een code per e-mail én een code uit een authenticator-app.
+
+    1. Zet het eerst voor jezelf aan: ga naar **Settings → Account security** en scan de QR-code met je authenticator-app.
+    2. Verplicht het daarna voor het hele team: ga naar **Settings → Sign-in & security**, zet **Require two-factor authentication for every member** aan en kies een datum bij **Required from**. Tot die datum zien collega's een herinnering. Vanaf die datum moeten ze het eerst instellen.
+    3. Kies op dezelfde pagina na hoeveel minuten het scherm vergrendelt (**Lock the screen after**, tussen 5 en 60 minuten). Een lopend gesprek of chat vergrendelt nooit.
+
+    **Klaar als:** onder **Settings → Users & access** staat in de kolom **Two-factor** bij jezelf dat het aan staat, en **Required from** heeft een datum.
+  </Step>
+  <Step title="4. Nodig je collega's uit met de juiste rol">
+    **Wie:** Jij · **Waar:** **Settings → Users & access → Invite User To Team**
+
+    Nodig iedere collega apart uit. Vul het e-mailadres in, kies een rol en klik **Invite**. Kies de rol op basis van wat iemand doet:
+
+    | Rol in Inquira | Voor wie |
+    | --- | --- |
+    | **Admin** | Beheerder: alle instellingen en gebruikers |
+    | **Coordinator / secretary** | Secretariaat en planning: cliënten, afspraken, takenlijsten |
+    | **Communications** | Wie teksten en huisstijl voor cliënten beheert |
+    | **Roster sync** | Alleen voor Medicore: wie roosterregels synchroniseert met de Inquira-extensie |
+
+    De collega krijgt een e-mail met een link en een uitnodigingscode. De uitnodiging is beperkt geldig (bij andere praktijken 7 dagen). Is hij verlopen, klik dan in de lijst op **Resend signup invite**.
+
+    **Klaar als:** iedere collega staat in de lijst onder **Settings → Users & access** met zijn eigen rol, en niemand staat meer op "pending".
+  </Step>
+  <Step title="5. Geef Inquira tijdelijk toegang tot je team">
+    **Wie:** Jij · **Waar:** **Settings → Users & access → Give Inquira staff access**
+
+    Tijdens het inrichten werkt je Inquira-consultant in jouw team. Dat kan alleen als een beheerder van jouw praktijk daar toestemming voor geeft.
+
+    1. Klik **Give Inquira staff access**.
+    2. Kies bij **Staff member** je consultant.
+    3. Kies bij **Role** meestal **Admin**, want inrichten gaat vaak over instellingen.
+    4. Kies **Fixed period** en vul bij **Access for (days)** een termijn in (standaard 90 dagen, maximaal 180). Kies alleen **No end date** als Inquira je team onder contract blijvend ondersteunt.
+    5. Klik **Grant access**.
+
+    Alle beheerders krijgen hierover een e-mail. Alles wat Inquira in je team doet, staat in je audit log. Je kunt de toegang altijd intrekken onder **Inquira staff with access**.
+
+    **Klaar als:** je consultant staat onder **Inquira staff with access** met een einddatum.
+  </Step>
+</Steps>
+
+### EPD koppelen: Medicore
+
+<Steps>
+  <Step title="6. Vraag Medicore om de API-koppeling voor Inquira">
+    **Wie:** Je leverancier (Medicore), samen met Inquira · **Waar:** het klantportaal van Medicore
+
+    Meestal neemt Inquira zelf contact op met Medicore. Vraag jouw contactpersoon bij Medicore wel wat de connector kost. Medicore stuurt de inloggegevens van de koppeling (de API-gebruiker `api_inquira` en de sleutels) via beveiligde mail rechtstreeks naar Inquira, niet naar jou.
+
+    Laat Medicore deze drie dingen aanzetten. Zonder deze drie werkt de koppeling niet:
+    - de **autorisatiematrix** (Medicore doet dit soms 's nachts);
+    - het **API-platform** voor jullie omgeving;
+    - een **medewerker gekoppeld aan de API-gebruiker**, met dezelfde rechten als een gewone medewerker. Zonder die rechten kan Inquira geen notities en formulieren in het dossier zetten.
+
+    **Klaar als:** Medicore bevestigt dat alle drie aan staan en Inquira heeft de inloggegevens ontvangen.
+  </Step>
+  <Step title="7. Laat Inquira de koppeling installeren">
+    **Wie:** Inquira · **Waar:** **Apps → Medicore EHR**
+
+    Inquira installeert de app Medicore EHR in je team, vult de gegevens van Medicore in en klikt **Connect**. Daarna haalt Inquira je medewerkers, agenda's en cliënten op. Cliënten worden direct bijgewerkt als ze in Medicore veranderen. De volledige synchronisatie loopt elk uur.
+
+    **Klaar als:** onder **Apps → Medicore EHR** staat **Connected**.
+  </Step>
+  <Step title="8. Kies welke medewerkers meedoen">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Inquira stuurt je een lijst van alle medewerkers die het in Medicore ziet. Zet in de kolom SYNC op TRUE wie met Inquira moet meedoen, en stuur de lijst terug.
+
+    Iedere medewerker bij wie Inquira afspraken plant, moet in Medicore een e-mailadres hebben. Komt er later een behandelaar bij, laat het Inquira dan weten. Anders ziet Inquira die nieuwe agenda niet.
+
+    **Klaar als:** onder **Settings → Directory** staan alle behandelaren die meedoen.
+  </Step>
+  <Step title="9. Installeer de Inquira-extensie voor roosterregels">
+    **Wie:** Jij (wie de roosters beheert) · **Waar:** Chrome of Edge, naast Medicore
+
+    Medicore heeft geen koppeling voor roosterregels. Wie roosterregels in Medicore wijzigt, synchroniseert ze daarna met één klik in de Inquira-extensie. Installeren duurt een paar minuten. Inquira stuurt je de link.
+
+    Wie alleen roosters synchroniseert, krijgt in stap 4 de rol **Roster sync**. Werkt je praktijk met Edge? Installeer de extensie dan in Edge.
+
+    **Klaar als:** de roosterbeheerder heeft één keer gesynchroniseerd en Inquira bevestigt dat de roosters van de behandelaren binnen zijn.
+  </Step>
+  <Step title='10. Vraag Medicore om het notitieformulier "98 INQUIRA"'>
+    **Wie:** Jij vraagt het aan, Je leverancier (Medicore) maakt het, Inquira stelt het in · **Waar:** het klantportaal van Medicore, daarna **Settings → EHR reporting**
+
+    Bij iedere actie richting een cliënt (sms gestuurd, gebeld, vragenlijst ingevuld) zet Inquira een korte notitie in het Medicore-dossier. Zonder eigen formulier komen die notities als "Individueel verslag" tussen de behandelverslagen. Dan komen ze ook mee in dossier-exports. Daarom raden we een eigen formulier aan. Het nummer 98 zet het onderaan de lijst.
+
+    1. Kijk eerst of je Medicore onder **Dossier Patiënt → Verslagen** een tabblad "NOTITIES" en een formulier "00 NOTITIES" heeft.
+    2. Stuur Medicore via het klantportaal (als consultancyvraag) een verzoek voor een nieuw formulier "98 INQUIRA" onder tabblad "NOTITIES", met dezelfde velden als "00 NOTITIES" (datum-tijd en een vrij tekstveld). Vraag ook of de API-gebruiker `api_inquira` het formulier mag aanmaken en vullen. Inquira geeft je de volledige tekst om door te sturen.
+    3. Ontbreekt het tabblad "NOTITIES"? Vraag Medicore dan in hetzelfde verzoek om dat tabblad aan te maken.
+    4. Laat Inquira weten zodra het formulier er staat. Inquira zet de notities dan naar het nieuwe formulier.
+
+    **Klaar als:** een notitie van Inquira over een testcliënt staat in Medicore onder "98 INQUIRA", niet onder "Individueel verslag".
+  </Step>
+</Steps>
+
+### EPD koppelen: Nedap ONS
+
+<Steps>
+  <Step title="11. Stuur Inquira je ONS-klantcode">
+    **Wie:** Jij (je ONS-beheerder) · **Waar:** per e-mail aan Inquira
+
+    Je ONS-beheerder vindt de klantcode in ONS bij de zorginstellingsgegevens. Nedap legt uit waar dat staat: [Zorginstellingsgegevens beheren](https://support.nedap-ons.nl/support/solutions/articles/103000266351-zorginstellingsgegevens-beheren). Stuur Inquira de klantcode en de naam en het e-mailadres van je ONS-beheerder.
+
+    **Klaar als:** Inquira bevestigt dat het koppelverzoek voor de Inquira-app klaarstaat.
+  </Step>
+  <Step title="12. Keur de Inquira-app goed in ONS Podium">
+    **Wie:** Jij (je ONS-beheerder), daarna Inquira · **Waar:** ONS Podium, daarna **Apps → Nedap ONS**
+
+    Het koppelverzoek verschijnt in ONS Podium. Je ONS-beheerder keurt het met één klik goed. Het kan even duren voordat het verzoek zichtbaar is. Daarna installeert Inquira de app Nedap ONS in je team en kiest samen met jou welke medewerkers meedoen.
+
+    Brengt Inquira later een nieuwe versie van de app uit die meer gegevens nodig heeft? Dan vraagt ONS Podium opnieuw om toestemming. Dat is dan weer één klik.
+
+    **Klaar als:** de app is goedgekeurd in ONS Podium en onder **Settings → Directory** staan je behandelaren uit ONS.
+  </Step>
+</Steps>
+
+### Testgegevens, meldingen en teksten
+
+<Steps>
+  <Step title="13. Maak een testbehandelaar en testcliënten aan">
+    **Wie:** Jij (de functioneel beheerder van je EPD) · **Waar:** je EPD (productieomgeving)
+
+    Inquira test alles eerst met testgegevens in je echte omgeving. Een acceptatieomgeving van het EPD wijkt te vaak af (roosters, afspraaksoorten).
+
+    - **Testbehandelaar**: een behandelaarsaccount voor Inquira, gekoppeld aan het e-mailadres van je Inquira-consultant. In Medicore heeft dit account een licentie nodig. Vraag Medicore of die later kan worden afgeschaald.
+    - **Testrooster**: roosterregels of open blokken voor de testbehandelaar, zoals een gewone behandelaar die heeft. Gebruik bij voorkeur een testlocatie onderaan de lijst (bijvoorbeeld "Z-Test"), zodat het secretariaat er geen last van heeft.
+    - **Testcliënten**: twee of drie (achternaam bijvoorbeeld InquiraTestA, B, C) met een mobiel nummer en e-mailadres dat Inquira je geeft. Koppel nooit echte cliënten aan testafspraken.
+
+    **Klaar als:** de testcliënten staan in Inquira onder **Clients** en de testbehandelaar staat onder **Settings → Directory**.
+  </Step>
+  <Step title="14. Kies welke melding naar welke mailbox gaat">
+    **Wie:** Jij · **Waar:** per e-mail aan Inquira
+
+    Inquira mailt je team bij gebeurtenissen die aandacht vragen. Kies per melding een adres. Gebruik een gedeelde mailbox, geen persoonlijk adres: dan raakt niets kwijt bij ziekte of vakantie.
+
+    | Melding | Mailbox |
+    | --- | --- |
+    | Een cliënt vraagt een afspraak aan die een medewerker eerst moet bevestigen | |
+    | Een cliënt verzet of annuleert een afspraak | |
+    | Een cliënt is niet bereikbaar (sms of e-mail komt niet aan) | |
+    | Terugbelverzoek uit de telefoonassistent (alleen als je die gebruikt) | |
+    | Tegoed bijna op | |
+
+    Meldingen over afspraken stel je per afspraaksjabloon in, op het tabblad **Notifications** (**Additional notification emails**). De gids van je toepassing zegt waar. De melding over je tegoed staat onder **Settings → Usage & credits**.
+
+    **Klaar als:** Inquira heeft je ingevulde tabel en elke melding heeft een gedeelde mailbox.
+  </Step>
+  <Step title="15. Stel de afzender van sms en e-mail in">
+    **Wie:** Jij · **Waar:** **Client Content → Organisation settings → Branding**
+
+    Vul in:
+    - **Email sender name**: de naam die cliënten als afzender van e-mails zien.
+    - **Reply-to email**: waar antwoorden van cliënten op een e-mail heen gaan.
+    - **Default SMS sender name**: de afzender van sms'jes. 3 tot 11 tekens, alleen letters en cijfers, met minstens één letter. Meestal de naam van de praktijk, ingekort.
+    - **Contact name**, **Contact phone number** en **Contact email**: waar cliënten met een vraag terechtkunnen.
+
+    Voeg ook je logo en kleuren toe. Stuur jezelf een test-e-mail met **Test email recipient**.
+
+    **Klaar als:** de test-e-mail komt aan met de juiste afzender, het juiste antwoordadres en je logo.
+  </Step>
+  <Step title="16. Kies je of u, en lever je teksten aan">
+    **Wie:** Jij, daarna Inquira · **Waar:** per e-mail aan Inquira, daarna **Client Content → Messages** en **Settings → Client actions → Page text**
+
+    Er is geen schakelaar voor je of u: elke tekst wordt in jouw keuze geschreven. Geef Inquira door:
+    - **je of u** in alle berichten aan cliënten;
+    - de precieze schrijfwijze van de praktijknaam;
+    - het **terugbelnummer** voor cliënten met een vraag, met de tijden waarop het bereikbaar is;
+    - hoe een cliënt laat zien wie hij is bij het openen van een link. De meeste praktijken kiezen een sms-code plus geboortedatum. Dit staat onder **Settings → Client actions → Client verification**.
+
+    Inquira schrijft een eerste versie van de berichten. Jij leest ze na onder **Client Content → Messages**. De vaste teksten op de pagina's die cliënten openen, staan onder **Settings → Client actions → Page text**. Kies je "je", controleer dan ook die pagina's: de standaardtekst gebruikt "u".
+
+    **Klaar als:** je hebt de berichten nagelezen en ze gebruiken overal dezelfde aanspreekvorm.
+  </Step>
+</Steps>
+
+## Testen voor livegang
+
+Hier test je alleen of de koppeling werkt. Elke toepassing heeft daarna zijn eigen test.
+
+**Wie test:** de beheerder samen met de functioneel beheerder van het EPD.
+
+1. **Status.** Onder **Apps → Medicore EHR** of **Apps → Nedap ONS** staat de koppeling als verbonden.
+2. **Medewerkers.** Onder **Settings → Directory** staan alle behandelaren die meedoen, ook de testbehandelaar. Ontbreekt er één? Bij Medicore heeft die meestal geen e-mailadres of staat hij niet op SYNC.
+3. **Cliënten.** Zoek een testcliënt op onder **Clients**. Pas in je EPD het e-mailadres van die testcliënt aan en kijk of het binnen een uur ook in Inquira is veranderd.
+4. **Roosters (alleen Medicore).** Wijzig een roosterregel van de testbehandelaar, synchroniseer met de extensie en vraag Inquira te bevestigen dat het rooster is bijgewerkt.
+5. **Notities (alleen Medicore).** Laat Inquira een testbericht naar een testcliënt sturen. De notitie komt in het dossier onder "98 INQUIRA".
+6. **Inloggen.** Een collega met de rol **Coordinator / secretary** logt in met tweestapsverificatie en ziet de cliënten.
+
+**Goed** is: alle zes kloppen. Werkt iets niet, meld dan welk punt en wat je ziet.
+
+## Live gaan en de eerste week
+
+Deze gids zet zelf niets live: er gaan nog geen berichten naar cliënten. Dat gebeurt pas als je een toepassing aanzet.
+
+In de eerste week na de koppeling:
+- Kijk onder **Settings → Users & access** of iedereen is ingelogd en tweestapsverificatie heeft. Stuur verlopen uitnodigingen opnieuw.
+- Laat de functioneel beheerder bij een nieuwe behandelaar of agenda direct Inquira inlichten.
+- Controleer bij Medicore of de notities in "98 INQUIRA" komen.
+
+Je bent klaar als alle collega's kunnen inloggen, de behandelaren en cliënten kloppen en de testnotitie op de goede plek staat. Ga dan door met de gids van je eerste toepassing.
+
+## Veelgestelde vragen
+
+<AccordionGroup>
+  <Accordion title="Moeten we het notitieformulier 98 INQUIRA hebben?">
+    Nee, het is geen eis. Zonder dit formulier komen de notities van Inquira als "Individueel verslag" in het dossier, tussen de behandelverslagen. Dan komen ze ook mee in dossier-exports. Daarom kiezen de meeste praktijken voor een eigen formulier. Je kunt er ook voor kiezen alles alleen in Inquira te bewaren.
+  </Accordion>
+  <Accordion title="Kunnen we het testen in de acceptatieomgeving van ons EPD?">
+    Liever niet. Roosters en afspraaksoorten wijken daar in de praktijk te vaak af van productie. Inquira test eerst in een eigen testomgeving en daarna in je productieomgeving met een testbehandelaar en testcliënten. Er worden dan geen echte cliënten benaderd.
+  </Accordion>
+  <Accordion title="Een collega kan niet inloggen. Wat nu?">
+    Kijk onder **Settings → Users & access**. Staat de collega nog op "pending", dan is de uitnodiging misschien verlopen: klik **Resend signup invite**. Is de collega zijn authenticator-app kwijt, dan kan een beheerder de tweestapsverificatie resetten met het icoon in de kolom **Two-factor**. Werkt je praktijk met Microsoft, dan is **Sign in with Microsoft** voor de meeste collega's het makkelijkst.
+  </Accordion>
+  <Accordion title="Waarom ziet Inquira een nieuwe behandelaar niet?">
+    Bij Medicore: de behandelaar staat niet op SYNC, of heeft geen e-mailadres in Medicore. Laat het Inquira weten, dan zetten we hem aan. Bij Nedap ONS komen nieuwe medewerkers meestal vanzelf binnen. Zie je ze na een dag nog niet, meld het dan.
+  </Accordion>
+  <Accordion title="Kan Inquira zomaar in ons team kijken?">
+    Nee. Een medewerker van Inquira kan alleen in je team werken als een beheerder van jouw praktijk toegang geeft onder **Give Inquira staff access**. De toegang heeft een einddatum, alle beheerders krijgen een e-mail en alles staat in je audit log. Je kunt de toegang op elk moment intrekken.
+  </Accordion>
+  <Accordion title="Wie krijgt sms'jes en e-mails als een cliënt in ONS geheim is?">
+    Bij Nedap ONS blokkeert Inquira standaard sms, e-mail en telefoon voor cliënten die in ONS als geheim staan. Ook de voorkeuren uit Ons Notificaties worden gevolgd als je die module hebt.
+  </Accordion>
+  <Accordion title="Moeten we wachtwoorden of cliëntlijsten per e-mail sturen?">
+    Nee. Stuur wachtwoorden, testaccounts en cliëntlijsten nooit gewoon per e-mail, maar via beveiligde mail of een gedeelde map. Medicore stuurt de sleutels van de koppeling rechtstreeks naar Inquira. Echte cliëntgegevens zijn voor de inrichting niet nodig.
+  </Accordion>
+</AccordionGroup>
+
+## Hulp nodig?
+
+Stel je vraag via het vraagteken-icoon rechtsboven in Inquira, of mail support@inquira.health.
